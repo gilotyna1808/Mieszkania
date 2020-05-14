@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mieszkania"
         mc:Ignorable="d"
-        Title="empty" Height="450" Width="800">
+        Height="500" Width="600" >
     <Grid>
-        <DockPanel x:Name="panel" LastChildFill="False" HorizontalAlignment="Right" Width="792" Height="419" VerticalAlignment="Bottom"/>
+        <DockPanel x:Name="panel" LastChildFill="False" HorizontalAlignment="Right" Width="600" Height="500" VerticalAlignment="Bottom"/>
 
     </Grid>
 </Window>

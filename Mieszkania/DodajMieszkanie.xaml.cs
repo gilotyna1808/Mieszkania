@@ -52,5 +52,10 @@ namespace Mieszkania
                select new {a.IdMieszkania,a.Kod_Pocztowy,a.Miasto,a.Mieszkanie1,a.Nr_Domu,a.Status_Mieszkania,a.Ulica};
             dataG.ItemsSource = querry.ToList();*/
         }
+
+        private void txt_Miasto_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
