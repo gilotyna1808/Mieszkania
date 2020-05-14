@@ -14,5 +14,10 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("dostepprac.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("mieszkania.mdf")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("mieszkania_log.ldf")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sqlservertypes/readme.htm")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sqlservertypes/x64/msvcr120.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sqlservertypes/x64/sqlserverspatial140.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sqlservertypes/x86/msvcr120.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sqlservertypes/x86/sqlserverspatial140.dll")]
 
 
