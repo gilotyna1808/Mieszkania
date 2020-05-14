@@ -6,17 +6,17 @@
         xmlns:local="clr-namespace:Mieszkania"
         mc:Ignorable="d"
         Title="ModyfikujPracownika" Height="450" Width="800">
-    <Grid>
-        <Label Content="Id" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="54,91,0,0" Height="33" Width="268"/>
-        <Button Content="Wybierz mieszkanie" HorizontalAlignment="Left" VerticalAlignment="Top" Width="192" Margin="340,31,0,0" Height="39"/>
-        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Margin="379,110,0,0"/>
-        <Button Content="Modyfikuj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="168" Margin="209,335,0,0" Height="47"/>
-        <Label Content="Imie: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="54,142,0,0" Height="33" Width="268"/>
+    <Grid Margin="0,0,-6.4,0">
+        <Label Content="Id" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="54,110,0,0" Height="33" Width="268"/>
+        <Button x:Name="btn_Wybierz" Content="Wybierz pracownika" HorizontalAlignment="Left" VerticalAlignment="Top" Width="192" Margin="28,34,0,0" Height="39" Click="btn_Wybierz_Click"/>
+        <TextBox x:Name="txt_id" IsEnabled="False" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" Text="IdPracownika" VerticalAlignment="Top" Width="144" Margin="233,96,0,0"/>
+        <Button x:Name="btn_Modyfikuj" Content="Modyfikuj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="168" Margin="209,335,0,0" Height="47" Click="btn_Modyfikuj_Click"/>
+        <Label Content="Imie: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="54,160,0,0" Height="33" Width="268"/>
         <Label Content="Nazwisko: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="54,208,0,0" Height="33" Width="268"/>
-        <Label Content="Numer telefonu:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="54,270,0,0" Height="33" Width="268"/>
-        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Margin="379,170,0,0"/>
-        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Margin="379,218,0,0"/>
-        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Margin="379,274,0,0"/>
+        <Label Content="Numer telefonu:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="54,257,0,0" Height="33" Width="268"/>
+        <TextBox x:Name="txt_imiePrac" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" Text="Imie" VerticalAlignment="Top" Width="144" Margin="233,148,0,0"/>
+        <TextBox x:Name="txt_nazPrac" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" Text="Nazwisko" VerticalAlignment="Top" Width="144" Margin="233,198,0,0"/>
+        <TextBox x:Name="txt_telPrac" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" Text="xxxxxxxxx" VerticalAlignment="Top" Width="144" Margin="233,246,0,0"/>
 
     </Grid>
 </Window>
