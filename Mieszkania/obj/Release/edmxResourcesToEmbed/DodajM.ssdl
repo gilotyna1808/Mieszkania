@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MieszkaniaModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Mieszkanie">
+    <Key>
+      <PropertyRef Name="IdMieszkania" />
+    </Key>
+    <Property Name="IdMieszkania" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Miasto" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Kod_Pocztowy" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Ulica" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Nr_Domu" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Mieszkanie1" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Status_Mieszkania" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityContainer Name="MieszkaniaModel1StoreContainer">
+    <EntitySet Name="Mieszkanie" EntityType="Self.Mieszkanie" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

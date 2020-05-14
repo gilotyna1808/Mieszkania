@@ -1,0 +1,17 @@
+﻿<Window x:Class="Mieszkania.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mieszkania"
+        mc:Ignorable="d"
+        Title="Mieszkania START" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Logowanie" Height="66" Margin="314,134,266,0" VerticalAlignment="Top"/>
+        <Button x:Name="btn_mainLog" Content="Logowanie" HorizontalAlignment="Left" Height="96" Margin="250,182,0,0" VerticalAlignment="Top" Width="242" Click="btn_mainLog_Click"/>
+
+    </Grid>
+</Window>

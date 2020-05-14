@@ -1,0 +1,14 @@
+﻿<Window x:Class="Mieszkania.Wyswietlanie.WyswietlMieszkania"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mieszkania.Wyswietlanie"
+        mc:Ignorable="d"
+        Title="WyswietlMieszkania" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="dataG" HorizontalAlignment="Left" Height="339" Margin="10,10,0,0" VerticalAlignment="Top" Width="772"/>
+        <Button x:Name="btn_W" Content="Wybierz/Zamknij" HorizontalAlignment="Left" Height="55" Margin="284,354,0,0" VerticalAlignment="Top" Width="199" Click="btn_W_Click"/>
+
+    </Grid>
+</Window>

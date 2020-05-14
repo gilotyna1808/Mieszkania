@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MieszkaniaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Autoryzacja">
+    <Key>
+      <PropertyRef Name="IdPracownika" />
+    </Key>
+    <Property Name="IdPracownika" Type="int" Nullable="false" />
+    <Property Name="Login" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Haslo" Type="varchar" MaxLength="45" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Lokator">
+    <Key>
+      <PropertyRef Name="IdLokatora" />
+    </Key>
+    <Property Name="IdLokatora" Type="int" Nullable="false" />
+    <Property Name="Imie" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Nazwisko" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="NrTelefonu" Type="varchar" MaxLength="13" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Mieszkanie">
+    <Key>
+      <PropertyRef Name="IdMieszkania" />
+    </Key>
+    <Property Name="IdMieszkania" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Miasto" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Kod_Pocztowy" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Ulica" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Nr_Domu" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Mieszkanie1" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Status_Mieszkania" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="Pracownicy">
+    <Key>
+      <PropertyRef Name="IdPracownika" />
+    </Key>
+    <Property Name="IdPracownika" Type="int" Nullable="false" />
+    <Property Name="Nazwisko" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Imie" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="NrTel" Type="varchar" MaxLength="12" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\DANIEL-PC\DESKTOP\BAZY\PROJEKT\MIESZKANIA\MIESZKANIA\MIESZKANIA.MDF.dbo.Pracownicy_Odp' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Pracownicy_Odp">
+    <Key>
+      <PropertyRef Name="IdPracownika" />
+      <PropertyRef Name="IdMieszkania" />
+    </Key>
+    <Property Name="IdPracownika" Type="int" Nullable="false" />
+    <Property Name="IdMieszkania" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Remonty">
+    <Key>
+      <PropertyRef Name="IdRemontu" />
+    </Key>
+    <Property Name="IdRemontu" Type="int" Nullable="false" />
+    <Property Name="IdMieszkania" Type="int" Nullable="false" />
+    <Property Name="Stan" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Koszt_Remontu" Type="money" Nullable="false" />
+    <Property Name="Data_Rozpoczecia" Type="date" Nullable="false" />
+    <Property Name="Data_Zakonczenia" Type="date" />
+  </EntityType>
+  <EntityType Name="Umowa">
+    <Key>
+      <PropertyRef Name="IdUmowy" />
+    </Key>
+    <Property Name="IdUmowy" Type="int" Nullable="false" />
+    <Property Name="IdMieszkania" Type="int" Nullable="false" />
+    <Property Name="IdLokatora" Type="int" Nullable="false" />
+    <Property Name="Od_Kiedy" Type="date" Nullable="false" />
+    <Property Name="Do_Kiedy" Type="date" />
+    <Property Name="Czynsz" Type="money" Nullable="false" />
+    <Property Name="Oplaty_Stale" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="MieszkaniaModelStoreContainer">
+    <EntitySet Name="Autoryzacja" EntityType="Self.Autoryzacja" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lokator" EntityType="Self.Lokator" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mieszkanie" EntityType="Self.Mieszkanie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pracownicy" EntityType="Self.Pracownicy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Remonty" EntityType="Self.Remonty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Umowa" EntityType="Self.Umowa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pracownicy_Odp" EntityType="Self.Pracownicy_Odp" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Pracownicy_Odp].[IdPracownika] AS [IdPracownika], 
+    [Pracownicy_Odp].[IdMieszkania] AS [IdMieszkania]
+    FROM [dbo].[Pracownicy_Odp] AS [Pracownicy_Odp]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

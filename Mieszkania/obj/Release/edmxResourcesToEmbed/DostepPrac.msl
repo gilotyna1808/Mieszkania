@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MieszkaniaModelStoreContainer" CdmEntityContainer="DostepPrac">
+    <EntitySetMapping Name="Autoryzacja">
+      <EntityTypeMapping TypeName="MieszkaniaModel.Autoryzacja">
+        <MappingFragment StoreEntitySet="Autoryzacja">
+          <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Haslo" ColumnName="Haslo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lokator">
+      <EntityTypeMapping TypeName="MieszkaniaModel.Lokator">
+        <MappingFragment StoreEntitySet="Lokator">
+          <ScalarProperty Name="IdLokatora" ColumnName="IdLokatora" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="NrTelefonu" ColumnName="NrTelefonu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mieszkanie">
+      <EntityTypeMapping TypeName="MieszkaniaModel.Mieszkanie">
+        <MappingFragment StoreEntitySet="Mieszkanie">
+          <ScalarProperty Name="IdMieszkania" ColumnName="IdMieszkania" />
+          <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+          <ScalarProperty Name="Kod_Pocztowy" ColumnName="Kod_Pocztowy" />
+          <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+          <ScalarProperty Name="Nr_Domu" ColumnName="Nr_Domu" />
+          <ScalarProperty Name="Mieszkanie1" ColumnName="Mieszkanie1" />
+          <ScalarProperty Name="Status_Mieszkania" ColumnName="Status_Mieszkania" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pracownicy">
+      <EntityTypeMapping TypeName="MieszkaniaModel.Pracownicy">
+        <MappingFragment StoreEntitySet="Pracownicy">
+          <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="NrTel" ColumnName="NrTel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Remonty">
+      <EntityTypeMapping TypeName="MieszkaniaModel.Remonty">
+        <MappingFragment StoreEntitySet="Remonty">
+          <ScalarProperty Name="IdRemontu" ColumnName="IdRemontu" />
+          <ScalarProperty Name="IdMieszkania" ColumnName="IdMieszkania" />
+          <ScalarProperty Name="Stan" ColumnName="Stan" />
+          <ScalarProperty Name="Koszt_Remontu" ColumnName="Koszt_Remontu" />
+          <ScalarProperty Name="Data_Rozpoczecia" ColumnName="Data_Rozpoczecia" />
+          <ScalarProperty Name="Data_Zakonczenia" ColumnName="Data_Zakonczenia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Umowa">
+      <EntityTypeMapping TypeName="MieszkaniaModel.Umowa">
+        <MappingFragment StoreEntitySet="Umowa">
+          <ScalarProperty Name="IdUmowy" ColumnName="IdUmowy" />
+          <ScalarProperty Name="IdMieszkania" ColumnName="IdMieszkania" />
+          <ScalarProperty Name="IdLokatora" ColumnName="IdLokatora" />
+          <ScalarProperty Name="Od_Kiedy" ColumnName="Od_Kiedy" />
+          <ScalarProperty Name="Do_Kiedy" ColumnName="Do_Kiedy" />
+          <ScalarProperty Name="Czynsz" ColumnName="Czynsz" />
+          <ScalarProperty Name="Oplaty_Stale" ColumnName="Oplaty_Stale" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pracownicy_Odp">
+      <EntityTypeMapping TypeName="MieszkaniaModel.Pracownicy_Odp">
+        <MappingFragment StoreEntitySet="Pracownicy_Odp">
+          <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
+          <ScalarProperty Name="IdMieszkania" ColumnName="IdMieszkania" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

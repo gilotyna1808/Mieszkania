@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MieszkaniaModelStoreContainer" CdmEntityContainer="MieszkaniaEntities1">
+    <EntitySetMapping Name="Autoryzacja">
+      <EntityTypeMapping TypeName="MieszkaniaModel.Autoryzacja">
+        <MappingFragment StoreEntitySet="Autoryzacja">
+          <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Haslo" ColumnName="Haslo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

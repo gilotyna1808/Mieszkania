@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MieszkaniaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Autoryzacja">
+          <Key>
+            <PropertyRef Name="IdPracownika" />
+          </Key>
+          <Property Name="IdPracownika" Type="int" Nullable="false" />
+          <Property Name="Login" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Haslo" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Lokator">
+          <Key>
+            <PropertyRef Name="IdLokatora" />
+          </Key>
+          <Property Name="IdLokatora" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Imie" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Nazwisko" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="NrTelefonu" Type="varchar" MaxLength="13" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Mieszkanie">
+          <Key>
+            <PropertyRef Name="IdMieszkania" />
+          </Key>
+          <Property Name="IdMieszkania" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Miasto" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Kod_Pocztowy" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Ulica" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Nr_Domu" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Mieszkanie1" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Status_Mieszkania" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="Pracownicy">
+          <Key>
+            <PropertyRef Name="IdPracownika" />
+          </Key>
+          <Property Name="IdPracownika" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwisko" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Imie" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="NrTel" Type="varchar" MaxLength="12" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\DANIEL-PC\DESKTOP\BAZY\PROJEKT\MIESZKANIA\MIESZKANIA\MIESZKANIA.MDF.dbo.Pracownicy_Odp' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Pracownicy_Odp">
+          <Key>
+            <PropertyRef Name="IdPracownika" />
+            <PropertyRef Name="IdMieszkania" />
+          </Key>
+          <Property Name="IdPracownika" Type="int" Nullable="false" />
+          <Property Name="IdMieszkania" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Remonty">
+          <Key>
+            <PropertyRef Name="IdRemontu" />
+          </Key>
+          <Property Name="IdRemontu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdMieszkania" Type="int" Nullable="false" />
+          <Property Name="Stan" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Koszt_Remontu" Type="money" Nullable="false" />
+          <Property Name="Data_Rozpoczecia" Type="date" Nullable="false" />
+          <Property Name="Data_Zakonczenia" Type="date" />
+        </EntityType>
+        <EntityType Name="Umowa">
+          <Key>
+            <PropertyRef Name="IdUmowy" />
+          </Key>
+          <Property Name="IdUmowy" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdMieszkania" Type="int" Nullable="false" />
+          <Property Name="IdLokatora" Type="int" Nullable="false" />
+          <Property Name="Od_Kiedy" Type="date" Nullable="false" />
+          <Property Name="Do_Kiedy" Type="date" />
+          <Property Name="Termin_Rozliczenia" Type="date" />
+          <Property Name="Czynsz" Type="money" Nullable="false" />
+          <Property Name="Oplaty_Stale" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="MieszkaniaModelStoreContainer">
+          <EntitySet Name="Autoryzacja" EntityType="Self.Autoryzacja" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Lokator" EntityType="Self.Lokator" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mieszkanie" EntityType="Self.Mieszkanie" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pracownicy" EntityType="Self.Pracownicy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Remonty" EntityType="Self.Remonty" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Umowa" EntityType="Self.Umowa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pracownicy_Odp" EntityType="Self.Pracownicy_Odp" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Pracownicy_Odp].[IdPracownika] AS [IdPracownika], 
+    [Pracownicy_Odp].[IdMieszkania] AS [IdMieszkania]
+    FROM [dbo].[Pracownicy_Odp] AS [Pracownicy_Odp]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MieszkaniaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Autoryzacja">
+          <Key>
+            <PropertyRef Name="IdPracownika" />
+          </Key>
+          <Property Name="IdPracownika" Type="Int32" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Haslo" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Lokator">
+          <Key>
+            <PropertyRef Name="IdLokatora" />
+          </Key>
+          <Property Name="IdLokatora" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Imie" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nazwisko" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NrTelefonu" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Mieszkanie">
+          <Key>
+            <PropertyRef Name="IdMieszkania" />
+          </Key>
+          <Property Name="IdMieszkania" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Miasto" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Kod_Pocztowy" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ulica" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nr_Domu" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Mieszkanie1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Status_Mieszkania" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Pracownicy">
+          <Key>
+            <PropertyRef Name="IdPracownika" />
+          </Key>
+          <Property Name="IdPracownika" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwisko" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Imie" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NrTel" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Remonty">
+          <Key>
+            <PropertyRef Name="IdRemontu" />
+          </Key>
+          <Property Name="IdRemontu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdMieszkania" Type="Int32" Nullable="false" />
+          <Property Name="Stan" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Koszt_Remontu" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Data_Rozpoczecia" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Data_Zakonczenia" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Umowa">
+          <Key>
+            <PropertyRef Name="IdUmowy" />
+          </Key>
+          <Property Name="IdUmowy" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdMieszkania" Type="Int32" Nullable="false" />
+          <Property Name="IdLokatora" Type="Int32" Nullable="false" />
+          <Property Name="Od_Kiedy" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Do_Kiedy" Type="DateTime" Precision="0" />
+          <Property Name="Termin_Rozliczenia" Type="DateTime" Precision="0" />
+          <Property Name="Czynsz" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Oplaty_Stale" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pracownicy_Odp">
+          <Key>
+            <PropertyRef Name="IdPracownika" />
+            <PropertyRef Name="IdMieszkania" />
+          </Key>
+          <Property Name="IdPracownika" Type="Int32" Nullable="false" />
+          <Property Name="IdMieszkania" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="DostepPrac" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Autoryzacja" EntityType="Self.Autoryzacja" />
+          <EntitySet Name="Lokator" EntityType="Self.Lokator" />
+          <EntitySet Name="Mieszkanie" EntityType="Self.Mieszkanie" />
+          <EntitySet Name="Pracownicy" EntityType="Self.Pracownicy" />
+          <EntitySet Name="Remonty" EntityType="Self.Remonty" />
+          <EntitySet Name="Umowa" EntityType="Self.Umowa" />
+          <EntitySet Name="Pracownicy_Odp" EntityType="Self.Pracownicy_Odp" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MieszkaniaModelStoreContainer" CdmEntityContainer="DostepPrac">
+          <EntitySetMapping Name="Autoryzacja">
+            <EntityTypeMapping TypeName="MieszkaniaModel.Autoryzacja">
+              <MappingFragment StoreEntitySet="Autoryzacja">
+                <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Haslo" ColumnName="Haslo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lokator">
+            <EntityTypeMapping TypeName="MieszkaniaModel.Lokator">
+              <MappingFragment StoreEntitySet="Lokator">
+                <ScalarProperty Name="IdLokatora" ColumnName="IdLokatora" />
+                <ScalarProperty Name="Imie" ColumnName="Imie" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="NrTelefonu" ColumnName="NrTelefonu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mieszkanie">
+            <EntityTypeMapping TypeName="MieszkaniaModel.Mieszkanie">
+              <MappingFragment StoreEntitySet="Mieszkanie">
+                <ScalarProperty Name="IdMieszkania" ColumnName="IdMieszkania" />
+                <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+                <ScalarProperty Name="Kod_Pocztowy" ColumnName="Kod_Pocztowy" />
+                <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+                <ScalarProperty Name="Nr_Domu" ColumnName="Nr_Domu" />
+                <ScalarProperty Name="Mieszkanie1" ColumnName="Mieszkanie1" />
+                <ScalarProperty Name="Status_Mieszkania" ColumnName="Status_Mieszkania" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pracownicy">
+            <EntityTypeMapping TypeName="MieszkaniaModel.Pracownicy">
+              <MappingFragment StoreEntitySet="Pracownicy">
+                <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="Imie" ColumnName="Imie" />
+                <ScalarProperty Name="NrTel" ColumnName="NrTel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Remonty">
+            <EntityTypeMapping TypeName="MieszkaniaModel.Remonty">
+              <MappingFragment StoreEntitySet="Remonty">
+                <ScalarProperty Name="IdRemontu" ColumnName="IdRemontu" />
+                <ScalarProperty Name="IdMieszkania" ColumnName="IdMieszkania" />
+                <ScalarProperty Name="Stan" ColumnName="Stan" />
+                <ScalarProperty Name="Koszt_Remontu" ColumnName="Koszt_Remontu" />
+                <ScalarProperty Name="Data_Rozpoczecia" ColumnName="Data_Rozpoczecia" />
+                <ScalarProperty Name="Data_Zakonczenia" ColumnName="Data_Zakonczenia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Umowa">
+            <EntityTypeMapping TypeName="MieszkaniaModel.Umowa">
+              <MappingFragment StoreEntitySet="Umowa">
+                <ScalarProperty Name="IdUmowy" ColumnName="IdUmowy" />
+                <ScalarProperty Name="IdMieszkania" ColumnName="IdMieszkania" />
+                <ScalarProperty Name="IdLokatora" ColumnName="IdLokatora" />
+                <ScalarProperty Name="Od_Kiedy" ColumnName="Od_Kiedy" />
+                <ScalarProperty Name="Do_Kiedy" ColumnName="Do_Kiedy" />
+                <ScalarProperty Name="Termin_Rozliczenia" ColumnName="Termin_Rozliczenia" />
+                <ScalarProperty Name="Czynsz" ColumnName="Czynsz" />
+                <ScalarProperty Name="Oplaty_Stale" ColumnName="Oplaty_Stale" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pracownicy_Odp">
+            <EntityTypeMapping TypeName="MieszkaniaModel.Pracownicy_Odp">
+              <MappingFragment StoreEntitySet="Pracownicy_Odp">
+                <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
+                <ScalarProperty Name="IdMieszkania" ColumnName="IdMieszkania" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
