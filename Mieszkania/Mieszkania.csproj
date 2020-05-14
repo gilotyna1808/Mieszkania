@@ -117,6 +117,9 @@
     <Compile Include="DodajMieszkanie.xaml.cs">
       <DependentUpon>DodajMieszkanie.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DodajPracownika.xaml.cs">
+      <DependentUpon>DodajPracownika.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DodajRemont.xaml.cs">
       <DependentUpon>DodajRemont.xaml</DependentUpon>
     </Compile>
@@ -168,6 +171,9 @@
     <Compile Include="Mieszkanie.cs">
       <DependentUpon>DostepPrac.tt</DependentUpon>
     </Compile>
+    <Compile Include="ModyfikujPracownika.xaml.cs">
+      <DependentUpon>ModyfikujPracownika.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pracownicy.cs">
       <DependentUpon>DostepPrac.tt</DependentUpon>
     </Compile>
@@ -214,6 +220,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="DodajPracownika.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DodajRemont.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -246,6 +256,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Mieszkania_Soft.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ModyfikujPracownika.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

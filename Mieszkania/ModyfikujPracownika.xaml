@@ -1,0 +1,22 @@
+﻿<Window x:Class="Mieszkania.ModyfikujPracownika"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mieszkania"
+        mc:Ignorable="d"
+        Title="ModyfikujPracownika" Height="450" Width="800">
+    <Grid>
+        <Label Content="Id" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="54,91,0,0" Height="33" Width="268"/>
+        <Button Content="Wybierz mieszkanie" HorizontalAlignment="Left" VerticalAlignment="Top" Width="192" Margin="340,31,0,0" Height="39"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Margin="379,110,0,0"/>
+        <Button Content="Modyfikuj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="168" Margin="209,335,0,0" Height="47"/>
+        <Label Content="Imie: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="54,142,0,0" Height="33" Width="268"/>
+        <Label Content="Nazwisko: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="54,208,0,0" Height="33" Width="268"/>
+        <Label Content="Numer telefonu:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="54,270,0,0" Height="33" Width="268"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Margin="379,170,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Margin="379,218,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Margin="379,274,0,0"/>
+
+    </Grid>
+</Window>
