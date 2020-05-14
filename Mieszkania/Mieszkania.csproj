@@ -185,7 +185,7 @@
       <DependentUpon>DostepPrac.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
-    <Compile Include="Wyswietlanie\ModyfikujMieszkania.xaml.cs">
+    <Compile Include="ModyfikujMieszkania.xaml.cs">
       <DependentUpon>ModyfikujMieszkania.xaml</DependentUpon>
     </Compile>
     <Compile Include="Wyswietlanie\Wyswietlanie_Menu.xaml.cs">
@@ -253,7 +253,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Wyswietlanie\ModyfikujMieszkania.xaml">
+    <Page Include="ModyfikujMieszkania.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

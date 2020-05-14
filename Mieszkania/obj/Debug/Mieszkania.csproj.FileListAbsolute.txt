@@ -89,5 +89,5 @@ C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Mieszkania\Mieszkania\bin\Debug\pt\Micro
 C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Mieszkania\Mieszkania\bin\Debug\ru\Microsoft.ReportViewer.WebDesign.resources.dll
 C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Mieszkania\Mieszkania\bin\Debug\zh-CHS\Microsoft.ReportViewer.WebDesign.resources.dll
 C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Mieszkania\Mieszkania\bin\Debug\zh-CHT\Microsoft.ReportViewer.WebDesign.resources.dll
-C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Mieszkania\Mieszkania\obj\Debug\Wyswietlanie\ModyfikujMieszkania.g.cs
-C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Mieszkania\Mieszkania\obj\Debug\Wyswietlanie\ModyfikujMieszkania.baml
+C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Mieszkania\Mieszkania\obj\Debug\ModyfikujMieszkania.g.cs
+C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Mieszkania\Mieszkania\obj\Debug\ModyfikujMieszkania.baml
