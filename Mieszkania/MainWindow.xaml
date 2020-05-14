@@ -5,13 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mieszkania"
         mc:Ignorable="d"
-        Title="Mieszkania START" Height="450" Width="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Label Content="Logowanie" Height="66" Margin="314,134,266,0" VerticalAlignment="Top"/>
-        <Button x:Name="btn_mainLog" Content="Logowanie" HorizontalAlignment="Left" Height="96" Margin="250,182,0,0" VerticalAlignment="Top" Width="242" Click="btn_mainLog_Click"/>
+        Title="Mieszkania START" Height="500" Width="700" Background="#f6f6f6">
+    <Grid Margin="0,0,0,9" HorizontalAlignment="Left" Width="700">
+
+
+        <Label Content="Nie jesteś zalogowany &#xA;  do naszego serwisu" FontSize="20" Background="White" HorizontalContentAlignment="Center" Height="80" Margin="409,284,41,97.4" Width="250"/>
+        <Button x:Name="btn_mainLog" Foreground="White" FontSize="17" Background="#2ec4b6"  Content="Przejdz do logowania" HorizontalAlignment="Left" Height="50" Margin="409,369,0,0" VerticalAlignment="Top" Width="250" Click="btn_mainLog_Click"/>
+        <Label Content="HOME ASSISTANT" Height="70" Width="400" Foreground="#2ec4b6" HorizontalAlignment="Left" FontSize="35" HorizontalContentAlignment="Center" Margin="150,98,0,0" VerticalAlignment="Top"/>
+        <Image HorizontalAlignment="Left" Stretch="Fill" Height="90" Source="/img/dach.png" Margin="220,10,0,0" VerticalAlignment="Top" Width="260"/>
+        <Grid HorizontalAlignment="Left" Height="278" Margin="10,173,0,0" VerticalAlignment="Top" Width="350"/>
 
     </Grid>
 </Window>

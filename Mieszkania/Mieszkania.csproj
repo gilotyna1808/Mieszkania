@@ -344,6 +344,8 @@
       <DependentUpon>DostepPrac.edmx</DependentUpon>
       <LastGenOutput>DostepPrac.cs</LastGenOutput>
     </Content>
+    <Resource Include="img\dach.png" />
+    <Resource Include="img\house.jpg" />
     <Content Include="Mieszkania.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mieszkania"
         mc:Ignorable="d"
-        Background="#330066"
-        Title="Autoryzacja" Height="303.875" Width="366.602">
+        Height="400" Width="400"
+        Background="#f6f6f6">
     <Grid Margin="0,0,439,246">
-        <Button x:Name="btn_aut_log" Content="Zaloguj się!" Foreground="White"   Background="#9966ff" HorizontalAlignment="Left" Height="34" Margin="106,196,-256,-201.6" VerticalAlignment="Top" Width="150" Click="Button_Click"/>
-        <TextBox x:Name="autLogin" HorizontalAlignment="Left" Height="24" Margin="107,91,-257,-86.6" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="150"/>
-        <Label Content="Login:" Foreground="White" HorizontalAlignment="Left" Height="24" Margin="26,91,-176,-86.6" VerticalAlignment="Top" Width="150"/>
-        <Label Content="Password:" Foreground="White" HorizontalAlignment="Left" Height="24" Margin="26,148,-176,-143.6" VerticalAlignment="Top" Width="150"/>
-        <PasswordBox x:Name="autPass" HorizontalAlignment="Left" Margin="106,148,-256,-143.6" VerticalAlignment="Top" Width="150" Height="24"/>
-        <Label Content="Log in" FontSize="35" Background="#9933cc" Foreground="#ccccff" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,0,-360,-29.6" VerticalAlignment="Top" Width="360" Height="58"/>
-        <PasswordBox HorizontalAlignment="Left" Margin="-107,-59,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btn_aut_log" Foreground="White" Background="#2EC4B6" Content="Zaloguj" HorizontalAlignment="Left" Height="35" Margin="200,298,-300,-208.6" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
+        <TextBox x:Name="autLogin" HorizontalAlignment="Left" VerticalContentAlignment="Top"  Foreground="#FF9F1C" Height="40" Margin="100,139,-300,-54.6" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="200"/>
+        <Label Content="Login:" HorizontalAlignment="Left" Height="35" Margin="53,104,-100,-14.6" VerticalAlignment="Top" Width="47"/>
+        <Label Content="Hasło:" HorizontalAlignment="Left" Height="35" Margin="53,196,-100,-106.6" VerticalAlignment="Top" Width="47" RenderTransformOrigin="0.54,-0.427"/>
+        <PasswordBox x:Name="autPass" VerticalContentAlignment="Top" HorizontalAlignment="Left" Height="40" Margin="100,231,-300,-146.6" Foreground="#FF9F1C" VerticalAlignment="Top" DataContext="Password"  Width="200"/>
+        <Image x:Name="vievImage" Stretch="Fill" HorizontalAlignment="Left" Height="70" Margin="150,18,-220,0" VerticalAlignment="Top" Width="70" Source="/img/house.jpg"/>
+
 
     </Grid>
 </Window>
