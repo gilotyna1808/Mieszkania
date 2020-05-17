@@ -133,6 +133,24 @@ namespace Mieszkania
             }
             return false;
         }
+        public bool sprawdzKosztRemontu(string s)
+        {
+            Regex koszt = new Regex(@"^[0-9]+[\,]?[0-9]{1,2}$");
+            if (koszt.IsMatch(s))
+            {
+                return true;
+            }
+            return false;
+        }
 
+        public bool sprawdzStanRemont(string s)
+        {
+            //Regex stan = new Regex(@"^[0-9]+$");
+            if (SpradzCzyZaDlugie(s,45))
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
