@@ -16,46 +16,45 @@ using System.Windows.Shapes;
 namespace Mieszkania
 {
     /// <summary>
-    /// Logika interakcji dla klasy ModyfikujPracownika.xaml
+    /// Logika interakcji dla klasy ModyfikujLokatora.xaml
     /// </summary>
-    public partial class ModyfikujPracownika : Window
+    public partial class ModyfikujLokatora : Window
     {
-        public ModyfikujPracownika()
+        public ModyfikujLokatora()
         {
             InitializeComponent();
         }
-
         private void btn_Wybierz_Click(object sender, RoutedEventArgs e)
         {
-            WyswietlPrac wp = new WyswietlPrac();
-            wp.ShowDialog();
+            WyswietlLokator wl = new WyswietlLokator();
+            wl.ShowDialog();
             int temp_id = 0;
-            //do czego przyrównac temp_id?
+            temp_id = wl.id_w_l;
             if (temp_id != 0)
             {
                 txt_id.Text = Convert.ToString(temp_id);
             }
         }
-
         private void btn_Modyfikuj_Click(object sender, RoutedEventArgs e)
         {
             int temp_id = Convert.ToInt32(txt_id.Text);
-            using(DostepPrac dp = new DostepPrac())
+            using (DostepPrac dp = new DostepPrac())
             {
-                var q = from data in dp.Pracownicy
-                             orderby data.IdPracownika
-                             select data;
-                foreach(Pracownicy p in q)
+                var q = from data in dp.Lokator
+                        orderby data.IdLokatora
+                        select data;
+                foreach (Lokator l in q)
                 {
-                    if(p.IdPracownika == temp_id)
+                    if (l.IdLokatora == temp_id)
                     {
-                        p.Imie = txt_imiePrac.Text;
-                        p.Nazwisko = txt_nazPrac.Text;
-                        p.NrTel = txt_telPrac.Text;
+                        l.Imie = txt_imieLok.Text;
+                        l.Nazwisko = txt_nazLok.Text;
+                        l.NrTelefonu = txt_telLok.Text;
                     }
                 }
                 dp.SaveChanges();
             };
         }
+
     }
 }
