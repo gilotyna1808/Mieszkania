@@ -1,0 +1,97 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+
+namespace Mieszkania
+{
+    class Walidacja
+    {
+        public bool SpradzCzyZaDlugie(string text, int maxDlugosc)
+        {
+            if (text.Length <= maxDlugosc) return true;
+            return false;
+        }
+        public bool sprawdzImie(string s)
+        {
+            Regex imie= new Regex(@"[A-z]+");
+            if (imie.IsMatch(s))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool sprawdzNazwisko(string s)
+        {
+            Regex nazw = new Regex(@"([A-z]+.?)+");
+            if (nazw.IsMatch(s))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool sprawdzTelefon(string s)
+        {
+            Regex tel = new Regex(@"[+]?[0-9]{9,12}");
+            if (tel.IsMatch(s))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool sprawdzMiasto(string s)
+        {
+            //Regex miasto = new Regex(@".{1,45}");
+            if (SpradzCzyZaDlugie(s, 45))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool sprawdzNrDomu(string s)
+        {
+           Regex nrDomu = new Regex(@"[A-z]*[0-9]+[A-z]*");
+            if (nrDomu.IsMatch(s))
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool sprawdzUlice(string s)
+        {
+            //Regex ulica = new Regex(@".{1,45}");
+            if (SpradzCzyZaDlugie(s,45))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool sprawdzStatusMieszkanie(string s)
+        {
+            //Regex mieszkanie = new Regex(@".{1,45}");
+            if (SpradzCzyZaDlugie(s, 45))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool sprawdzKodPocztowy(string s)
+        {
+            Regex tel = new Regex(@"[0-9]{2}-[0-9]{3}");
+            if (tel.IsMatch(s))
+            {
+                return true;
+            }
+            return false;
+        }
+
+    }
+}

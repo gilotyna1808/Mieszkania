@@ -35,31 +35,45 @@ namespace Mieszkania.Dodawanie
 
         private void btn_dodaj_Click(object sender, RoutedEventArgs e)
         {
+            Walidacja w= new Walidacja();
+            bool walidacjaImie = true;
+            bool walidacjaNazw = true;
+            bool walidacjaTel = true;
             string imie = txt_imi.Text;
             string nazwisko = txt_naz.Text;
             string nrTel = txt_tel.Text;
-            using (var db = new DostepPrac())
+            walidacjaImie = w.sprawdzImie(imie);
+            walidacjaNazw = w.sprawdzNazwisko(nazwisko);
+            walidacjaTel = w.sprawdzTelefon(nrTel);
+            if (walidacjaImie && walidacjaNazw && walidacjaTel)
             {
-                var m = new Lokator()
+                using (var db = new DostepPrac())
                 {
-                    Imie = imie,
-                    Nazwisko = nazwisko,
-                    NrTelefonu = nrTel
-                };
-                db.Lokator.Add(m);
-                db.SaveChanges();
-            }
-            if (temp == 1)
-            {
-                var db = new DostepPrac();
-                var querry =
-                from a in db.Lokator
-                where (a.Imie==imie && a.Nazwisko ==nazwisko && a.NrTelefonu==nrTel)
-                select new {a.IdLokatora};
-                if (querry.Count() == 1)
-                {
-                    id = ((Convert.ToInt32(querry.ToList().Last().IdLokatora)));
+                    var m = new Lokator()
+                    {
+                        Imie = imie,
+                        Nazwisko = nazwisko,
+                        NrTelefonu = nrTel
+                    };
+                    db.Lokator.Add(m);
+                    db.SaveChanges();
                 }
+                if (temp == 1)
+                {
+                    var db = new DostepPrac();
+                    var querry =
+                    from a in db.Lokator
+                    where (a.Imie == imie && a.Nazwisko == nazwisko && a.NrTelefonu == nrTel)
+                    select new { a.IdLokatora };
+                    if (querry.Count() == 1)
+                    {
+                        id = ((Convert.ToInt32(querry.ToList().Last().IdLokatora)));
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nie spelniono zasad");
             }
         }
     }

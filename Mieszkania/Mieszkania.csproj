@@ -185,9 +185,10 @@
       <DependentUpon>DostepPrac.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
-    <Compile Include="Wyswietlanie\ModyfikujMieszkania.xaml.cs">
+    <Compile Include="ModyfikujMieszkania.xaml.cs">
       <DependentUpon>ModyfikujMieszkania.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Walidacja.cs" />
     <Compile Include="Wyswietlanie\Wyswietlanie_Menu.xaml.cs">
       <DependentUpon>Wyswietlanie_Menu.xaml</DependentUpon>
     </Compile>
@@ -253,7 +254,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Wyswietlanie\ModyfikujMieszkania.xaml">
+    <Page Include="ModyfikujMieszkania.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -344,6 +345,8 @@
       <DependentUpon>DostepPrac.edmx</DependentUpon>
       <LastGenOutput>DostepPrac.cs</LastGenOutput>
     </Content>
+    <Resource Include="img\dach.png" />
+    <Resource Include="img\house.jpg" />
     <Content Include="Mieszkania.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

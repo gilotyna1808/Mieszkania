@@ -17,7 +17,7 @@ namespace Mieszkania
 {
     /// <summary>
     /// Logika interakcji dla klasy Autoryzacja.xaml
-    /// </summary>
+    /// </summary>dd
     public partial class Autoryzacja : Window
     {
         DostepAut dostepM = new DostepAut();

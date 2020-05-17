@@ -31,19 +31,40 @@ namespace Mieszkania
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            using (var db = new DostepPrac())
-            {
-                var m = new Mieszkanie()
+            Walidacja w = new Walidacja();
+            bool walidacjaMiasto,walidacjaMieszkanie,walidacjaNrDomu,walidacjaUlica,walidacjaStatus,walidacjaKod;
+            string miasto, mieszkanie,nrDomu, ulica, status, kodPocztowy;
+            miasto = txt_Miasto.Text;
+            mieszkanie = txt_Mieszkanie.Text;
+            nrDomu = txt_Nr.Text;
+            ulica = txt_Ul.Text;
+            status = txt_status.Text;
+            kodPocztowy = txt_Kod.Text;
+            walidacjaMiasto = w.sprawdzMiasto(miasto);
+            walidacjaMieszkanie = w.sprawdzMiasto(mieszkanie);//Specjalnie spradzane jak miasto Pole do mozliwego usuniecia
+            walidacjaNrDomu = w.sprawdzNrDomu(nrDomu);
+            walidacjaUlica = w.sprawdzUlice(ulica);
+            walidacjaStatus = w.sprawdzStatusMieszkanie(status);
+            walidacjaKod = w.sprawdzKodPocztowy(kodPocztowy);
+            if (walidacjaMiasto && walidacjaMieszkanie && walidacjaNrDomu && walidacjaUlica && walidacjaStatus && walidacjaKod) {
+                using (var db = new DostepPrac())
                 {
-                    Miasto = txt_Miasto.Text.Trim(),
-                    Mieszkanie1 = txt_Mieszkanie.Text.Trim(),
-                    Nr_Domu = txt_Nr.Text.Trim(),
-                    Ulica = txt_Ul.Text.Trim(),
-                    Status_Mieszkania = txt_status.Text.Trim(),
-                    Kod_Pocztowy = txt_Kod.Text
-                };
-                db.Mieszkanie.Add(m);
-                db.SaveChanges();
+                    var m = new Mieszkanie()
+                    {
+                        Miasto=miasto,
+                        Mieszkanie1=mieszkanie,
+                        Nr_Domu=nrDomu,
+                        Ulica=ulica,
+                        Status_Mieszkania=status,
+                        Kod_Pocztowy=kodPocztowy
+                    };
+                    db.Mieszkanie.Add(m);
+                    db.SaveChanges();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nie spelniono wymagan");
             }
             //Do testów 
             /*var dba = new DostepPrac();
