@@ -188,6 +188,7 @@
     <Compile Include="ModyfikujMieszkania.xaml.cs">
       <DependentUpon>ModyfikujMieszkania.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Walidacja.cs" />
     <Compile Include="Wyswietlanie\Wyswietlanie_Menu.xaml.cs">
       <DependentUpon>Wyswietlanie_Menu.xaml</DependentUpon>
     </Compile>
