@@ -117,6 +117,7 @@
     <Compile Include="DodajMieszkanie.xaml.cs">
       <DependentUpon>DodajMieszkanie.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DodajPracownika.xaml.cs" />
     <Compile Include="DodajRemont.xaml.cs">
       <DependentUpon>DodajRemont.xaml</DependentUpon>
     </Compile>
@@ -168,6 +169,9 @@
     <Compile Include="Mieszkanie.cs">
       <DependentUpon>DostepPrac.tt</DependentUpon>
     </Compile>
+    <Compile Include="ModyfikujLokatora.xaml.cs" />
+    <Compile Include="ModyfikujPracownika.xaml.cs" />
+    <Compile Include="ModyfikujRemont.xaml.cs" />
     <Compile Include="Pracownicy.cs">
       <DependentUpon>DostepPrac.tt</DependentUpon>
     </Compile>
