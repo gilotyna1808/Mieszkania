@@ -203,6 +203,18 @@
     <Compile Include="UsunLokatora.xaml.cs">
       <DependentUpon>UsunLokatora.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UsunMieszkanie.xaml.cs">
+      <DependentUpon>UsunMieszkanie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UsunPracownika.xaml.cs">
+      <DependentUpon>UsunPracownika.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UsunRemont.xaml.cs">
+      <DependentUpon>UsunRemont.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UsunUmowe.xaml.cs">
+      <DependentUpon>UsunUmowe.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Wyswietlanie\ModyfikujMieszkania.xaml.cs">
       <DependentUpon>ModyfikujMieszkania.xaml</DependentUpon>
     </Compile>
@@ -292,6 +304,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UsunLokatora.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UsunMieszkanie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UsunPracownika.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UsunRemont.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UsunUmowe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
