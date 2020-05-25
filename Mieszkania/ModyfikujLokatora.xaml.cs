@@ -33,27 +33,50 @@ namespace Mieszkania
             if (temp_id != 0)
             {
                 txt_id.Text = Convert.ToString(temp_id);
+                using (var com = new DostepPrac())
+                {
+                    var i = com.Lokator.Where(s => s.IdLokatora == temp_id);
+                    txt_imieLok.Text = Convert.ToString(i.Select(s => s.Imie).FirstOrDefault());
+                    txt_nazLok.Text = Convert.ToString(i.Select(s => s.Nazwisko).FirstOrDefault());
+                    txt_telLok.Text= Convert.ToString(i.Select(s => s.NrTelefonu).FirstOrDefault());
+
+                }
             }
         }
         private void btn_Modyfikuj_Click(object sender, RoutedEventArgs e)
         {
+            Walidacja w = new Walidacja();
             int temp_id = Convert.ToInt32(txt_id.Text);
-            using (DostepPrac dp = new DostepPrac())
-            {
-                var q = from data in dp.Lokator
-                        orderby data.IdLokatora
-                        select data;
-                foreach (Lokator l in q)
+            string imie=txt_imieLok.Text;
+            string naz= txt_nazLok.Text;
+            string nrT= txt_telLok.Text;
+            bool imie_w = true, nazw_w = true, nrT_w = true, id_w = true;
+            imie_w = w.sprawdzImie(imie);
+            nazw_w = w.sprawdzNazwisko(naz);
+            nrT_w = w.sprawdzTelefon(nrT);
+            id_w = w.sprawdzId(txt_id.Text);
+            if (imie_w && nazw_w && nrT_w && id_w) {
+                using (DostepPrac dp = new DostepPrac())
                 {
-                    if (l.IdLokatora == temp_id)
+                    var q = from data in dp.Lokator
+                            orderby data.IdLokatora
+                            select data;
+                    foreach (Lokator l in q)
                     {
-                        l.Imie = txt_imieLok.Text;
-                        l.Nazwisko = txt_nazLok.Text;
-                        l.NrTelefonu = txt_telLok.Text;
+                        if (l.IdLokatora == temp_id)
+                        {
+                            l.Imie = imie;
+                            l.Nazwisko = naz;
+                            l.NrTelefonu = nrT;
+                        }
                     }
-                }
-                dp.SaveChanges();
-            };
+                    dp.SaveChanges();
+                };
+            }
+            else
+            {
+                MessageBox.Show("Wprowadzono nieprawidłowe dane");
+            }
         }
 
     }

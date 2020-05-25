@@ -19,14 +19,26 @@ namespace Mieszkania.Wyswietlanie
     /// </summary>
     public partial class WyswietlRemonty : Window
     {
+        public int id_w_r { get; set; }
         public WyswietlRemonty()
         {
             InitializeComponent();
             var dba = new DostepPrac();
             var querry =
                from a in dba.Remonty
-               select new {a.IdMieszkania,a.IdRemontu,a.Koszt_Remontu,a.Stan,a.Data_Rozpoczecia,a.Data_Zakonczenia};
+               select new {a.IdRemontu ,a.IdMieszkania,a.Koszt_Remontu,a.Stan,a.Data_Rozpoczecia,a.Data_Zakonczenia};
             dataG.ItemsSource = querry.ToList();
+        }
+
+        private void btn_W_Click(object sender, RoutedEventArgs e)
+        {
+            if (dataG.SelectedItems.Count > 0)
+            {
+                string tes = Convert.ToString(dataG.Items.GetItemAt(dataG.SelectedIndex));
+                tes = (tes.Substring(13, 3)).TrimEnd(',');
+                id_w_r = Convert.ToInt32(tes);
+            }
+            this.Close();
         }
     }
 }

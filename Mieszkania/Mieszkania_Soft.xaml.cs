@@ -93,16 +93,18 @@ namespace Mieszkania
             PanelWidok.Children.Add(ml);
         }
 
-        private void btn_ModyfikujU_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void btn_ModyfikujP_Click(object sender, RoutedEventArgs e)
         {
             ModyfikujPracownika mp = new ModyfikujPracownika();
             PanelWidok.Children.Clear();
             PanelWidok.Children.Add(mp);
+        }
+
+        private void btn_ModyfikujR_Click(object sender, RoutedEventArgs e)
+        {
+            ModyfikujRemont mr = new ModyfikujRemont();
+            PanelWidok.Children.Clear();
+            PanelWidok.Children.Add(mr);
         }
     }
 }

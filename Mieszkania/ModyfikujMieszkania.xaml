@@ -23,12 +23,6 @@
         <TextBox x:Name="txt_status" HorizontalAlignment="Left" Height="38" Margin="252,368,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
         <Button x:Name="btn_Wybierz" Content="Wybierz Mieszkanie" HorizontalAlignment="Left" Height="40" Margin="39,54,0,0" VerticalAlignment="Top" Width="395" Click="btn_Wybierz_Click"/>
         <Button x:Name="btn_zmien" Content="Zmien" HorizontalAlignment="Left" Margin="136,435,0,0" VerticalAlignment="Top" Width="191" Height="37" Click="btn_zmien_Click"/>
-        <CheckBox x:Name="c_miast" Content="CheckBox" HorizontalAlignment="Left" Height="38" Margin="439,163,0,0" VerticalAlignment="Top" Width="89"/>
-        <CheckBox x:Name="c_kod" Content="CheckBox" HorizontalAlignment="Left" Height="38" Margin="439,206,0,0" VerticalAlignment="Top" Width="89"/>
-        <CheckBox x:Name="c_ul" Content="CheckBox" HorizontalAlignment="Left" Height="38" Margin="439,244,0,0" VerticalAlignment="Top" Width="89"/>
-        <CheckBox x:Name="c_nr" Content="CheckBox" HorizontalAlignment="Left" Height="38" Margin="439,287,0,0" VerticalAlignment="Top" Width="89"/>
-        <CheckBox x:Name="c_miesz" Content="CheckBox" HorizontalAlignment="Left" Height="38" Margin="439,325,0,0" VerticalAlignment="Top" Width="89"/>
-        <CheckBox x:Name="c_status" Content="CheckBox" HorizontalAlignment="Left" Height="38" Margin="439,368,0,0" VerticalAlignment="Top" Width="89"/>
 
     </Grid>
 </UserControl>

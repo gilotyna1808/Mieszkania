@@ -32,31 +32,42 @@ namespace Mieszkania
         }
         private void btn_dodaj_Click(object sender, RoutedEventArgs e)
         {
+            Walidacja w = new Walidacja();
             string imie = txt_imiePrac.Text;
             string naz = txt_nazPrac.Text;
             string nrTelPrac = txt_telPrac.Text;
-
-            using (var v = new DostepPrac())
+            bool imie_w=true, naz_w=true, nrT_w=true;
+            imie_w = w.sprawdzImie(imie);
+            naz_w = w.sprawdzNazwisko(naz);
+            nrT_w = w.sprawdzTelefon(nrTelPrac);
+            if (imie_w && naz_w && nrT_w)
             {
-                var p = new Pracownicy()
+                using (var v = new DostepPrac())
                 {
-                    Imie = imie,
-                    Nazwisko = naz,
-                    NrTel = nrTelPrac
-                };
-                v.Pracownicy.Add(p);
-                v.SaveChanges();
-            }
-            if(temp == 1)
-            {
-                var v = new DostepPrac();
-                var q = from a in v.Pracownicy
-                        where (a.Imie == imie && a.Nazwisko == naz && a.NrTel == nrTelPrac)
-                        select new { a.IdPracownika };
-                if(q.Count()==1)
-                {
-                    id = ((Convert.ToInt32(q.ToList().Last().IdPracownika)));
+                    var p = new Pracownicy()
+                    {
+                        Imie = imie,
+                        Nazwisko = naz,
+                        NrTel = nrTelPrac
+                    };
+                    v.Pracownicy.Add(p);
+                    v.SaveChanges();
                 }
+                if (temp == 1)
+                {
+                    var v = new DostepPrac();
+                    var q = from a in v.Pracownicy
+                            where (a.Imie == imie && a.Nazwisko == naz && a.NrTel == nrTelPrac)
+                            select new { a.IdPracownika };
+                    if (q.Count() == 1)
+                    {
+                        id = ((Convert.ToInt32(q.ToList().Last().IdPracownika)));
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Wprowadzono zle dane");
             }
         }
     }

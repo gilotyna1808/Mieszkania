@@ -19,6 +19,7 @@ namespace Mieszkania.Wyswietlanie
     /// </summary>
     public partial class WyswietlPrac : Window
     {
+        public int id_w_p { get; set; }
         public WyswietlPrac()
         {
             InitializeComponent();
@@ -27,6 +28,17 @@ namespace Mieszkania.Wyswietlanie
                from a in dba.Pracownicy
                select new {a.IdPracownika,a.Imie,a.Nazwisko,a.NrTel };
             dataG.ItemsSource = querry.ToList();
+        }
+
+        private void btn_W_Click(object sender, RoutedEventArgs e)
+        {
+            if (dataG.SelectedItems.Count > 0)
+            {
+                string tes = Convert.ToString(dataG.Items.GetItemAt(dataG.SelectedIndex));
+                tes = (tes.Substring(16, 3)).TrimEnd(',');
+                id_w_p = Convert.ToInt32(tes);
+            }
+            this.Close();
         }
     }
 }
