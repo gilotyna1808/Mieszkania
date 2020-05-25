@@ -31,16 +31,26 @@ namespace Mieszkania
         {
             string log = Convert.ToString(autLogin.Text);
             string pass = Convert.ToString(autPass.Password);
+            int id;
+            string im="", naz="";
             var querry =
                 from a in dostepM.Autoryzacja
                 where (a.Login == log && a.Haslo == pass)
                 select new { a.Haslo, a.IdPracownika };
             if (querry.Count() == 1)
             {
-                int id = ((Convert.ToInt32(querry.ToList().Last().IdPracownika)));
-                uzytkownik = new User(log, id);
+                id = ((Convert.ToInt32(querry.ToList().Last().IdPracownika)));
+                
                 this.Close();
+                using (var com = new DostepPrac())
+                {
+                    var i = com.Pracownicy.Where(s => s.IdPracownika == id);
+                    im= Convert.ToString(i.Select(s => s.Imie).FirstOrDefault());
+                    naz = Convert.ToString(i.Select(s => s.Nazwisko).FirstOrDefault());
+                }
+                uzytkownik = new User(log, id,im,naz);
             }
+
             else
             {
                 MessageBox.Show("Podano zle dane logowania");

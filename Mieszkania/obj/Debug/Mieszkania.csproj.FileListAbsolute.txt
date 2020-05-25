@@ -194,3 +194,5 @@ C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Daniel\gilotyna1808\Mieszkania\Mieszkani
 C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Daniel\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\ModyfikujRemont.baml
 C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Daniel\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\ModyfikujUmowe.g.cs
 C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Daniel\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\ModyfikujUmowe.baml
+C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Daniel\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Powitanie.g.cs
+C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Daniel\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Powitanie.baml

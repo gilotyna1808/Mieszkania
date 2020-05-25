@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="Mieszkania.Powitanie"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Mieszkania"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="600">
+    <Grid Background="White">
+        <Label Content="Witaj" HorizontalAlignment="Left" Margin="230,66,0,0" VerticalAlignment="Top" Height="78" Width="145" FontSize="48"/>
+        <Label x:Name="lbl1" Content="" HorizontalAlignment="Left" Margin="95,167,0,0" VerticalAlignment="Top" Height="70" Width="458" FontSize="48"/>
+        <Label x:Name="lbl2" Content="" HorizontalAlignment="Left" Margin="95,284,0,0" VerticalAlignment="Top" Height="78" Width="458" FontSize="48"/>
+
+    </Grid>
+</UserControl>

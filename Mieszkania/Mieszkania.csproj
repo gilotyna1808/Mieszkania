@@ -175,6 +175,9 @@
     <Compile Include="ModyfikujUmowe.xaml.cs">
       <DependentUpon>ModyfikujUmowe.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Powitanie.xaml.cs">
+      <DependentUpon>Powitanie.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pracownicy.cs">
       <DependentUpon>DostepPrac.tt</DependentUpon>
     </Compile>
@@ -274,6 +277,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ModyfikujUmowe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Powitanie.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

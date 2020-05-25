@@ -27,7 +27,10 @@ namespace Mieszkania
         public Mieszkania_Soft(User uzytkonik)
         {
             u = uzytkonik;
+            Powitanie powi = new Powitanie(u);
             InitializeComponent();
+            PanelWidok.Children.Clear();
+            PanelWidok.Children.Add(powi);
         }
 
         private void btn_DodajMie_Click(object sender, RoutedEventArgs e)
