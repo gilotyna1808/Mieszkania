@@ -31,6 +31,7 @@ namespace Mieszkania
             WyswietlPrac wp = new WyswietlPrac();
             wp.ShowDialog();
             int temp_id = 0;
+
             //do czego przyrównac temp_id?
             if (temp_id != 0)
             {
