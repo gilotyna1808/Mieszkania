@@ -21,8 +21,10 @@ namespace Mieszkania
     /// </summary>
     public partial class DodajRemont : UserControl
     {
-        public DodajRemont()
+        private User uzytkowik;
+        public DodajRemont(User u)
         {
+            uzytkowik = u;
             InitializeComponent();
         }
 
@@ -63,7 +65,7 @@ namespace Mieszkania
         }
         private void btn_wybierz_mieszkanie_Click(object sender, RoutedEventArgs e)
         {
-            WyswietlMieszkania wm = new WyswietlMieszkania();
+            WyswietlMieszkania wm = new WyswietlMieszkania(uzytkowik);
             wm.ShowDialog();
             int temp_id = 0;
             temp_id = wm.id_w_m;

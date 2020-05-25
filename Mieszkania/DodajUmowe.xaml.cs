@@ -21,8 +21,10 @@ namespace Mieszkania
     /// </summary>
     public partial class DodajUmowe : UserControl
     {
-        public DodajUmowe()
+        User uzytkownik;
+        public DodajUmowe(User u)
         {
+            uzytkownik = u;
             InitializeComponent();
         }
 
@@ -78,7 +80,7 @@ namespace Mieszkania
 
         private void btn_lista_m_Click(object sender, RoutedEventArgs e)
         {
-            WyswietlMieszkania wyswietlMieszkania = new WyswietlMieszkania();
+            WyswietlMieszkania wyswietlMieszkania = new WyswietlMieszkania(uzytkownik);
             wyswietlMieszkania.ShowDialog();
             int temp_id = 0;
             temp_id = wyswietlMieszkania.id_w_m;

@@ -20,14 +20,16 @@ namespace Mieszkania.Wyswietlanie
     /// </summary>
     public partial class ModyfikujMieszkania : UserControl
     {
-        public ModyfikujMieszkania()
+        private User uzytkownik;
+        public ModyfikujMieszkania(User u)
         {
+            uzytkownik = u;
             InitializeComponent();
         }
 
         private void btn_Wybierz_Click(object sender, RoutedEventArgs e)
         {
-            WyswietlMieszkania wm = new WyswietlMieszkania();
+            WyswietlMieszkania wm = new WyswietlMieszkania(uzytkownik);
             wm.ShowDialog();
             int temp_id = 0;
             temp_id = wm.id_w_m;

@@ -42,7 +42,7 @@ namespace Mieszkania
 
         private void btn_DodajRemont_Click(object sender, RoutedEventArgs e)
         {
-            DodajRemont dr = new DodajRemont();
+            DodajRemont dr = new DodajRemont(u);
             PanelWidok.Children.Clear();
             PanelWidok.Children.Add(dr);
         }
@@ -56,7 +56,7 @@ namespace Mieszkania
 
         private void btn_wyswietlanie_Click(object sender, RoutedEventArgs e)
         {
-            Wyswietlanie_Menu wm = new Wyswietlanie_Menu();
+            Wyswietlanie_Menu wm = new Wyswietlanie_Menu(u);
             PanelWidok.Children.Clear();
             PanelWidok.Children.Add(wm);
         }
@@ -70,14 +70,14 @@ namespace Mieszkania
 
         private void btn_dodajUmowe_Click(object sender, RoutedEventArgs e)
         {
-            DodajUmowe du = new DodajUmowe();
+            DodajUmowe du = new DodajUmowe(u);
             PanelWidok.Children.Clear();
             PanelWidok.Children.Add(du);
         }
 
         private void btn_ModyfikujM_Click(object sender, RoutedEventArgs e)
         {
-            ModyfikujMieszkania mm = new ModyfikujMieszkania();
+            ModyfikujMieszkania mm = new ModyfikujMieszkania(u);
             PanelWidok.Children.Clear();
             PanelWidok.Children.Add(mm);
         }
