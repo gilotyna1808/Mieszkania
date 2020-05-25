@@ -8,12 +8,15 @@ namespace Mieszkania
 {
     public class User
     {
-        private string login;
+        private string login,imie,nazwisko;
         private int idPrac;
-        public User(string log,int id)
+
+        public User(string log,int id,string imie="",string nazwisko="")
         {
             this.login = log;
             this.idPrac = id;
+            this.imie = imie;
+            this.nazwisko = nazwisko;
         }
 
         public int getIdPrac()
@@ -24,6 +27,15 @@ namespace Mieszkania
         public string getLogin()
         {
             return this.login;
+        }
+        public string getImie()
+        {
+            return this.imie;
+        }
+
+        public string getNazwisko()
+        {
+            return this.nazwisko;
         }
     }
 }

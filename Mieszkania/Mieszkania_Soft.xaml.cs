@@ -1,4 +1,5 @@
 ﻿using Mieszkania.Dodawanie;
+using Mieszkania.Usuwanie;
 using Mieszkania.Wyswietlanie;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,10 @@ namespace Mieszkania
         public Mieszkania_Soft(User uzytkonik)
         {
             u = uzytkonik;
+            Powitanie powi = new Powitanie(u);
             InitializeComponent();
+            PanelWidok.Children.Clear();
+            PanelWidok.Children.Add(powi);
         }
 
         private void btn_DodajMie_Click(object sender, RoutedEventArgs e)
@@ -39,7 +43,7 @@ namespace Mieszkania
 
         private void btn_DodajRemont_Click(object sender, RoutedEventArgs e)
         {
-            DodajRemont dr = new DodajRemont();
+            DodajRemont dr = new DodajRemont(u);
             PanelWidok.Children.Clear();
             PanelWidok.Children.Add(dr);
         }
@@ -53,7 +57,7 @@ namespace Mieszkania
 
         private void btn_wyswietlanie_Click(object sender, RoutedEventArgs e)
         {
-            Wyswietlanie_Menu wm = new Wyswietlanie_Menu();
+            Wyswietlanie_Menu wm = new Wyswietlanie_Menu(u);
             PanelWidok.Children.Clear();
             PanelWidok.Children.Add(wm);
         }
@@ -67,16 +71,58 @@ namespace Mieszkania
 
         private void btn_dodajUmowe_Click(object sender, RoutedEventArgs e)
         {
-            DodajUmowe du = new DodajUmowe();
+            DodajUmowe du = new DodajUmowe(u);
             PanelWidok.Children.Clear();
             PanelWidok.Children.Add(du);
         }
 
         private void btn_ModyfikujM_Click(object sender, RoutedEventArgs e)
         {
-            ModyfikujMieszkania mm = new ModyfikujMieszkania();
+            ModyfikujMieszkania mm = new ModyfikujMieszkania(u);
             PanelWidok.Children.Clear();
             PanelWidok.Children.Add(mm);
+        }
+
+        private void btn_DodajP_Click(object sender, RoutedEventArgs e)
+        {
+            DodajPracownika dp = new DodajPracownika();
+            PanelWidok.Children.Clear();
+            PanelWidok.Children.Add(dp);
+        }
+
+        private void btn_ModyfikujL_Click(object sender, RoutedEventArgs e)
+        {
+            ModyfikujLokatora ml = new ModyfikujLokatora();
+            PanelWidok.Children.Clear();
+            PanelWidok.Children.Add(ml);
+        }
+
+        private void btn_ModyfikujP_Click(object sender, RoutedEventArgs e)
+        {
+            ModyfikujPracownika mp = new ModyfikujPracownika();
+            PanelWidok.Children.Clear();
+            PanelWidok.Children.Add(mp);
+        }
+
+        private void btn_ModyfikujR_Click(object sender, RoutedEventArgs e)
+        {
+            ModyfikujRemont mr = new ModyfikujRemont();
+            PanelWidok.Children.Clear();
+            PanelWidok.Children.Add(mr);
+        }
+
+        private void btn_ModyfikujU_Click(object sender, RoutedEventArgs e)
+        {
+            ModyfikujUmowe mr = new ModyfikujUmowe();
+            PanelWidok.Children.Clear();
+            PanelWidok.Children.Add(mr);
+        }
+
+        private void btn_Inne_Click(object sender, RoutedEventArgs e)
+        {
+            UsuwanieMenu um = new UsuwanieMenu(this, u);
+            PanelWidok.Children.Clear();
+            PanelWidok.Children.Add(um);
         }
     }
 }

@@ -21,35 +21,51 @@ namespace Mieszkania
     /// </summary>
     public partial class DodajRemont : UserControl
     {
-        public DodajRemont()
+        private User uzytkowik;
+        public DodajRemont(User u)
         {
+            uzytkowik = u;
             InitializeComponent();
         }
 
         private void btn_dodaj_r_Click(object sender, RoutedEventArgs e)
         {
-            using (var db = new DostepPrac())
-            {
-                decimal koszt = Convert.ToDecimal(txt_Koszt.Text);//Do dodania walidacja
-                System.DateTime dataP = Convert.ToDateTime(txt_data_p.Text); //Do dodania walidacja
-                System.DateTime dataK = Convert.ToDateTime(txt_data_k.Text); //Do dodania walidacja
-                int id_m = Convert.ToInt32(txt_id_m.Text);//Do dodania walidacja i wybieranie z listy
-                var dodaj = new Remonty()
+            Walidacja w = new Walidacja();
+            bool walidacjaKoszt, walidacjaStan, walidacjaDataP, walidacjaDataK, walidacjaIdM;
+            string koszt_s, stan, dataP_s, dataK_s, IdM_s;
+            koszt_s = txt_Koszt.Text;
+            stan = txt_stan.Text;
+            dataP_s = txt_data_p.Text;
+            dataK_s = txt_data_k.Text;
+            IdM_s = txt_id_m.Text;
+            walidacjaKoszt = w.sprawdzKosztRemontu(koszt_s);
+            walidacjaStan = w.sprawdzStanRemont(stan);
+            walidacjaDataP = w.sprawdzDate(dataP_s);
+            walidacjaDataK = w.sprawdzDate(dataK_s);
+            walidacjaIdM = w.sprawdzId(IdM_s);
+            if (walidacjaKoszt && walidacjaStan && walidacjaDataP && walidacjaDataK && walidacjaIdM) {
+                decimal koszt = Convert.ToDecimal(koszt_s);
+                System.DateTime dataP = Convert.ToDateTime(dataP_s);
+                System.DateTime dataK = Convert.ToDateTime(dataK_s);
+                int id_m = Convert.ToInt32(IdM_s);
+                using (var db = new DostepPrac())
                 {
-                    Stan = txt_stan.Text,
-                    Koszt_Remontu = koszt,
-                    Data_Rozpoczecia=dataP,
-                    Data_Zakonczenia=dataK,
-                    IdMieszkania=id_m
-                };
-                db.Remonty.Add(dodaj);
-                db.SaveChanges();
+                    var dodaj = new Remonty()
+                    {
+                        Stan = stan,
+                        Koszt_Remontu = koszt,
+                        Data_Rozpoczecia = dataP,
+                        Data_Zakonczenia = dataK,
+                        IdMieszkania = id_m
+                    };
+                    db.Remonty.Add(dodaj);
+                    db.SaveChanges();
+                }
             }
         }
-
         private void btn_wybierz_mieszkanie_Click(object sender, RoutedEventArgs e)
         {
-            WyswietlMieszkania wm = new WyswietlMieszkania();
+            WyswietlMieszkania wm = new WyswietlMieszkania(uzytkowik);
             wm.ShowDialog();
             int temp_id = 0;
             temp_id = wm.id_w_m;

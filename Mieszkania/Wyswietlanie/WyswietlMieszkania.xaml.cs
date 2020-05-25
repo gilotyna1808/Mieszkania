@@ -20,13 +20,16 @@ namespace Mieszkania.Wyswietlanie
     public partial class WyswietlMieszkania : Window
     {
         public int id_w_m { get; set; }
-        public WyswietlMieszkania()
+        public WyswietlMieszkania(User u)
         {
+            int id = u.getIdPrac();
             InitializeComponent();
             id_w_m = 0;
             var dba = new DostepPrac();
             var querry =
                from a in dba.Mieszkanie
+               join a2 in dba.Pracownicy_Odp  on a.IdMieszkania equals a2.IdMieszkania
+               where(a2.IdPracownika== id)
                select new { a.IdMieszkania, a.Kod_Pocztowy, a.Miasto, a.Mieszkanie1, a.Nr_Domu, a.Status_Mieszkania, a.Ulica };
             dataG.ItemsSource = querry.ToList();
         }

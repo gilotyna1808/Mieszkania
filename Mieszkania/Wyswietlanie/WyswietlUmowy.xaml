@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="WyswietlUmowy" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="dataG" HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="772"/>
+        <DataGrid x:Name="dataG" HorizontalAlignment="Left" Height="322" Margin="10,10,0,0" VerticalAlignment="Top" Width="772"/>
+        <Button x:Name="btn_W" Content="Wybierz/Zamknij" HorizontalAlignment="Left" Height="55" Margin="284,354,0,0" VerticalAlignment="Top" Width="199" Click="btn_W_Click"/>
 
     </Grid>
 </Window>

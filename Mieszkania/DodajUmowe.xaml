@@ -14,11 +14,11 @@
         <Label Content="Termin rozliczenia" HorizontalAlignment="Left" Height="32" Margin="63,213,0,0" VerticalAlignment="Top" Width="168"/>
         <Label Content="Id Mieszkania" HorizontalAlignment="Left" Height="32" Margin="63,250,0,0" VerticalAlignment="Top" Width="168"/>
         <Label Content="Id Lokatora" HorizontalAlignment="Left" Height="32" Margin="63,287,0,0" VerticalAlignment="Top" Width="168"/>
-        <TextBox x:Name="txt_data_p" HorizontalAlignment="Left" Height="32" Margin="268,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165"/>
-        <TextBox x:Name="txt_data_k" HorizontalAlignment="Left" Height="32" Margin="268,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165"/>
+        <DatePicker x:Name="txt_data_p" HorizontalAlignment="Left" Height="32" Margin="268,65,0,0"  VerticalAlignment="Top" Width="165"/>
+        <DatePicker x:Name="txt_data_k" HorizontalAlignment="Left" Height="32" Margin="268,97,0,0"  VerticalAlignment="Top" Width="165"/>
         <TextBox x:Name="txt_czynsz" HorizontalAlignment="Left" Height="32" Margin="268,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165"/>
         <TextBox x:Name="txt_oplaty" HorizontalAlignment="Left" Height="32" Margin="268,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165"/>
-        <TextBox x:Name="txt_data_rozl" HorizontalAlignment="Left" Height="32" Margin="268,213,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165"/>
+        <DatePicker x:Name="txt_data_rozl" HorizontalAlignment="Left" Height="32" Margin="268,213,0,0" VerticalAlignment="Top" Width="165" IsDropDownOpen="True"/>
         <TextBox x:Name="txt_id_m" HorizontalAlignment="Left" Height="32" Margin="268,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165"/>
         <TextBox x:Name="txt_id_l" HorizontalAlignment="Left" Height="32" Margin="268,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165"/>
         <Button x:Name="btn_lisa_l" Content="Wybierz z listy" HorizontalAlignment="Left" Height="32" Margin="438,287,0,0" VerticalAlignment="Top" Width="52" Click="btn_lisa_l_Click"/>

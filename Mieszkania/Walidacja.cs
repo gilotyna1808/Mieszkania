@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Mieszkania
 {
@@ -16,7 +17,7 @@ namespace Mieszkania
         }
         public bool sprawdzImie(string s)
         {
-            Regex imie= new Regex(@"[A-z]+");
+            Regex imie= new Regex(@"^[A-z]+$");
             if (imie.IsMatch(s))
             {
                 return true;
@@ -26,7 +27,7 @@ namespace Mieszkania
 
         public bool sprawdzNazwisko(string s)
         {
-            Regex nazw = new Regex(@"([A-z]+.?)+");
+            Regex nazw = new Regex(@"^([A-z]+.?)+$");
             if (nazw.IsMatch(s))
             {
                 return true;
@@ -36,7 +37,7 @@ namespace Mieszkania
 
         public bool sprawdzTelefon(string s)
         {
-            Regex tel = new Regex(@"[+]?[0-9]{9,12}");
+            Regex tel = new Regex(@"^[+]?[0-9]{9,12}$");
             if (tel.IsMatch(s))
             {
                 return true;
@@ -56,7 +57,7 @@ namespace Mieszkania
 
         public bool sprawdzNrDomu(string s)
         {
-           Regex nrDomu = new Regex(@"[A-z]*[0-9]+[A-z]*");
+           Regex nrDomu = new Regex(@"^[A-z]*[0-9]+[A-z]*$");
             if (nrDomu.IsMatch(s))
             {
                 return true;
@@ -85,13 +86,71 @@ namespace Mieszkania
 
         public bool sprawdzKodPocztowy(string s)
         {
-            Regex tel = new Regex(@"[0-9]{2}-[0-9]{3}");
-            if (tel.IsMatch(s))
+            Regex kod = new Regex(@"^[0-9]{2}-[0-9]{3}$");
+            if (kod.IsMatch(s))
             {
                 return true;
             }
             return false;
         }
 
+        public bool sprawdzCzynsz(string s)
+        {
+            Regex czynsz = new Regex(@"^[0-9]+\,?[0-9]{1,2}$");
+            if (czynsz.IsMatch(s))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool sprawdzOplaty(string s)
+        {
+            Regex oplaty = new Regex(@"^[0-9]+[\,]?[0-9]{1,2}$");
+            if (oplaty.IsMatch(s))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool sprawdzDate(string s)
+        {
+            Regex data = new Regex(@"^[0-9]{1,2}[\.][0-9]{1,2}[\.][0-9]{4}$");
+            if (data.IsMatch(s))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool sprawdzId(string s)
+        {
+            Regex id = new Regex(@"^[0-9]+$");
+            if (id.IsMatch(s))
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool sprawdzKosztRemontu(string s)
+        {
+            Regex koszt = new Regex(@"^[0-9]+[\,]?[0-9]{1,2}$");
+            if (koszt.IsMatch(s))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool sprawdzStanRemont(string s)
+        {
+            //Regex stan = new Regex(@"^[0-9]+$");
+            if (SpradzCzyZaDlugie(s,45))
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

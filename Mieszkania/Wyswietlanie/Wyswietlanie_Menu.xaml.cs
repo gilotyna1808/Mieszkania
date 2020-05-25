@@ -20,8 +20,10 @@ namespace Mieszkania.Wyswietlanie
     /// </summary>
     public partial class Wyswietlanie_Menu : UserControl
     {
-        public Wyswietlanie_Menu()
+        User uzytkownik;
+        public Wyswietlanie_Menu(User u)
         {
+            uzytkownik=u;
             InitializeComponent();
         }
 
@@ -39,7 +41,7 @@ namespace Mieszkania.Wyswietlanie
 
         private void btn_m_Click(object sender, RoutedEventArgs e)
         {
-            WyswietlMieszkania m = new WyswietlMieszkania();
+            WyswietlMieszkania m = new WyswietlMieszkania(uzytkownik);
             m.Show();
         }
 
