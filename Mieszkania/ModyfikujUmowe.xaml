@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="ModyfikujUmowe" Height="450" Width="800">
     <Grid>
-        <Button Content="Modyfikuj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="234" Margin="87,339,0,0" Height="40" Click="Button_Click_1"/>
+        <Button Content="Modyfikuj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="234" Margin="87,351,0,0" Height="40" Click="Button_Click_1"/>
         <Button Content="Wybierz umowe" HorizontalAlignment="Left" VerticalAlignment="Top" Width="234" Margin="87,43,0,0" Height="37" Click="Button_Click"/>
         <TextBox x:Name="txt_id" IsEnabled="False" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Width="120" Margin="201,107,0,0"/>
         <TextBox x:Name="txt_od_kiedy" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="xx-xx-xxxx" VerticalAlignment="Top" Width="120" Margin="201,150,0,0"/>
