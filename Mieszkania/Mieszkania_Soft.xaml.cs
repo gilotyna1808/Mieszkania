@@ -106,5 +106,12 @@ namespace Mieszkania
             PanelWidok.Children.Clear();
             PanelWidok.Children.Add(mr);
         }
+
+        private void btn_ModyfikujU_Click(object sender, RoutedEventArgs e)
+        {
+            ModyfikujUmowe mr = new ModyfikujUmowe();
+            PanelWidok.Children.Clear();
+            PanelWidok.Children.Add(mr);
+        }
     }
 }

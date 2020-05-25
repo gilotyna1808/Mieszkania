@@ -172,6 +172,9 @@
     <Compile Include="ModyfikujLokatora.xaml.cs" />
     <Compile Include="ModyfikujPracownika.xaml.cs" />
     <Compile Include="ModyfikujRemont.xaml.cs" />
+    <Compile Include="ModyfikujUmowe.xaml.cs">
+      <DependentUpon>ModyfikujUmowe.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pracownicy.cs">
       <DependentUpon>DostepPrac.tt</DependentUpon>
     </Compile>
@@ -269,6 +272,10 @@
     <Page Include="ModyfikujRemont.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ModyfikujUmowe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="test.xaml">
       <SubType>Designer</SubType>
