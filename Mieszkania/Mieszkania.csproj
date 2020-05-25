@@ -180,6 +180,9 @@
     <Compile Include="ModyfikujRemont.xaml.cs">
       <DependentUpon>ModyfikujRemont.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ModyfikujUmowe.xaml.cs">
+      <DependentUpon>ModyfikujUmowe.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pracownicy.cs">
       <DependentUpon>DostepPrac.tt</DependentUpon>
     </Compile>
@@ -197,6 +200,9 @@
       <DependentUpon>DostepPrac.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
+    <Compile Include="UsunLokatora.xaml.cs">
+      <DependentUpon>UsunLokatora.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Wyswietlanie\ModyfikujMieszkania.xaml.cs">
       <DependentUpon>ModyfikujMieszkania.xaml</DependentUpon>
     </Compile>
@@ -277,7 +283,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ModyfikujUmowe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="test.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UsunLokatora.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

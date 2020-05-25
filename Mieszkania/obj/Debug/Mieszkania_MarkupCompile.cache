@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Kasia\source\repos\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\
+C:\Users\Kasia\Source\Repos\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\
 Mieszkania
 none
 false
 DEBUG;TRACE
-C:\Users\Kasia\source\repos\gilotyna1808\Mieszkania\Mieszkania\App.xaml
-18-1289734986
+C:\Users\Kasia\Source\Repos\gilotyna1808\Mieszkania\Mieszkania\App.xaml
+22-275036843
 111745857574
-37-1573431246
-31420377435
-Autoryzacja.xaml;DodajMieszkanie.xaml;DodajPracownika.xaml;DodajRemont.xaml;DodajLokatora.xaml;DodajUmowe.xaml;empty.xaml;MainWindow.xaml;Mieszkania_Soft.xaml;ModyfikujPracownika.xaml;test.xaml;Wyswietlanie\ModyfikujMieszkania.xaml;Wyswietlanie\Wyswietlanie_Menu.xaml;Wyswietlanie\WyswietlLokator.xaml;Wyswietlanie\WyswietlMieszkania.xaml;Wyswietlanie\WyswietlPrac.xaml;Wyswietlanie\WyswietlRemonty.xaml;Wyswietlanie\WyswietlUmowy.xaml;
+42-1902527979
+31-1840341736
+Autoryzacja.xaml;DodajMieszkanie.xaml;DodajPracownika.xaml;DodajRemont.xaml;DodajLokatora.xaml;DodajUmowe.xaml;empty.xaml;MainWindow.xaml;Mieszkania_Soft.xaml;ModyfikujLokatora.xaml;ModyfikujPracownika.xaml;ModyfikujRemont.xaml;ModyfikujUmowe.xaml;test.xaml;UsunLokatora.xaml;Wyswietlanie\ModyfikujMieszkania.xaml;Wyswietlanie\Wyswietlanie_Menu.xaml;Wyswietlanie\WyswietlLokator.xaml;Wyswietlanie\WyswietlMieszkania.xaml;Wyswietlanie\WyswietlPrac.xaml;Wyswietlanie\WyswietlRemonty.xaml;Wyswietlanie\WyswietlUmowy.xaml;
 
 True
 

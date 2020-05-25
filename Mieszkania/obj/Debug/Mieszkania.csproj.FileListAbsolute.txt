@@ -188,3 +188,11 @@ C:\Users\Kasia\Source\Repos\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Mieszka
 C:\Users\Kasia\Source\Repos\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Mieszkania.csproj.CopyComplete
 C:\Users\Kasia\Source\Repos\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Mieszkania.exe
 C:\Users\Kasia\Source\Repos\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Mieszkania.pdb
+C:\Users\Kasia\Source\Repos\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\ModyfikujLokatora.g.cs
+C:\Users\Kasia\Source\Repos\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\ModyfikujRemont.g.cs
+C:\Users\Kasia\Source\Repos\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\ModyfikujUmowe.g.cs
+C:\Users\Kasia\Source\Repos\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\UsunLokatora.g.cs
+C:\Users\Kasia\Source\Repos\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\ModyfikujLokatora.baml
+C:\Users\Kasia\Source\Repos\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\ModyfikujRemont.baml
+C:\Users\Kasia\Source\Repos\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\ModyfikujUmowe.baml
+C:\Users\Kasia\Source\Repos\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\UsunLokatora.baml

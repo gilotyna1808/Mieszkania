@@ -1,0 +1,26 @@
+﻿<Window x:Class="Mieszkania.ModyfikujUmowe"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mieszkania"
+        mc:Ignorable="d"
+        Title="ModyfikujUmowe" Height="450" Width="800">
+    <Grid>
+        <Button Content="Modyfikuj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="234" Margin="87,339,0,0" Height="40" Click="Button_Click_1"/>
+        <Button Content="Wybierz umowe" HorizontalAlignment="Left" VerticalAlignment="Top" Width="234" Margin="87,43,0,0" Height="37" Click="Button_Click"/>
+        <TextBox x:Name="txt_id" IsEnabled="False" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Width="120" Margin="201,107,0,0"/>
+        <TextBox x:Name="txt_od_kiedy" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="xx-xx-xxxx" VerticalAlignment="Top" Width="120" Margin="201,150,0,0"/>
+        <TextBox x:Name="txt_do_kiedy" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="xx-xx-xxxx" VerticalAlignment="Top" Width="120" Margin="201,192,0,0"/>
+        <TextBox x:Name="txt_czynsz" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Czynsz" VerticalAlignment="Top" Width="120" Margin="201,220,0,0"/>
+        <TextBox x:Name="txt_termin_roz" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="xx-xx-xxxx" VerticalAlignment="Top" Width="120" Margin="201,286,0,0"/>
+        <Label Content="ID: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="87,102,0,0"/>
+        <Label Content="Od kiedy: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="87,145,0,0" RenderTransformOrigin="0.372,1.424"/>
+        <Label Content="Do kiedy: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="87,187,0,0"/>
+        <Label Content="Czynsz: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="87,220,0,0"/>
+        <Label Content="Termin rozliczenia: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="87,282,0,0"/>
+        <TextBox x:Name="txt_coplaty" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Oplaty stale" VerticalAlignment="Top" Width="120" Margin="201,258,0,0"/>
+        <Label Content="Oplaty stale: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="87,246,0,0"/>
+
+    </Grid>
+</Window>

@@ -78,5 +78,12 @@ namespace Mieszkania
             PanelWidok.Children.Clear();
             PanelWidok.Children.Add(mm);
         }
+
+        private void btn_Usun_Click(object sender, RoutedEventArgs e)
+        {
+            UsunLokatora ul = new UsunLokatora();
+            PanelWidok.Children.Clear();
+            PanelWidok.Children.Add(ul);
+        }
     }
 }

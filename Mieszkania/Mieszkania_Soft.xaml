@@ -22,6 +22,7 @@
                 </LinearGradientBrush>
             </StackPanel.Background>
             <Label Content="Menu" HorizontalAlignment="Left" Height="42" Margin="36,0,0,0" Width="144"/>
+            <Button  x:Name="btn_Usun" Content="UsunLokatora"  Click="btn_Usun_Click"/>
             <Button x:Name="btn_DodajMie" Content="Dodaj Mieszkanie" HorizontalAlignment="Left" Height="36" Margin="10,0,0,0" Width="247" Click="btn_DodajMie_Click"/>
             <Button x:Name="btn_DodajRemont" Content="Dodaj Remont" HorizontalAlignment="Left" Height="36" Margin="10,10,0,0" Width="247" Click="btn_DodajRemont_Click"/>
             <Button x:Name="btn_wyswietlanie" Content="Wywietl_testy" HorizontalAlignment="Left" Height="36" Margin="10,10,0,0" Width="247" Click="btn_wyswietlanie_Click"/>
