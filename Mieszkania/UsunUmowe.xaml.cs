@@ -45,6 +45,7 @@ namespace Mieszkania
             var q = from data in dp.Remonty
                     orderby data.IdRemontu
                     select data;
+
             foreach (Remonty r in q)
             {
                 if (r.IdRemontu == temp_id)
