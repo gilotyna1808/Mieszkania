@@ -196,3 +196,15 @@ C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Daniel\gilotyna1808\Mieszkania\Mieszkani
 C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Daniel\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\ModyfikujUmowe.baml
 C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Daniel\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Powitanie.g.cs
 C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Daniel\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Powitanie.baml
+C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Daniel\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Usuwanie\UsunLokatora.g.cs
+C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Daniel\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Usuwanie\UsunMieszkanie.g.cs
+C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Daniel\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Usuwanie\UsunPracownika.g.cs
+C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Daniel\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Usuwanie\UsunRemont.g.cs
+C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Daniel\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Usuwanie\UsunUmowe.g.cs
+C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Daniel\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Usuwanie\UsunLokatora.baml
+C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Daniel\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Usuwanie\UsunMieszkanie.baml
+C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Daniel\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Usuwanie\UsunPracownika.baml
+C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Daniel\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Usuwanie\UsunRemont.baml
+C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Daniel\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Usuwanie\UsunUmowe.baml
+C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Daniel\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Usuwanie\UsuwanieMenu.g.cs
+C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Daniel\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Usuwanie\UsuwanieMenu.baml

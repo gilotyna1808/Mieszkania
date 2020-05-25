@@ -198,6 +198,24 @@
     <Compile Include="ModyfikujMieszkania.xaml.cs">
       <DependentUpon>ModyfikujMieszkania.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Usuwanie\UsunLokatora.xaml.cs">
+      <DependentUpon>UsunLokatora.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Usuwanie\UsunMieszkanie.xaml.cs">
+      <DependentUpon>UsunMieszkanie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Usuwanie\UsunPracownika.xaml.cs">
+      <DependentUpon>UsunPracownika.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Usuwanie\UsunRemont.xaml.cs">
+      <DependentUpon>UsunRemont.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Usuwanie\UsunUmowe.xaml.cs">
+      <DependentUpon>UsunUmowe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Usuwanie\UsuwanieMenu.xaml.cs">
+      <DependentUpon>UsuwanieMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Walidacja.cs" />
     <Compile Include="Wyswietlanie\Wyswietlanie_Menu.xaml.cs">
       <DependentUpon>Wyswietlanie_Menu.xaml</DependentUpon>
@@ -289,6 +307,30 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ModyfikujMieszkania.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Usuwanie\UsunLokatora.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Usuwanie\UsunMieszkanie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Usuwanie\UsunPracownika.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Usuwanie\UsunRemont.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Usuwanie\UsunUmowe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Usuwanie\UsuwanieMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

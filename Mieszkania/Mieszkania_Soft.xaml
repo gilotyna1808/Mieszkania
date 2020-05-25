@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mieszkania"
         mc:Ignorable="d"
-        Title="Mieszkania_Soft" Height="507.653" Width="900">
+        Title="Mieszkania_Soft" Height="541.324" Width="900">
     <Grid>
         <DockPanel x:Name="PanelWidok" RenderTransformOrigin="-0.603,-0.327" Margin="300,0,0,0">
             <Label Content="" HorizontalAlignment="Left" Height="155" Margin="119,136,0,172" Width="336"/>
@@ -24,8 +24,9 @@
             <Button x:Name="btn_ModyfikujR" Content="Modyfikuj Remont" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Height="35" Margin="25,5,0,0" Width="250" Click="btn_ModyfikujR_Click"/>
             <Button x:Name="btn_ModyfikujP" Content="Modyfikuj Pracownika" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Height="18" Margin="25,5,0,0" Width="250" Click="btn_ModyfikujP_Click"/>
             <Button x:Name="btn_ModyfikujU" Content="Modyfikuj Umowe" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Height="21" Margin="25,5,0,0" Width="250" Click="btn_ModyfikujU_Click"/>
-            <Button x:Name="btn_Logout" Content="Wyloguj" HorizontalAlignment="Left" Foreground="#2ec4b6" Background="#cbf3f0" Height="29" Margin="25,5,0,0" Width="250" Click="btn_Logout_Click"/>
-            
+            <Button x:Name="btn_Inne" Content="inne" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Height="21" Margin="25,5,0,0" Width="250" Click="btn_Inne_Click"/>
+            <Button x:Name="btn_Logout_Copy" Content="Wyloguj" HorizontalAlignment="Left" Foreground="#2ec4b6" Background="#cbf3f0" Height="29" Margin="25,5,0,0" Width="250" Click="btn_Logout_Click"/>
+
         </StackPanel>
     </Grid>
 </Window>

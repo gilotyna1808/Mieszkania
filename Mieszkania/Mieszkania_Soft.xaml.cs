@@ -1,4 +1,5 @@
 ﻿using Mieszkania.Dodawanie;
+using Mieszkania.Usuwanie;
 using Mieszkania.Wyswietlanie;
 using System;
 using System.Collections.Generic;
@@ -115,6 +116,13 @@ namespace Mieszkania
             ModyfikujUmowe mr = new ModyfikujUmowe();
             PanelWidok.Children.Clear();
             PanelWidok.Children.Add(mr);
+        }
+
+        private void btn_Inne_Click(object sender, RoutedEventArgs e)
+        {
+            UsuwanieMenu um = new UsuwanieMenu(this, u);
+            PanelWidok.Children.Clear();
+            PanelWidok.Children.Add(um);
         }
     }
 }
