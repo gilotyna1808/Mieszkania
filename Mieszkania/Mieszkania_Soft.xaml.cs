@@ -78,5 +78,31 @@ namespace Mieszkania
             PanelWidok.Children.Clear();
             PanelWidok.Children.Add(mm);
         }
+
+        private void btn_DodajP_Click(object sender, RoutedEventArgs e)
+        {
+            DodajPracownika dp = new DodajPracownika();
+            PanelWidok.Children.Clear();
+            PanelWidok.Children.Add(dp);
+        }
+
+        private void btn_ModyfikujL_Click(object sender, RoutedEventArgs e)
+        {
+            ModyfikujLokatora ml = new ModyfikujLokatora();
+            PanelWidok.Children.Clear();
+            PanelWidok.Children.Add(ml);
+        }
+
+        private void btn_ModyfikujU_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_ModyfikujP_Click(object sender, RoutedEventArgs e)
+        {
+            ModyfikujPracownika mp = new ModyfikujPracownika();
+            PanelWidok.Children.Clear();
+            PanelWidok.Children.Add(mp);
+        }
     }
 }

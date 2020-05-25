@@ -17,7 +17,7 @@ namespace Mieszkania
     /// <summary>
     /// Logika interakcji dla klasy DodajPracownikow.xaml
     /// </summary>
-    public partial class DodajPracownika : Window
+    public partial class DodajPracownika : UserControl
     {
         private int temp = 0;
         public int id { get; set; }

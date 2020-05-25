@@ -18,7 +18,7 @@ namespace Mieszkania
     /// <summary>
     /// Logika interakcji dla klasy ModyfikujRemont.xaml
     /// </summary>
-    public partial class ModyfikujRemont : Window
+    public partial class ModyfikujRemont : UserControl
     {
         public ModyfikujRemont()
         {

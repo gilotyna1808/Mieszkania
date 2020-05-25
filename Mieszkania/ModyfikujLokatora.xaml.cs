@@ -18,7 +18,7 @@ namespace Mieszkania
     /// <summary>
     /// Logika interakcji dla klasy ModyfikujLokatora.xaml
     /// </summary>
-    public partial class ModyfikujLokatora : Window
+    public partial class ModyfikujLokatora : UserControl
     {
         public ModyfikujLokatora()
         {

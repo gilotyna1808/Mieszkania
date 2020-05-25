@@ -18,7 +18,7 @@ namespace Mieszkania
     /// <summary>
     /// Logika interakcji dla klasy ModyfikujPracownika.xaml
     /// </summary>
-    public partial class ModyfikujPracownika : Window
+    public partial class ModyfikujPracownika : UserControl
     {
         public ModyfikujPracownika()
         {
