@@ -32,7 +32,7 @@ namespace Mieszkania
             WyswietlLokator wl = new WyswietlLokator();
             wl.ShowDialog();
             int temp_id = 0;
-            //do czego przyrównac temp_id?
+            temp_id = wl.id_w_l;
             if (temp_id != 0)
             {
                 txt_id.Text = Convert.ToString(temp_id);

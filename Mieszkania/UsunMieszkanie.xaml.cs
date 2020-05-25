@@ -28,10 +28,10 @@ namespace Mieszkania
 
         private void btn_Wybierz_Click(object sender, RoutedEventArgs e)
         {
-            WyswietlPrac wp = new WyswietlPrac();
-            wp.ShowDialog();
+            WyswietlMieszkania wm = new WyswietlMieszkania();
+            wm.ShowDialog();
             int temp_id = 0;
-            //do czego przyrównac temp_id?
+            temp_id = wm.id_w_m;
             if (temp_id != 0)
             {
                 txt_id.Text = Convert.ToString(temp_id);
