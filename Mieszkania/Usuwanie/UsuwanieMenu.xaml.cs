@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mieszkania.Raporty;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -62,6 +63,12 @@ namespace Mieszkania.Usuwanie
             UsunUmowe us = new UsunUmowe(uzytkownik);
             baze.PanelWidok.Children.Clear();
             baze.PanelWidok.Children.Add(us);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            RaportTest rp = new RaportTest(uzytkownik);
+            rp.Show();
         }
     }
 }

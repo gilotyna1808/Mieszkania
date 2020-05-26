@@ -12,6 +12,7 @@
         <Button x:Name="btn3" Content="Usun Pracownika" HorizontalAlignment="Left" Height="43" Margin="23,140,0,0" VerticalAlignment="Top" Width="160" Click="btn3_Click"/>
         <Button x:Name="btn4" Content="Usun Remont" HorizontalAlignment="Left" Height="43" Margin="23,205,0,0" VerticalAlignment="Top" Width="160" Click="btn4_Click"/>
         <Button x:Name="btn5" Content="Usun umowe" HorizontalAlignment="Left" Height="43" Margin="23,265,0,0" VerticalAlignment="Top" Width="160" Click="btn5_Click"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="55" Margin="188,388,0,0" VerticalAlignment="Top" Width="232" Click="Button_Click"/>
 
     </Grid>
 </UserControl>
