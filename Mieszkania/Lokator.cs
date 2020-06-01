@@ -14,9 +14,21 @@ namespace Mieszkania
     
     public partial class Lokator
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Lokator()
+        {
+            this.Umowa = new HashSet<Umowa>();
+        }
+    
         public int IdLokatora { get; set; }
         public string Imie { get; set; }
         public string Nazwisko { get; set; }
-        public string NrTelefonu { get; set; }
+        public string Pesel { get; set; }
+        public string Nr_Telefonu { get; set; }
+        public string Adres_Korespondecyjny { get; set; }
+        public string Adres_Mailowy { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Umowa> Umowa { get; set; }
     }
 }

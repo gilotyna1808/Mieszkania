@@ -4,14 +4,16 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MieszkaniaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Autoryzacja">
+      <Schema Namespace="MieszkaniaModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Czynsz_Wplywy">
           <Key>
-            <PropertyRef Name="IdPracownika" />
+            <PropertyRef Name="IdCzynszu" />
           </Key>
-          <Property Name="IdPracownika" Type="int" Nullable="false" />
-          <Property Name="Login" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="Haslo" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="IdCzynszu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdUmowy" Type="int" Nullable="false" />
+          <Property Name="Kwota" Type="money" Nullable="false" />
+          <Property Name="Termin_Rozliczenia" Type="date" Nullable="false" />
+          <Property Name="Zaplacone" Type="bit" />
         </EntityType>
         <EntityType Name="Lokator">
           <Key>
@@ -20,7 +22,10 @@
           <Property Name="IdLokatora" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Imie" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="Nazwisko" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="NrTelefonu" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="Pesel" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="Nr_Telefonu" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Adres_Korespondecyjny" Type="varchar" MaxLength="50" />
+          <Property Name="Adres_Mailowy" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Mieszkanie">
           <Key>
@@ -31,8 +36,9 @@
           <Property Name="Kod_Pocztowy" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="Ulica" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="Nr_Domu" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="Mieszkanie1" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Nr_Mieszkania" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="Status_Mieszkania" Type="varchar" MaxLength="45" />
+          <Property Name="Posiadane" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Pracownicy">
           <Key>
@@ -42,9 +48,13 @@
           <Property Name="Nazwisko" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="Imie" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="NrTel" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="Pesel" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Miasto_Zamieszkania" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Adres_Zamieszkania" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="IdStanowisko" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'C:\USERS\DANIEL-PC\DESKTOP\BAZY\PROJEKT\MIESZKANIA\MIESZKANIA\MIESZKANIA.MDF.dbo.Pracownicy_Odp' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'C:\USERS\DANIEL-PC\DESKTOP\BAZY\PROJEKT\DANIELV2\GILOTYNA1808\MIESZKANIA\MIESZKANIA\MIESZKANIA.MDF.dbo.Pracownicy_Odp' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Pracownicy_Odp">
           <Key>
             <PropertyRef Name="IdPracownika" />
@@ -64,6 +74,14 @@ warning 6002: The table/view 'C:\USERS\DANIEL-PC\DESKTOP\BAZY\PROJEKT\MIESZKANIA
           <Property Name="Data_Rozpoczecia" Type="date" Nullable="false" />
           <Property Name="Data_Zakonczenia" Type="date" />
         </EntityType>
+        <EntityType Name="Stanowiska">
+          <Key>
+            <PropertyRef Name="IdStanowiska" />
+          </Key>
+          <Property Name="IdStanowiska" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa_Stanowiska" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Opis_Stanowiska" Type="varchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="Umowa">
           <Key>
             <PropertyRef Name="IdUmowy" />
@@ -73,16 +91,76 @@ warning 6002: The table/view 'C:\USERS\DANIEL-PC\DESKTOP\BAZY\PROJEKT\MIESZKANIA
           <Property Name="IdLokatora" Type="int" Nullable="false" />
           <Property Name="Od_Kiedy" Type="date" Nullable="false" />
           <Property Name="Do_Kiedy" Type="date" />
-          <Property Name="Termin_Rozliczenia" Type="date" />
-          <Property Name="Czynsz" Type="money" Nullable="false" />
+          <Property Name="Stawka_Czynsz" Type="money" Nullable="false" />
           <Property Name="Oplaty_Stale" Type="money" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="MieszkaniaModelStoreContainer">
-          <EntitySet Name="Autoryzacja" EntityType="Self.Autoryzacja" Schema="dbo" store:Type="Tables" />
+        <Association Name="FK_Czynsz_Wplywy_ToTable">
+          <End Role="Umowa" Type="Self.Umowa" Multiplicity="1" />
+          <End Role="Czynsz_Wplywy" Type="Self.Czynsz_Wplywy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Umowa">
+              <PropertyRef Name="IdUmowy" />
+            </Principal>
+            <Dependent Role="Czynsz_Wplywy">
+              <PropertyRef Name="IdUmowy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pracownicy_ToTable">
+          <End Role="Stanowiska" Type="Self.Stanowiska" Multiplicity="1" />
+          <End Role="Pracownicy" Type="Self.Pracownicy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stanowiska">
+              <PropertyRef Name="IdStanowiska" />
+            </Principal>
+            <Dependent Role="Pracownicy">
+              <PropertyRef Name="IdStanowisko" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Remonty_ToTable">
+          <End Role="Mieszkanie" Type="Self.Mieszkanie" Multiplicity="1" />
+          <End Role="Remonty" Type="Self.Remonty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mieszkanie">
+              <PropertyRef Name="IdMieszkania" />
+            </Principal>
+            <Dependent Role="Remonty">
+              <PropertyRef Name="IdMieszkania" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Umowa_ToTable">
+          <End Role="Mieszkanie" Type="Self.Mieszkanie" Multiplicity="1" />
+          <End Role="Umowa" Type="Self.Umowa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mieszkanie">
+              <PropertyRef Name="IdMieszkania" />
+            </Principal>
+            <Dependent Role="Umowa">
+              <PropertyRef Name="IdMieszkania" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Umowa_ToTable_1">
+          <End Role="Lokator" Type="Self.Lokator" Multiplicity="1" />
+          <End Role="Umowa" Type="Self.Umowa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lokator">
+              <PropertyRef Name="IdLokatora" />
+            </Principal>
+            <Dependent Role="Umowa">
+              <PropertyRef Name="IdLokatora" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MieszkaniaModel1StoreContainer">
+          <EntitySet Name="Czynsz_Wplywy" EntityType="Self.Czynsz_Wplywy" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Lokator" EntityType="Self.Lokator" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Mieszkanie" EntityType="Self.Mieszkanie" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Pracownicy" EntityType="Self.Pracownicy" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Remonty" EntityType="Self.Remonty" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stanowiska" EntityType="Self.Stanowiska" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Umowa" EntityType="Self.Umowa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Pracownicy_Odp" EntityType="Self.Pracownicy_Odp" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -90,19 +168,42 @@ warning 6002: The table/view 'C:\USERS\DANIEL-PC\DESKTOP\BAZY\PROJEKT\MIESZKANIA
     [Pracownicy_Odp].[IdMieszkania] AS [IdMieszkania]
     FROM [dbo].[Pracownicy_Odp] AS [Pracownicy_Odp]</DefiningQuery>
           </EntitySet>
+          <AssociationSet Name="FK_Czynsz_Wplywy_ToTable" Association="Self.FK_Czynsz_Wplywy_ToTable">
+            <End Role="Umowa" EntitySet="Umowa" />
+            <End Role="Czynsz_Wplywy" EntitySet="Czynsz_Wplywy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pracownicy_ToTable" Association="Self.FK_Pracownicy_ToTable">
+            <End Role="Stanowiska" EntitySet="Stanowiska" />
+            <End Role="Pracownicy" EntitySet="Pracownicy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Remonty_ToTable" Association="Self.FK_Remonty_ToTable">
+            <End Role="Mieszkanie" EntitySet="Mieszkanie" />
+            <End Role="Remonty" EntitySet="Remonty" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Umowa_ToTable" Association="Self.FK_Umowa_ToTable">
+            <End Role="Mieszkanie" EntitySet="Mieszkanie" />
+            <End Role="Umowa" EntitySet="Umowa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Umowa_ToTable_1" Association="Self.FK_Umowa_ToTable_1">
+            <End Role="Lokator" EntitySet="Lokator" />
+            <End Role="Umowa" EntitySet="Umowa" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="MieszkaniaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Autoryzacja">
+      <Schema Namespace="MieszkaniaModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Czynsz_Wplywy">
           <Key>
-            <PropertyRef Name="IdPracownika" />
+            <PropertyRef Name="IdCzynszu" />
           </Key>
-          <Property Name="IdPracownika" Type="Int32" Nullable="false" />
-          <Property Name="Login" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Haslo" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdCzynszu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdUmowy" Type="Int32" Nullable="false" />
+          <Property Name="Kwota" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Termin_Rozliczenia" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Zaplacone" Type="Boolean" />
+          <NavigationProperty Name="Umowa" Relationship="Self.FK_Czynsz_Wplywy_ToTable" FromRole="Czynsz_Wplywy" ToRole="Umowa" />
         </EntityType>
         <EntityType Name="Lokator">
           <Key>
@@ -111,7 +212,11 @@ warning 6002: The table/view 'C:\USERS\DANIEL-PC\DESKTOP\BAZY\PROJEKT\MIESZKANIA
           <Property Name="IdLokatora" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Imie" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Nazwisko" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="NrTelefonu" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Pesel" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nr_Telefonu" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Adres_Korespondecyjny" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Adres_Mailowy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Umowa" Relationship="Self.FK_Umowa_ToTable_1" FromRole="Lokator" ToRole="Umowa" />
         </EntityType>
         <EntityType Name="Mieszkanie">
           <Key>
@@ -122,8 +227,11 @@ warning 6002: The table/view 'C:\USERS\DANIEL-PC\DESKTOP\BAZY\PROJEKT\MIESZKANIA
           <Property Name="Kod_Pocztowy" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Ulica" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Nr_Domu" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Mieszkanie1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nr_Mieszkania" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Status_Mieszkania" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Posiadane" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Remonty" Relationship="Self.FK_Remonty_ToTable" FromRole="Mieszkanie" ToRole="Remonty" />
+          <NavigationProperty Name="Umowa" Relationship="Self.FK_Umowa_ToTable" FromRole="Mieszkanie" ToRole="Umowa" />
         </EntityType>
         <EntityType Name="Pracownicy">
           <Key>
@@ -133,6 +241,11 @@ warning 6002: The table/view 'C:\USERS\DANIEL-PC\DESKTOP\BAZY\PROJEKT\MIESZKANIA
           <Property Name="Nazwisko" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Imie" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="NrTel" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Pesel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Miasto_Zamieszkania" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Adres_Zamieszkania" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="IdStanowisko" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Stanowiska" Relationship="Self.FK_Pracownicy_ToTable" FromRole="Pracownicy" ToRole="Stanowiska" />
         </EntityType>
         <EntityType Name="Remonty">
           <Key>
@@ -144,6 +257,16 @@ warning 6002: The table/view 'C:\USERS\DANIEL-PC\DESKTOP\BAZY\PROJEKT\MIESZKANIA
           <Property Name="Koszt_Remontu" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="Data_Rozpoczecia" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Data_Zakonczenia" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Mieszkanie" Relationship="Self.FK_Remonty_ToTable" FromRole="Remonty" ToRole="Mieszkanie" />
+        </EntityType>
+        <EntityType Name="Stanowiska">
+          <Key>
+            <PropertyRef Name="IdStanowiska" />
+          </Key>
+          <Property Name="IdStanowiska" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa_Stanowiska" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Opis_Stanowiska" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Pracownicy" Relationship="Self.FK_Pracownicy_ToTable" FromRole="Stanowiska" ToRole="Pracownicy" />
         </EntityType>
         <EntityType Name="Umowa">
           <Key>
@@ -154,9 +277,11 @@ warning 6002: The table/view 'C:\USERS\DANIEL-PC\DESKTOP\BAZY\PROJEKT\MIESZKANIA
           <Property Name="IdLokatora" Type="Int32" Nullable="false" />
           <Property Name="Od_Kiedy" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Do_Kiedy" Type="DateTime" Precision="0" />
-          <Property Name="Termin_Rozliczenia" Type="DateTime" Precision="0" />
-          <Property Name="Czynsz" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Stawka_Czynsz" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="Oplaty_Stale" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="Czynsz_Wplywy" Relationship="Self.FK_Czynsz_Wplywy_ToTable" FromRole="Umowa" ToRole="Czynsz_Wplywy" />
+          <NavigationProperty Name="Lokator" Relationship="Self.FK_Umowa_ToTable_1" FromRole="Umowa" ToRole="Lokator" />
+          <NavigationProperty Name="Mieszkanie" Relationship="Self.FK_Umowa_ToTable" FromRole="Umowa" ToRole="Mieszkanie" />
         </EntityType>
         <EntityType Name="Pracownicy_Odp">
           <Key>
@@ -166,65 +291,156 @@ warning 6002: The table/view 'C:\USERS\DANIEL-PC\DESKTOP\BAZY\PROJEKT\MIESZKANIA
           <Property Name="IdPracownika" Type="Int32" Nullable="false" />
           <Property Name="IdMieszkania" Type="Int32" Nullable="false" />
         </EntityType>
+        <Association Name="FK_Czynsz_Wplywy_ToTable">
+          <End Role="Umowa" Type="Self.Umowa" Multiplicity="1" />
+          <End Role="Czynsz_Wplywy" Type="Self.Czynsz_Wplywy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Umowa">
+              <PropertyRef Name="IdUmowy" />
+            </Principal>
+            <Dependent Role="Czynsz_Wplywy">
+              <PropertyRef Name="IdUmowy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Umowa_ToTable_1">
+          <End Role="Lokator" Type="Self.Lokator" Multiplicity="1" />
+          <End Role="Umowa" Type="Self.Umowa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lokator">
+              <PropertyRef Name="IdLokatora" />
+            </Principal>
+            <Dependent Role="Umowa">
+              <PropertyRef Name="IdLokatora" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Remonty_ToTable">
+          <End Role="Mieszkanie" Type="Self.Mieszkanie" Multiplicity="1" />
+          <End Role="Remonty" Type="Self.Remonty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mieszkanie">
+              <PropertyRef Name="IdMieszkania" />
+            </Principal>
+            <Dependent Role="Remonty">
+              <PropertyRef Name="IdMieszkania" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Umowa_ToTable">
+          <End Role="Mieszkanie" Type="Self.Mieszkanie" Multiplicity="1" />
+          <End Role="Umowa" Type="Self.Umowa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mieszkanie">
+              <PropertyRef Name="IdMieszkania" />
+            </Principal>
+            <Dependent Role="Umowa">
+              <PropertyRef Name="IdMieszkania" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pracownicy_ToTable">
+          <End Role="Stanowiska" Type="Self.Stanowiska" Multiplicity="1" />
+          <End Role="Pracownicy" Type="Self.Pracownicy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stanowiska">
+              <PropertyRef Name="IdStanowiska" />
+            </Principal>
+            <Dependent Role="Pracownicy">
+              <PropertyRef Name="IdStanowisko" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="DostepPrac" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Autoryzacja" EntityType="Self.Autoryzacja" />
+          <EntitySet Name="Czynsz_Wplywy" EntityType="Self.Czynsz_Wplywy" />
           <EntitySet Name="Lokator" EntityType="Self.Lokator" />
           <EntitySet Name="Mieszkanie" EntityType="Self.Mieszkanie" />
           <EntitySet Name="Pracownicy" EntityType="Self.Pracownicy" />
           <EntitySet Name="Remonty" EntityType="Self.Remonty" />
+          <EntitySet Name="Stanowiska" EntityType="Self.Stanowiska" />
           <EntitySet Name="Umowa" EntityType="Self.Umowa" />
           <EntitySet Name="Pracownicy_Odp" EntityType="Self.Pracownicy_Odp" />
+          <AssociationSet Name="FK_Czynsz_Wplywy_ToTable" Association="Self.FK_Czynsz_Wplywy_ToTable">
+            <End Role="Umowa" EntitySet="Umowa" />
+            <End Role="Czynsz_Wplywy" EntitySet="Czynsz_Wplywy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Umowa_ToTable_1" Association="Self.FK_Umowa_ToTable_1">
+            <End Role="Lokator" EntitySet="Lokator" />
+            <End Role="Umowa" EntitySet="Umowa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Remonty_ToTable" Association="Self.FK_Remonty_ToTable">
+            <End Role="Mieszkanie" EntitySet="Mieszkanie" />
+            <End Role="Remonty" EntitySet="Remonty" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Umowa_ToTable" Association="Self.FK_Umowa_ToTable">
+            <End Role="Mieszkanie" EntitySet="Mieszkanie" />
+            <End Role="Umowa" EntitySet="Umowa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pracownicy_ToTable" Association="Self.FK_Pracownicy_ToTable">
+            <End Role="Stanowiska" EntitySet="Stanowiska" />
+            <End Role="Pracownicy" EntitySet="Pracownicy" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="MieszkaniaModelStoreContainer" CdmEntityContainer="DostepPrac">
-          <EntitySetMapping Name="Autoryzacja">
-            <EntityTypeMapping TypeName="MieszkaniaModel.Autoryzacja">
-              <MappingFragment StoreEntitySet="Autoryzacja">
-                <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
-                <ScalarProperty Name="Login" ColumnName="Login" />
-                <ScalarProperty Name="Haslo" ColumnName="Haslo" />
+        <EntityContainerMapping StorageEntityContainer="MieszkaniaModel1StoreContainer" CdmEntityContainer="DostepPrac">
+          <EntitySetMapping Name="Czynsz_Wplywy">
+            <EntityTypeMapping TypeName="MieszkaniaModel1.Czynsz_Wplywy">
+              <MappingFragment StoreEntitySet="Czynsz_Wplywy">
+                <ScalarProperty Name="IdCzynszu" ColumnName="IdCzynszu" />
+                <ScalarProperty Name="IdUmowy" ColumnName="IdUmowy" />
+                <ScalarProperty Name="Kwota" ColumnName="Kwota" />
+                <ScalarProperty Name="Termin_Rozliczenia" ColumnName="Termin_Rozliczenia" />
+                <ScalarProperty Name="Zaplacone" ColumnName="Zaplacone" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Lokator">
-            <EntityTypeMapping TypeName="MieszkaniaModel.Lokator">
+            <EntityTypeMapping TypeName="MieszkaniaModel1.Lokator">
               <MappingFragment StoreEntitySet="Lokator">
                 <ScalarProperty Name="IdLokatora" ColumnName="IdLokatora" />
                 <ScalarProperty Name="Imie" ColumnName="Imie" />
                 <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
-                <ScalarProperty Name="NrTelefonu" ColumnName="NrTelefonu" />
+                <ScalarProperty Name="Pesel" ColumnName="Pesel" />
+                <ScalarProperty Name="Nr_Telefonu" ColumnName="Nr_Telefonu" />
+                <ScalarProperty Name="Adres_Korespondecyjny" ColumnName="Adres_Korespondecyjny" />
+                <ScalarProperty Name="Adres_Mailowy" ColumnName="Adres_Mailowy" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Mieszkanie">
-            <EntityTypeMapping TypeName="MieszkaniaModel.Mieszkanie">
+            <EntityTypeMapping TypeName="MieszkaniaModel1.Mieszkanie">
               <MappingFragment StoreEntitySet="Mieszkanie">
                 <ScalarProperty Name="IdMieszkania" ColumnName="IdMieszkania" />
                 <ScalarProperty Name="Miasto" ColumnName="Miasto" />
                 <ScalarProperty Name="Kod_Pocztowy" ColumnName="Kod_Pocztowy" />
                 <ScalarProperty Name="Ulica" ColumnName="Ulica" />
                 <ScalarProperty Name="Nr_Domu" ColumnName="Nr_Domu" />
-                <ScalarProperty Name="Mieszkanie1" ColumnName="Mieszkanie1" />
+                <ScalarProperty Name="Nr_Mieszkania" ColumnName="Nr_Mieszkania" />
                 <ScalarProperty Name="Status_Mieszkania" ColumnName="Status_Mieszkania" />
+                <ScalarProperty Name="Posiadane" ColumnName="Posiadane" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Pracownicy">
-            <EntityTypeMapping TypeName="MieszkaniaModel.Pracownicy">
+            <EntityTypeMapping TypeName="MieszkaniaModel1.Pracownicy">
               <MappingFragment StoreEntitySet="Pracownicy">
                 <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
                 <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
                 <ScalarProperty Name="Imie" ColumnName="Imie" />
                 <ScalarProperty Name="NrTel" ColumnName="NrTel" />
+                <ScalarProperty Name="Pesel" ColumnName="Pesel" />
+                <ScalarProperty Name="Miasto_Zamieszkania" ColumnName="Miasto_Zamieszkania" />
+                <ScalarProperty Name="Adres_Zamieszkania" ColumnName="Adres_Zamieszkania" />
+                <ScalarProperty Name="IdStanowisko" ColumnName="IdStanowisko" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Remonty">
-            <EntityTypeMapping TypeName="MieszkaniaModel.Remonty">
+            <EntityTypeMapping TypeName="MieszkaniaModel1.Remonty">
               <MappingFragment StoreEntitySet="Remonty">
                 <ScalarProperty Name="IdRemontu" ColumnName="IdRemontu" />
                 <ScalarProperty Name="IdMieszkania" ColumnName="IdMieszkania" />
@@ -235,22 +451,30 @@ warning 6002: The table/view 'C:\USERS\DANIEL-PC\DESKTOP\BAZY\PROJEKT\MIESZKANIA
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Stanowiska">
+            <EntityTypeMapping TypeName="MieszkaniaModel1.Stanowiska">
+              <MappingFragment StoreEntitySet="Stanowiska">
+                <ScalarProperty Name="IdStanowiska" ColumnName="IdStanowiska" />
+                <ScalarProperty Name="Nazwa_Stanowiska" ColumnName="Nazwa_Stanowiska" />
+                <ScalarProperty Name="Opis_Stanowiska" ColumnName="Opis_Stanowiska" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Umowa">
-            <EntityTypeMapping TypeName="MieszkaniaModel.Umowa">
+            <EntityTypeMapping TypeName="MieszkaniaModel1.Umowa">
               <MappingFragment StoreEntitySet="Umowa">
                 <ScalarProperty Name="IdUmowy" ColumnName="IdUmowy" />
                 <ScalarProperty Name="IdMieszkania" ColumnName="IdMieszkania" />
                 <ScalarProperty Name="IdLokatora" ColumnName="IdLokatora" />
                 <ScalarProperty Name="Od_Kiedy" ColumnName="Od_Kiedy" />
                 <ScalarProperty Name="Do_Kiedy" ColumnName="Do_Kiedy" />
-                <ScalarProperty Name="Termin_Rozliczenia" ColumnName="Termin_Rozliczenia" />
-                <ScalarProperty Name="Czynsz" ColumnName="Czynsz" />
+                <ScalarProperty Name="Stawka_Czynsz" ColumnName="Stawka_Czynsz" />
                 <ScalarProperty Name="Oplaty_Stale" ColumnName="Oplaty_Stale" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Pracownicy_Odp">
-            <EntityTypeMapping TypeName="MieszkaniaModel.Pracownicy_Odp">
+            <EntityTypeMapping TypeName="MieszkaniaModel1.Pracownicy_Odp">
               <MappingFragment StoreEntitySet="Pracownicy_Odp">
                 <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
                 <ScalarProperty Name="IdMieszkania" ColumnName="IdMieszkania" />

@@ -10,11 +10,13 @@ namespace Mieszkania
     {
         private string login,imie,nazwisko;
         private int idPrac;
+        private bool aktywny;
 
-        public User(string log,int id,string imie="",string nazwisko="")
+        public User(string log,int id,bool aktywny,string imie="",string nazwisko="")
         {
             this.login = log;
             this.idPrac = id;
+            this.aktywny = aktywny;
             this.imie = imie;
             this.nazwisko = nazwisko;
         }
@@ -36,6 +38,11 @@ namespace Mieszkania
         public string getNazwisko()
         {
             return this.nazwisko;
+        }
+
+        public bool getAktywny()
+        {
+            return this.aktywny;
         }
     }
 }

@@ -1,0 +1,32 @@
+﻿<Window x:Class="Mieszkania.Mieszkania_Soft_Pracownik"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mieszkania"
+        mc:Ignorable="d"
+        Title="Mieszkania_Soft" Height="541.324" Width="900">
+    <Grid>
+        <DockPanel x:Name="PanelWidok" RenderTransformOrigin="-0.603,-0.327" Margin="300,0,0,0">
+            <Label Content="" HorizontalAlignment="Left" Height="155" Margin="119,136,0,172" Width="336"/>
+        </DockPanel>
+        <StackPanel x:Name="PanelMenu" Margin="0,0,0,0.4" Background="#2ec4b6" HorizontalAlignment="Left" Width="300">
+
+            <Label Content="Menu" HorizontalAlignment="Left" Height="36" HorizontalContentAlignment="Center" Margin="75,0,0,0" Width="150" Foreground="White" FontSize="22"/>
+            <Button x:Name="btn_DodajMie" Content="Dodaj Mieszkanie" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Height="35" Margin="25,0,0,0" Width="250" Click="btn_DodajMie_Click"/>
+            <Button x:Name="btn_DodajRemont" Content="Dodaj Remont" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Height="35" Margin="25,5,0,0" Width="250" Click="btn_DodajRemont_Click"/>
+            <Button x:Name="btn_wyswietlanie" Content="Wywietl_testy" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Height="35" Margin="25,5,0,0" Width="250" Click="btn_wyswietlanie_Click"/>
+            <Button x:Name="btn_dodajLok" Content="Dodaj Lokatora" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Height="35" Margin="25,5,0,0" Width="250" Click="btn_dodajLok_Click"/>
+            <Button x:Name="btn_dodajUmowe" Content="Dodaj Umowe" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Height="35" Margin="25,5,0,0" Width="250" Click="btn_dodajUmowe_Click"/>
+            <Button x:Name="btn_ModyfikujM" Content="Modyfikuj Mieszkanie" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Height="35" Margin="25,5,0,0" Width="250" Click="btn_ModyfikujM_Click"/>
+            <Button x:Name="btn_DodajP" Content="Dodaj Pracownika" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Height="35" Margin="25,5,0,0" Width="250" Click="btn_DodajP_Click"/>
+            <Button x:Name="btn_ModyfikujL" Content="Modyfikuj Lokatora" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Height="35" Margin="25,5,0,0" Width="250" Click="btn_ModyfikujL_Click"/>
+            <Button x:Name="btn_ModyfikujR" Content="Modyfikuj Remont" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Height="35" Margin="25,5,0,0" Width="250" Click="btn_ModyfikujR_Click"/>
+            <Button x:Name="btn_ModyfikujP" Content="Modyfikuj Pracownika" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Height="18" Margin="25,5,0,0" Width="250" Click="btn_ModyfikujP_Click"/>
+            <Button x:Name="btn_ModyfikujU" Content="Modyfikuj Umowe" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Height="21" Margin="25,5,0,0" Width="250" Click="btn_ModyfikujU_Click"/>
+            <Button x:Name="btn_Inne" Content="inne" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Height="21" Margin="25,5,0,0" Width="250" Click="btn_Inne_Click"/>
+            <Button x:Name="btn_Logout_Copy" Content="Wyloguj" HorizontalAlignment="Left" Foreground="#2ec4b6" Background="#cbf3f0" Height="29" Margin="25,5,0,0" Width="250" Click="btn_Logout_Click"/>
+
+        </StackPanel>
+    </Grid>
+</Window>

@@ -61,9 +61,8 @@ namespace Mieszkania
                     {
                         Od_Kiedy = dataP,
                         Do_Kiedy = dataK,
-                        Czynsz = czynsz,
+                        Stawka_Czynsz = czynsz,
                         Oplaty_Stale = oplaty,
-                        Termin_Rozliczenia = dataRozl,
                         IdMieszkania = id_m,
                         IdLokatora = id_l
 

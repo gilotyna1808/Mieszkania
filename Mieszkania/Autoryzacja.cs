@@ -17,5 +17,6 @@ namespace Mieszkania
         public int IdPracownika { get; set; }
         public string Login { get; set; }
         public string Haslo { get; set; }
+        public Nullable<bool> Aktywne { get; set; }
     }
 }

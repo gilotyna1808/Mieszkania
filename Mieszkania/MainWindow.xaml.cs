@@ -33,9 +33,19 @@ namespace Mieszkania
             uzytkownik = aut.uzytkownik;
             if (uzytkownik != null)
             {
-                Mieszkania_Soft prog = new Mieszkania_Soft(uzytkownik);
-                prog.Show();
-                this.Close();
+                if (uzytkownik.getAktywny()) 
+                {
+                    Mieszkania_Soft_Pracownik prog = new Mieszkania_Soft_Pracownik(uzytkownik);
+                    prog.Show();
+                    this.Close();
+                }
+                else
+                {
+                    Mieszkania_Soft_Nieaktywne prog = new Mieszkania_Soft_Nieaktywne(uzytkownik);
+                    prog.Show();
+                    this.Close();
+                }
+                
             }
         }
     }

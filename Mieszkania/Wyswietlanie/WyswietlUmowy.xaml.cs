@@ -26,7 +26,7 @@ namespace Mieszkania.Wyswietlanie
            var dba = new DostepPrac();
            var querry =
               from a in dba.Umowa
-              select new {a.IdUmowy,a.Od_Kiedy,a.Do_Kiedy,a.Czynsz,a.Oplaty_Stale,a.IdMieszkania,a.IdLokatora};
+              select new {a.IdUmowy,a.Od_Kiedy,a.Do_Kiedy,a.Stawka_Czynsz,a.Oplaty_Stale,a.IdMieszkania,a.IdLokatora};
            dataG.ItemsSource = querry.ToList();
         }
 

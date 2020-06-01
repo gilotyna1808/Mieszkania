@@ -41,7 +41,7 @@ namespace Mieszkania.Wyswietlanie
                     var i = com.Mieszkanie.Where(s => s.IdMieszkania == temp_id);
                     txt_kod.Text = Convert.ToString(i.Select(s => s.Kod_Pocztowy).FirstOrDefault());
                     txt_miasto.Text = Convert.ToString(i.Select(s => s.Miasto).FirstOrDefault());
-                    txt_miesz.Text = Convert.ToString(i.Select(s => s.Mieszkanie1).FirstOrDefault());
+                    txt_miesz.Text = Convert.ToString(i.Select(s => s.Nr_Mieszkania).FirstOrDefault());
                     txt_nr.Text = Convert.ToString(i.Select(s => s.Nr_Domu).FirstOrDefault());
                     txt_status.Text = Convert.ToString(i.Select(s => s.Status_Mieszkania).FirstOrDefault());
                     txt_ul.Text = Convert.ToString(i.Select(s => s.Ulica).FirstOrDefault());
@@ -83,7 +83,7 @@ namespace Mieszkania.Wyswietlanie
                             m.Kod_Pocztowy = txt_kod.Text;
                             m.Ulica = txt_ul.Text;
                             m.Nr_Domu = txt_nr.Text;
-                            m.Mieszkanie1 = txt_miesz.Text;
+                            m.Nr_Mieszkania = txt_miesz.Text;
                             m.Status_Mieszkania = txt_status.Text;
                         }
                     }
