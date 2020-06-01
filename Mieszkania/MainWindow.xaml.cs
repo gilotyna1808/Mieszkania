@@ -35,9 +35,19 @@ namespace Mieszkania
             {
                 if (uzytkownik.getAktywny()) 
                 {
-                    Mieszkania_Soft_Pracownik prog = new Mieszkania_Soft_Pracownik(uzytkownik);
-                    prog.Show();
-                    this.Close();
+                    if (uzytkownik.getIdStanowiska()==1)
+                    {
+                        Mieszkania_Soft_Administrator prog = new Mieszkania_Soft_Administrator(uzytkownik);
+                        prog.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        Mieszkania_Soft_Pracownik prog = new Mieszkania_Soft_Pracownik(uzytkownik);
+                        prog.Show();
+                        this.Close();
+                    }
+                    
                 }
                 else
                 {

@@ -499,3 +499,7 @@ C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Danielv2\gilotyna1808\Mieszkania\Mieszka
 C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Danielv2\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Mieszkania_Soft_Pracownik.baml
 C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Danielv2\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Mieszkania_Soft_Nieaktywne.g.cs
 C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Danielv2\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Mieszkania_Soft_Nieaktywne.baml
+C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Danielv2\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Mieszkania_Soft_Administrator.g.cs
+C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Danielv2\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Mieszkania_Soft_Administrator.baml
+C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Danielv2\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Wyswietlanie\WyswietlPracownika.g.cs
+C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Danielv2\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Wyswietlanie\WyswietlPracownika.baml

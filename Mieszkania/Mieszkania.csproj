@@ -376,6 +376,9 @@
     <Compile Include="Lokator.cs">
       <DependentUpon>DostepPrac.tt</DependentUpon>
     </Compile>
+    <Compile Include="Mieszkania_Soft_Administrator.xaml.cs">
+      <DependentUpon>Mieszkania_Soft_Administrator.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Mieszkania_Soft_Nieaktywne.xaml.cs">
       <DependentUpon>Mieszkania_Soft_Nieaktywne.xaml</DependentUpon>
     </Compile>
@@ -451,6 +454,9 @@
     <Compile Include="Wyswietlanie\WyswietlPrac.xaml.cs">
       <DependentUpon>WyswietlPrac.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Wyswietlanie\WyswietlPracownika.xaml.cs">
+      <DependentUpon>WyswietlPracownika.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Wyswietlanie\WyswietlRemonty.xaml.cs">
       <DependentUpon>WyswietlRemonty.xaml</DependentUpon>
     </Compile>
@@ -500,6 +506,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Mieszkania_Soft_Administrator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Mieszkania_Soft_Nieaktywne.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -577,6 +587,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Wyswietlanie\WyswietlPrac.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Wyswietlanie\WyswietlPracownika.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

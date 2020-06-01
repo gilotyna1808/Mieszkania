@@ -31,7 +31,7 @@ namespace Mieszkania
         {
             string log = Convert.ToString(autLogin.Text);
             string pass = Convert.ToString(autPass.Password);
-            int id;
+            int id,idStan;
             string im="", naz="";
             bool aktywny;
             var querry =
@@ -49,8 +49,9 @@ namespace Mieszkania
                     var i = com.Pracownicy.Where(s => s.IdPracownika == id);
                     im= Convert.ToString(i.Select(s => s.Imie).FirstOrDefault());
                     naz = Convert.ToString(i.Select(s => s.Nazwisko).FirstOrDefault());
+                    idStan = Convert.ToInt32(i.Select(s => s.IdStanowisko).FirstOrDefault());
                 }
-                uzytkownik = new User(log, id,aktywny,im,naz);
+                uzytkownik = new User(log, id,aktywny,idStan,im,naz);
             }
 
             else
