@@ -38,7 +38,7 @@ namespace Mieszkania
                     var i = com.Lokator.Where(s => s.IdLokatora == temp_id);
                     txt_imieLok.Text = Convert.ToString(i.Select(s => s.Imie).FirstOrDefault());
                     txt_nazLok.Text = Convert.ToString(i.Select(s => s.Nazwisko).FirstOrDefault());
-                    txt_telLok.Text= Convert.ToString(i.Select(s => s.NrTelefonu).FirstOrDefault());
+                    txt_telLok.Text= Convert.ToString(i.Select(s => s.Nr_Telefonu).FirstOrDefault());
 
                 }
             }
@@ -67,7 +67,7 @@ namespace Mieszkania
                         {
                             l.Imie = imie;
                             l.Nazwisko = naz;
-                            l.NrTelefonu = nrT;
+                            l.Nr_Telefonu = nrT;
                         }
                     }
                     dp.SaveChanges();

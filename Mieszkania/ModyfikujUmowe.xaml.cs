@@ -38,10 +38,9 @@ namespace Mieszkania
                 {
                     var i = com.Umowa.Where(s => s.IdUmowy == temp_id);
                     txt_coplaty.Text = Convert.ToString(i.Select(s => s.Oplaty_Stale).FirstOrDefault());
-                    txt_czynsz.Text = Convert.ToString(i.Select(s => s.Czynsz).FirstOrDefault());
+                    txt_czynsz.Text = Convert.ToString(i.Select(s => s.Stawka_Czynsz).FirstOrDefault());
                     txt_do_kiedy.Text = Convert.ToString(i.Select(s => s.Do_Kiedy).FirstOrDefault());
                     txt_od_kiedy.Text = Convert.ToString(i.Select(s => s.Do_Kiedy).FirstOrDefault());
-                    txt_termin_roz.Text = Convert.ToString(i.Select(s => s.Termin_Rozliczenia).FirstOrDefault());
                     txt_idL.Text = Convert.ToString(i.Select(s => s.IdLokatora).FirstOrDefault());
                     txt_idM.Text = Convert.ToString(i.Select(s => s.IdMieszkania).FirstOrDefault());
                 }
@@ -80,11 +79,10 @@ namespace Mieszkania
                     {
                         if (u.IdUmowy == temp_id)
                         {
-                            u.Czynsz = Convert.ToDecimal(txt_czynsz.Text);
+                            u.Stawka_Czynsz = Convert.ToDecimal(txt_czynsz.Text);
                             u.Oplaty_Stale = Convert.ToDecimal(txt_coplaty.Text);
                             u.Od_Kiedy = Convert.ToDateTime(txt_od_kiedy.Text);
                             u.Do_Kiedy = Convert.ToDateTime(txt_do_kiedy.Text);
-                            u.Termin_Rozliczenia = Convert.ToDateTime(txt_termin_roz.Text);
                         }
                     }
                     dp.SaveChanges();

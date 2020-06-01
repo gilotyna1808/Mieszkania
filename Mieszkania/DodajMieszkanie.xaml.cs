@@ -52,7 +52,7 @@ namespace Mieszkania
                     var m = new Mieszkanie()
                     {
                         Miasto=miasto,
-                        Mieszkanie1=mieszkanie,
+                        Nr_Mieszkania=mieszkanie,
                         Nr_Domu=nrDomu,
                         Ulica=ulica,
                         Status_Mieszkania=status,

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DostepAutoryzacja.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="MieszkaniaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Autoryzacja">
           <Key>
             <PropertyRef Name="IdPracownika" />
@@ -12,15 +12,16 @@
           <Property Name="IdPracownika" Type="int" Nullable="false" />
           <Property Name="Login" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="Haslo" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Aktywne" Type="bit" />
         </EntityType>
-        <EntityContainer Name="DostepAutoryzacjaStoreContainer">
+        <EntityContainer Name="MieszkaniaModelStoreContainer">
           <EntitySet Name="Autoryzacja" EntityType="Self.Autoryzacja" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="DostepAutoryzacja" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="MieszkaniaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Autoryzacja">
           <Key>
             <PropertyRef Name="IdPracownika" />
@@ -28,6 +29,7 @@
           <Property Name="IdPracownika" Type="Int32" Nullable="false" />
           <Property Name="Login" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Haslo" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Aktywne" Type="Boolean" />
         </EntityType>
         <EntityContainer Name="DostepAut" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Autoryzacja" EntityType="Self.Autoryzacja" />
@@ -37,13 +39,14 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DostepAutoryzacjaStoreContainer" CdmEntityContainer="DostepAut">
+        <EntityContainerMapping StorageEntityContainer="MieszkaniaModelStoreContainer" CdmEntityContainer="DostepAut">
           <EntitySetMapping Name="Autoryzacja">
-            <EntityTypeMapping TypeName="DostepAutoryzacja.Autoryzacja">
+            <EntityTypeMapping TypeName="MieszkaniaModel.Autoryzacja">
               <MappingFragment StoreEntitySet="Autoryzacja">
                 <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
                 <ScalarProperty Name="Login" ColumnName="Login" />
                 <ScalarProperty Name="Haslo" ColumnName="Haslo" />
+                <ScalarProperty Name="Aktywne" ColumnName="Aktywne" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

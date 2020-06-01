@@ -322,6 +322,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Autoryzacja.cs">
+      <DependentUpon>DostepAut.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Czynsz_Wplywy.cs">
       <DependentUpon>DostepPrac.tt</DependentUpon>
     </Compile>
     <Compile Include="DodajMieszkanie.xaml.cs">
@@ -373,13 +376,11 @@
     <Compile Include="Lokator.cs">
       <DependentUpon>DostepPrac.tt</DependentUpon>
     </Compile>
-    <Compile Include="MieszkaniaDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MieszkaniaDataSet.xsd</DependentUpon>
+    <Compile Include="Mieszkania_Soft_Nieaktywne.xaml.cs">
+      <DependentUpon>Mieszkania_Soft_Nieaktywne.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Mieszkania_Soft.xaml.cs">
-      <DependentUpon>Mieszkania_Soft.xaml</DependentUpon>
+    <Compile Include="Mieszkania_Soft_Pracownik.xaml.cs">
+      <DependentUpon>Mieszkania_Soft_Pracownik.xaml</DependentUpon>
     </Compile>
     <Compile Include="Mieszkanie.cs">
       <DependentUpon>DostepPrac.tt</DependentUpon>
@@ -406,6 +407,9 @@
       <DependentUpon>DostepPrac.tt</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Stanowiska.cs">
+      <DependentUpon>DostepPrac.tt</DependentUpon>
+    </Compile>
     <Compile Include="test.xaml.cs">
       <DependentUpon>test.xaml</DependentUpon>
     </Compile>
@@ -496,7 +500,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Mieszkania_Soft.xaml">
+    <Page Include="Mieszkania_Soft_Nieaktywne.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Mieszkania_Soft_Pracownik.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -599,7 +607,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Testowy.rdlc" />
     <EntityDeploy Include="DostepAut.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DostepAut.Designer.cs</LastGenOutput>
@@ -614,17 +621,6 @@
     <None Include="DostepPrac.edmx.diagram">
       <DependentUpon>DostepPrac.edmx</DependentUpon>
     </None>
-    <None Include="MieszkaniaDataSet.xsc">
-      <DependentUpon>MieszkaniaDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="MieszkaniaDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MieszkaniaDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="MieszkaniaDataSet.xss">
-      <DependentUpon>MieszkaniaDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -635,6 +631,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="img\dach.png" />
+    <Resource Include="img\house.jpg" />
     <Content Include="DostepAut.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DostepAut.edmx</DependentUpon>
@@ -655,8 +653,6 @@
       <DependentUpon>DostepPrac.edmx</DependentUpon>
       <LastGenOutput>DostepPrac.cs</LastGenOutput>
     </Content>
-    <Resource Include="img\dach.png" />
-    <Resource Include="img\house.jpg" />
     <Content Include="Mieszkania.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

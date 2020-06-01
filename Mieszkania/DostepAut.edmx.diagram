@@ -4,8 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e9f3ad38b44446e7a6fffd0eea0f2afd" Name="Diagram1">
-        <EntityTypeShape EntityType="DostepAutoryzacja.Autoryzacja" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="f33264cfeb2a4ff9b4f987ad8b835d93" Name="Diagram1">
+        <EntityTypeShape EntityType="MieszkaniaModel.Autoryzacja" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

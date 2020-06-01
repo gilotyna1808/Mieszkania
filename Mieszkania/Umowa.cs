@@ -14,13 +14,23 @@ namespace Mieszkania
     
     public partial class Umowa
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Umowa()
+        {
+            this.Czynsz_Wplywy = new HashSet<Czynsz_Wplywy>();
+        }
+    
         public int IdUmowy { get; set; }
         public int IdMieszkania { get; set; }
         public int IdLokatora { get; set; }
         public System.DateTime Od_Kiedy { get; set; }
         public Nullable<System.DateTime> Do_Kiedy { get; set; }
-        public Nullable<System.DateTime> Termin_Rozliczenia { get; set; }
-        public decimal Czynsz { get; set; }
+        public decimal Stawka_Czynsz { get; set; }
         public decimal Oplaty_Stale { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Czynsz_Wplywy> Czynsz_Wplywy { get; set; }
+        public virtual Lokator Lokator { get; set; }
+        public virtual Mieszkanie Mieszkanie { get; set; }
     }
 }

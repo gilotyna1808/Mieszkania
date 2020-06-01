@@ -27,7 +27,7 @@ namespace Mieszkania.Wyswietlanie
             var dba = new DostepPrac();
             var querry =
                from a in dba.Lokator
-               select new {a.IdLokatora,a.Imie,a.Nazwisko,a.NrTelefonu};
+               select new {a.IdLokatora,a.Imie,a.Nazwisko,a.Nr_Telefonu};
             dataG.ItemsSource = querry.ToList();
         }
 

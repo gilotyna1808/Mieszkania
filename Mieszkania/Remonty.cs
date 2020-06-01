@@ -20,5 +20,7 @@ namespace Mieszkania
         public decimal Koszt_Remontu { get; set; }
         public System.DateTime Data_Rozpoczecia { get; set; }
         public Nullable<System.DateTime> Data_Zakonczenia { get; set; }
+    
+        public virtual Mieszkanie Mieszkanie { get; set; }
     }
 }

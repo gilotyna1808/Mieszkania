@@ -53,7 +53,7 @@ namespace Mieszkania.Dodawanie
                     {
                         Imie = imie,
                         Nazwisko = nazwisko,
-                        NrTelefonu = nrTel
+                        Nr_Telefonu = nrTel
                     };
                     db.Lokator.Add(m);
                     db.SaveChanges();
@@ -63,7 +63,7 @@ namespace Mieszkania.Dodawanie
                     var db = new DostepPrac();
                     var querry =
                     from a in db.Lokator
-                    where (a.Imie == imie && a.Nazwisko == nazwisko && a.NrTelefonu == nrTel)
+                    where (a.Imie == imie && a.Nazwisko == nazwisko && a.Nr_Telefonu == nrTel)
                     select new { a.IdLokatora };
                     if (querry.Count() == 1)
                     {

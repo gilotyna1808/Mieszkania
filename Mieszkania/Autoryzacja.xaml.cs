@@ -33,13 +33,15 @@ namespace Mieszkania
             string pass = Convert.ToString(autPass.Password);
             int id;
             string im="", naz="";
+            bool aktywny;
             var querry =
                 from a in dostepM.Autoryzacja
                 where (a.Login == log && a.Haslo == pass)
-                select new { a.Haslo, a.IdPracownika };
+                select new { a.Haslo, a.IdPracownika,a.Aktywne };
             if (querry.Count() == 1)
             {
                 id = ((Convert.ToInt32(querry.ToList().Last().IdPracownika)));
+                aktywny = Convert.ToBoolean(querry.ToList().Last().Aktywne);
                 
                 this.Close();
                 using (var com = new DostepPrac())
@@ -48,7 +50,7 @@ namespace Mieszkania
                     im= Convert.ToString(i.Select(s => s.Imie).FirstOrDefault());
                     naz = Convert.ToString(i.Select(s => s.Nazwisko).FirstOrDefault());
                 }
-                uzytkownik = new User(log, id,im,naz);
+                uzytkownik = new User(log, id,aktywny,im,naz);
             }
 
             else

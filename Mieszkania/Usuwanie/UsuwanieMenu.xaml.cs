@@ -22,13 +22,14 @@ namespace Mieszkania.Usuwanie
     public partial class UsuwanieMenu : UserControl
     {
         User uzytkownik;
-        Mieszkania_Soft baze;
-        public UsuwanieMenu(Mieszkania_Soft w, User u)
+        Mieszkania_Soft_Pracownik baze;
+        public UsuwanieMenu(Mieszkania_Soft_Pracownik w, User u)
         {
             baze = w;
             uzytkownik = u;
             InitializeComponent();
         }
+
 
         private void btn1_Click(object sender, RoutedEventArgs e)
         {

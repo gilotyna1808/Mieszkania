@@ -18,5 +18,11 @@ namespace Mieszkania
         public string Nazwisko { get; set; }
         public string Imie { get; set; }
         public string NrTel { get; set; }
+        public string Pesel { get; set; }
+        public string Miasto_Zamieszkania { get; set; }
+        public string Adres_Zamieszkania { get; set; }
+        public int IdStanowisko { get; set; }
+    
+        public virtual Stanowiska Stanowiska { get; set; }
     }
 }
