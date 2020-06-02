@@ -8,6 +8,7 @@
           <ScalarProperty Name="Login" ColumnName="Login" />
           <ScalarProperty Name="Haslo" ColumnName="Haslo" />
           <ScalarProperty Name="Aktywne" ColumnName="Aktywne" />
+          <ScalarProperty Name="IdKonta" ColumnName="IdKonta" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

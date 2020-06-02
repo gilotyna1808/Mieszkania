@@ -53,7 +53,7 @@ namespace Mieszkania.Wyswietlanie
 
         private void btn_r_Click(object sender, RoutedEventArgs e)
         {
-            WyswietlRemonty r = new WyswietlRemonty();
+            WyswietlRemonty r = new WyswietlRemonty(uzytkownik);
             r.Show();
         }
     }

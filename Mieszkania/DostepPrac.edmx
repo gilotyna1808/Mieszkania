@@ -5,6 +5,16 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="MieszkaniaModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Autoryzacja">
+          <Key>
+            <PropertyRef Name="IdKonta" />
+          </Key>
+          <Property Name="IdPracownika" Type="int" Nullable="false" />
+          <Property Name="Login" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Haslo" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Aktywne" Type="bit" />
+          <Property Name="IdKonta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
         <EntityType Name="Czynsz_Wplywy">
           <Key>
             <PropertyRef Name="IdCzynszu" />
@@ -52,16 +62,15 @@
           <Property Name="Miasto_Zamieszkania" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="Adres_Zamieszkania" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="IdStanowisko" Type="int" Nullable="false" />
+          <Property Name="Zatrudniony" Type="bit" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'C:\USERS\DANIEL-PC\DESKTOP\BAZY\PROJEKT\DANIELV2\GILOTYNA1808\MIESZKANIA\MIESZKANIA\MIESZKANIA.MDF.dbo.Pracownicy_Odp' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Pracownicy_Odp">
           <Key>
-            <PropertyRef Name="IdPracownika" />
-            <PropertyRef Name="IdMieszkania" />
+            <PropertyRef Name="IdOperacji" />
           </Key>
           <Property Name="IdPracownika" Type="int" Nullable="false" />
           <Property Name="IdMieszkania" Type="int" Nullable="false" />
+          <Property Name="IdOperacji" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="Remonty">
           <Key>
@@ -155,19 +164,15 @@ warning 6002: The table/view 'C:\USERS\DANIEL-PC\DESKTOP\BAZY\PROJEKT\DANIELV2\G
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="MieszkaniaModel1StoreContainer">
+          <EntitySet Name="Autoryzacja" EntityType="Self.Autoryzacja" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Czynsz_Wplywy" EntityType="Self.Czynsz_Wplywy" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Lokator" EntityType="Self.Lokator" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Mieszkanie" EntityType="Self.Mieszkanie" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Pracownicy" EntityType="Self.Pracownicy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pracownicy_Odp" EntityType="Self.Pracownicy_Odp" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Remonty" EntityType="Self.Remonty" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Stanowiska" EntityType="Self.Stanowiska" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Umowa" EntityType="Self.Umowa" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Pracownicy_Odp" EntityType="Self.Pracownicy_Odp" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Pracownicy_Odp].[IdPracownika] AS [IdPracownika], 
-    [Pracownicy_Odp].[IdMieszkania] AS [IdMieszkania]
-    FROM [dbo].[Pracownicy_Odp] AS [Pracownicy_Odp]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_Czynsz_Wplywy_ToTable" Association="Self.FK_Czynsz_Wplywy_ToTable">
             <End Role="Umowa" EntitySet="Umowa" />
             <End Role="Czynsz_Wplywy" EntitySet="Czynsz_Wplywy" />
@@ -194,6 +199,16 @@ warning 6002: The table/view 'C:\USERS\DANIEL-PC\DESKTOP\BAZY\PROJEKT\DANIELV2\G
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MieszkaniaModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Autoryzacja">
+          <Key>
+            <PropertyRef Name="IdKonta" />
+          </Key>
+          <Property Name="IdPracownika" Type="Int32" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Haslo" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Aktywne" Type="Boolean" />
+          <Property Name="IdKonta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
         <EntityType Name="Czynsz_Wplywy">
           <Key>
             <PropertyRef Name="IdCzynszu" />
@@ -245,7 +260,16 @@ warning 6002: The table/view 'C:\USERS\DANIEL-PC\DESKTOP\BAZY\PROJEKT\DANIELV2\G
           <Property Name="Miasto_Zamieszkania" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Adres_Zamieszkania" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="IdStanowisko" Type="Int32" Nullable="false" />
+          <Property Name="Zatrudniony" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Stanowiska" Relationship="Self.FK_Pracownicy_ToTable" FromRole="Pracownicy" ToRole="Stanowiska" />
+        </EntityType>
+        <EntityType Name="Pracownicy_Odp">
+          <Key>
+            <PropertyRef Name="IdOperacji" />
+          </Key>
+          <Property Name="IdPracownika" Type="Int32" Nullable="false" />
+          <Property Name="IdMieszkania" Type="Int32" Nullable="false" />
+          <Property Name="IdOperacji" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="Remonty">
           <Key>
@@ -282,14 +306,6 @@ warning 6002: The table/view 'C:\USERS\DANIEL-PC\DESKTOP\BAZY\PROJEKT\DANIELV2\G
           <NavigationProperty Name="Czynsz_Wplywy" Relationship="Self.FK_Czynsz_Wplywy_ToTable" FromRole="Umowa" ToRole="Czynsz_Wplywy" />
           <NavigationProperty Name="Lokator" Relationship="Self.FK_Umowa_ToTable_1" FromRole="Umowa" ToRole="Lokator" />
           <NavigationProperty Name="Mieszkanie" Relationship="Self.FK_Umowa_ToTable" FromRole="Umowa" ToRole="Mieszkanie" />
-        </EntityType>
-        <EntityType Name="Pracownicy_Odp">
-          <Key>
-            <PropertyRef Name="IdPracownika" />
-            <PropertyRef Name="IdMieszkania" />
-          </Key>
-          <Property Name="IdPracownika" Type="Int32" Nullable="false" />
-          <Property Name="IdMieszkania" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="FK_Czynsz_Wplywy_ToTable">
           <End Role="Umowa" Type="Self.Umowa" Multiplicity="1" />
@@ -352,14 +368,15 @@ warning 6002: The table/view 'C:\USERS\DANIEL-PC\DESKTOP\BAZY\PROJEKT\DANIELV2\G
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="DostepPrac" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Autoryzacja" EntityType="Self.Autoryzacja" />
           <EntitySet Name="Czynsz_Wplywy" EntityType="Self.Czynsz_Wplywy" />
           <EntitySet Name="Lokator" EntityType="Self.Lokator" />
           <EntitySet Name="Mieszkanie" EntityType="Self.Mieszkanie" />
           <EntitySet Name="Pracownicy" EntityType="Self.Pracownicy" />
+          <EntitySet Name="Pracownicy_Odp" EntityType="Self.Pracownicy_Odp" />
           <EntitySet Name="Remonty" EntityType="Self.Remonty" />
           <EntitySet Name="Stanowiska" EntityType="Self.Stanowiska" />
           <EntitySet Name="Umowa" EntityType="Self.Umowa" />
-          <EntitySet Name="Pracownicy_Odp" EntityType="Self.Pracownicy_Odp" />
           <AssociationSet Name="FK_Czynsz_Wplywy_ToTable" Association="Self.FK_Czynsz_Wplywy_ToTable">
             <End Role="Umowa" EntitySet="Umowa" />
             <End Role="Czynsz_Wplywy" EntitySet="Czynsz_Wplywy" />
@@ -387,6 +404,17 @@ warning 6002: The table/view 'C:\USERS\DANIEL-PC\DESKTOP\BAZY\PROJEKT\DANIELV2\G
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="MieszkaniaModel1StoreContainer" CdmEntityContainer="DostepPrac">
+          <EntitySetMapping Name="Autoryzacja">
+            <EntityTypeMapping TypeName="MieszkaniaModel1.Autoryzacja">
+              <MappingFragment StoreEntitySet="Autoryzacja">
+                <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Haslo" ColumnName="Haslo" />
+                <ScalarProperty Name="Aktywne" ColumnName="Aktywne" />
+                <ScalarProperty Name="IdKonta" ColumnName="IdKonta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Czynsz_Wplywy">
             <EntityTypeMapping TypeName="MieszkaniaModel1.Czynsz_Wplywy">
               <MappingFragment StoreEntitySet="Czynsz_Wplywy">
@@ -436,6 +464,16 @@ warning 6002: The table/view 'C:\USERS\DANIEL-PC\DESKTOP\BAZY\PROJEKT\DANIELV2\G
                 <ScalarProperty Name="Miasto_Zamieszkania" ColumnName="Miasto_Zamieszkania" />
                 <ScalarProperty Name="Adres_Zamieszkania" ColumnName="Adres_Zamieszkania" />
                 <ScalarProperty Name="IdStanowisko" ColumnName="IdStanowisko" />
+                <ScalarProperty Name="Zatrudniony" ColumnName="Zatrudniony" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pracownicy_Odp">
+            <EntityTypeMapping TypeName="MieszkaniaModel1.Pracownicy_Odp">
+              <MappingFragment StoreEntitySet="Pracownicy_Odp">
+                <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
+                <ScalarProperty Name="IdMieszkania" ColumnName="IdMieszkania" />
+                <ScalarProperty Name="IdOperacji" ColumnName="IdOperacji" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -470,14 +508,6 @@ warning 6002: The table/view 'C:\USERS\DANIEL-PC\DESKTOP\BAZY\PROJEKT\DANIELV2\G
                 <ScalarProperty Name="Do_Kiedy" ColumnName="Do_Kiedy" />
                 <ScalarProperty Name="Stawka_Czynsz" ColumnName="Stawka_Czynsz" />
                 <ScalarProperty Name="Oplaty_Stale" ColumnName="Oplaty_Stale" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Pracownicy_Odp">
-            <EntityTypeMapping TypeName="MieszkaniaModel1.Pracownicy_Odp">
-              <MappingFragment StoreEntitySet="Pracownicy_Odp">
-                <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
-                <ScalarProperty Name="IdMieszkania" ColumnName="IdMieszkania" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -28,7 +28,7 @@ namespace Mieszkania
         private void btn_mainLog_Click(object sender, RoutedEventArgs e)
         {
             User uzytkownik=null;
-            Autoryzacja aut = new Autoryzacja();
+            AutoryzacjaO aut = new AutoryzacjaO();
             aut.ShowDialog();
             uzytkownik = aut.uzytkownik;
             if (uzytkownik != null)

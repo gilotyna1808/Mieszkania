@@ -25,22 +25,33 @@ namespace Mieszkania.Wyswietlanie
             int id = u.getIdPrac();
             InitializeComponent();
             id_w_m = 0;
-            var dba = new DostepPrac();
-            var querry =
-               from a in dba.Mieszkanie
-               join a2 in dba.Pracownicy_Odp  on a.IdMieszkania equals a2.IdMieszkania
-               where(a2.IdPracownika== id)
-               select new { a.IdMieszkania, a.Kod_Pocztowy, a.Miasto, a.Nr_Mieszkania, a.Nr_Domu, a.Status_Mieszkania, a.Ulica };
-            dataG.ItemsSource = querry.ToList();
+            if (u.getIdStanowiska() == 1) {
+                var dba = new DostepPrac();
+                var querry =
+                   from a in dba.Mieszkanie
+                   select new { a.IdMieszkania, a.Kod_Pocztowy, a.Miasto, a.Nr_Mieszkania, a.Nr_Domu, a.Status_Mieszkania, a.Ulica,a.Posiadane };
+                dataG.ItemsSource = querry.ToList();
+            }
+            else {
+                var dba = new DostepPrac();
+                var querry =
+                   from a in dba.Mieszkanie
+                   join a2 in dba.Pracownicy_Odp on a.IdMieszkania equals a2.IdMieszkania
+                   where (a2.IdPracownika == id && a.Posiadane == true)
+                   select new { a.IdMieszkania, a.Kod_Pocztowy, a.Miasto, a.Nr_Mieszkania, a.Nr_Domu, a.Status_Mieszkania, a.Ulica };
+                dataG.ItemsSource = querry.ToList();
+            }
+            
         }
 
         private void btn_W_Click(object sender, RoutedEventArgs e)
         {
-            if (dataG.SelectedItems.Count > 0)
+            if (dataG.SelectedItems.Count == 1)
             {
-                string tes = Convert.ToString(dataG.Items.GetItemAt(dataG.SelectedIndex));
-                tes = (tes.Substring(17, 2)).TrimEnd(',');
-                id_w_m = Convert.ToInt32(tes);
+                DataGridRow dr = dataG.ItemContainerGenerator.ContainerFromIndex(dataG.SelectedIndex) as DataGridRow;
+                DataGridColumn dc = dataG.Columns[0];
+                TextBlock cell = dc.GetCellContent(dr) as TextBlock;
+                id_w_m = Convert.ToInt32(cell.Text);
             }
             this.Close();
         }

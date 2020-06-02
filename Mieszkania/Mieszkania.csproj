@@ -322,22 +322,25 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Autoryzacja.cs">
-      <DependentUpon>DostepAut.tt</DependentUpon>
+      <DependentUpon>DostepPrac.tt</DependentUpon>
     </Compile>
     <Compile Include="Czynsz_Wplywy.cs">
       <DependentUpon>DostepPrac.tt</DependentUpon>
     </Compile>
-    <Compile Include="DodajMieszkanie.xaml.cs">
+    <Compile Include="Dodawanie\DodajMieszkanie.xaml.cs">
       <DependentUpon>DodajMieszkanie.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DodajPracownika.xaml.cs" />
-    <Compile Include="DodajRemont.xaml.cs">
+    <Compile Include="Dodawanie\DodajPracownika.xaml.cs" />
+    <Compile Include="Dodawanie\DodajPracownikowOdp.xaml.cs">
+      <DependentUpon>DodajPracownikowOdp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dodawanie\DodajRemont.xaml.cs">
       <DependentUpon>DodajRemont.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DodajLokatora.xaml.cs">
+    <Compile Include="Dodawanie\DodajLokatora.xaml.cs">
       <DependentUpon>DodajLokatora.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DodajUmowe.xaml.cs">
+    <Compile Include="Dodawanie\DodajUmowe.xaml.cs">
       <DependentUpon>DodajUmowe.xaml</DependentUpon>
     </Compile>
     <Compile Include="DostepAut.Context.cs">
@@ -388,10 +391,10 @@
     <Compile Include="Mieszkanie.cs">
       <DependentUpon>DostepPrac.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModyfikujLokatora.xaml.cs" />
-    <Compile Include="ModyfikujPracownika.xaml.cs" />
-    <Compile Include="ModyfikujRemont.xaml.cs" />
-    <Compile Include="ModyfikujUmowe.xaml.cs">
+    <Compile Include="Modyfikacje\ModyfikujLokatora.xaml.cs" />
+    <Compile Include="Modyfikacje\ModyfikujPracownika.xaml.cs" />
+    <Compile Include="Modyfikacje\ModyfikujRemont.xaml.cs" />
+    <Compile Include="Modyfikacje\ModyfikujUmowe.xaml.cs">
       <DependentUpon>ModyfikujUmowe.xaml</DependentUpon>
     </Compile>
     <Compile Include="Powitanie.xaml.cs">
@@ -416,11 +419,17 @@
     <Compile Include="test.xaml.cs">
       <DependentUpon>test.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Ukryj\UkryjMieszkanie.xaml.cs">
+      <DependentUpon>UkryjMieszkanie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ukryj\UkryjPracownika.xaml.cs">
+      <DependentUpon>UkryjPracownika.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Umowa.cs">
       <DependentUpon>DostepPrac.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
-    <Compile Include="ModyfikujMieszkania.xaml.cs">
+    <Compile Include="Modyfikacje\ModyfikujMieszkania.xaml.cs">
       <DependentUpon>ModyfikujMieszkania.xaml</DependentUpon>
     </Compile>
     <Compile Include="Usuwanie\UsunLokatora.xaml.cs">
@@ -442,6 +451,15 @@
       <DependentUpon>UsuwanieMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Walidacja.cs" />
+    <Compile Include="Wyswietlanie\Kontrolery\Kon_WyswietlMieszkanie.xaml.cs">
+      <DependentUpon>Kon_WyswietlMieszkanie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wyswietlanie\Kontrolery\Kon_WyswietlRemonty.xaml.cs">
+      <DependentUpon>Kon_WyswietlRemonty.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wyswietlanie\WyswietlanieAutoryzacji.xaml.cs">
+      <DependentUpon>WyswietlanieAutoryzacji.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Wyswietlanie\Wyswietlanie_Menu.xaml.cs">
       <DependentUpon>Wyswietlanie_Menu.xaml</DependentUpon>
     </Compile>
@@ -454,8 +472,8 @@
     <Compile Include="Wyswietlanie\WyswietlPrac.xaml.cs">
       <DependentUpon>WyswietlPrac.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Wyswietlanie\WyswietlPracownika.xaml.cs">
-      <DependentUpon>WyswietlPracownika.xaml</DependentUpon>
+    <Compile Include="Wyswietlanie\Kontrolery\Kon_WyswietlPracownika.xaml.cs">
+      <DependentUpon>Kon_WyswietlPracownika.xaml</DependentUpon>
     </Compile>
     <Compile Include="Wyswietlanie\WyswietlRemonty.xaml.cs">
       <DependentUpon>WyswietlRemonty.xaml</DependentUpon>
@@ -467,23 +485,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DodajMieszkanie.xaml">
+    <Page Include="Dodawanie\DodajMieszkanie.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DodajPracownika.xaml">
+    <Page Include="Dodawanie\DodajPracownika.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="DodajRemont.xaml">
+    <Page Include="Dodawanie\DodajPracownikowOdp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DodajLokatora.xaml">
+    <Page Include="Dodawanie\DodajRemont.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DodajUmowe.xaml">
+    <Page Include="Dodawanie\DodajLokatora.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dodawanie\DodajUmowe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -518,19 +540,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ModyfikujLokatora.xaml">
+    <Page Include="Modyfikacje\ModyfikujLokatora.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ModyfikujPracownika.xaml">
+    <Page Include="Modyfikacje\ModyfikujPracownika.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ModyfikujRemont.xaml">
+    <Page Include="Modyfikacje\ModyfikujRemont.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ModyfikujUmowe.xaml">
+    <Page Include="Modyfikacje\ModyfikujUmowe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -546,9 +568,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ModyfikujMieszkania.xaml">
+    <Page Include="Modyfikacje\ModyfikujMieszkania.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ukryj\UkryjMieszkanie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ukryj\UkryjPracownika.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Usuwanie\UsunLokatora.xaml">
       <SubType>Designer</SubType>
@@ -574,6 +604,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Wyswietlanie\Kontrolery\Kon_WyswietlMieszkanie.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Wyswietlanie\Kontrolery\Kon_WyswietlRemonty.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Wyswietlanie\WyswietlanieAutoryzacji.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Wyswietlanie\Wyswietlanie_Menu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -590,7 +632,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Wyswietlanie\WyswietlPracownika.xaml">
+    <Page Include="Wyswietlanie\Kontrolery\Kon_WyswietlPracownika.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -706,6 +748,7 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.1.0.19235.1\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.0.19235.1\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

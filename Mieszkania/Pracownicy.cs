@@ -22,6 +22,7 @@ namespace Mieszkania
         public string Miasto_Zamieszkania { get; set; }
         public string Adres_Zamieszkania { get; set; }
         public int IdStanowisko { get; set; }
+        public bool Zatrudniony { get; set; }
     
         public virtual Stanowiska Stanowiska { get; set; }
     }

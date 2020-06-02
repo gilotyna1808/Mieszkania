@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="Mieszkania.Ukryj.UkryjMieszkanie"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Mieszkania.Ukryj"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="600">
+    <Grid Background="White">
+        <Label Content="Miasto:"        Foreground="#2EC4B6" HorizontalAlignment="Left" Height="40" Margin="45,95,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
+        <Label Content="Kod_Pocztowy:"  Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="45,140,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
+        <Label Content="Ulica:"         Foreground="#2EC4B6" HorizontalAlignment="Left" Height="40" Margin="45,185,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
+        <Label Content="Nr Domu:"       Foreground="#FF9F1C" HorizontalAlignment="Left" Height="45" Margin="45,230,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
+        <Label Content="Mieszkanie:"    Foreground="#2EC4B6" HorizontalAlignment="Left" Height="40" Margin="45,275,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
+        <Label Content="Status Mieszkania:" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="45,320,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
+        <TextBox x:Name="txt_Miasto"    Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,95,0,0"  TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" IsEnabled="False"/>
+        <TextBox x:Name="txt_Kod"       Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,140,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" IsEnabled="False"/>
+        <TextBox x:Name="txt_Ul"        Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,185,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" IsEnabled="False"/>
+        <TextBox x:Name="txt_Nr"        Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,230,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" IsEnabled="False"/>
+        <TextBox x:Name="txt_Mieszkanie" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,275,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" IsEnabled="False"/>
+        <TextBox x:Name="txt_status"    Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,320,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" IsEnabled="False"/>
+        <Button x:Name="btn_wybierz" Content="Wybierz" HorizontalAlignment="Left" Foreground="White" Background="#2EC4B6" FontSize="20" VerticalContentAlignment="Center" Height="50" Margin="45,31,0,0" VerticalAlignment="Top" Width="140" RenderTransformOrigin="-0.27,-6.8" Click="btn_wybierz_Click_1"/>
+        <TextBox x:Name="txt_id"    Foreground="#FF9F1C" HorizontalAlignment="Left" Height="50" Margin="340,31,0,0"  TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="200" IsEnabled="False"/>
+        <ComboBox x:Name="cbox_pos" HorizontalAlignment="Left" Margin="190,365,0,0" VerticalAlignment="Top" Width="350" Height="34" SelectedValuePath="Key" DisplayMemberPath="Value" IsEnabled="False"/>
+        <Label Content="ID:"  Foreground="#FF9F1C" HorizontalAlignment="Left" Height="50" Margin="190,31,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
+        <Label Content="Posiadane"    Foreground="#2EC4B6" HorizontalAlignment="Left" Height="40" Margin="45,360,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
+        <Button x:Name="btn_modyfikuj" Content="Usuń" HorizontalAlignment="Left" Foreground="White" Background="#2EC4B6" FontSize="20" VerticalContentAlignment="Center" Height="50" Margin="340,440,0,0" VerticalAlignment="Top" Width="200" Click="btn_modyfikuj_Click"/>
+
+    </Grid>
+</UserControl>

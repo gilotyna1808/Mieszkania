@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="MieszkaniaModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Autoryzacja">
+    <Key>
+      <PropertyRef Name="IdKonta" />
+    </Key>
+    <Property Name="IdPracownika" Type="Int32" Nullable="false" />
+    <Property Name="Login" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Haslo" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Aktywne" Type="Boolean" />
+    <Property Name="IdKonta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
   <EntityType Name="Czynsz_Wplywy">
     <Key>
       <PropertyRef Name="IdCzynszu" />
@@ -51,7 +61,16 @@
     <Property Name="Miasto_Zamieszkania" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
     <Property Name="Adres_Zamieszkania" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
     <Property Name="IdStanowisko" Type="Int32" Nullable="false" />
+    <Property Name="Zatrudniony" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="Stanowiska" Relationship="Self.FK_Pracownicy_ToTable" FromRole="Pracownicy" ToRole="Stanowiska" />
+  </EntityType>
+  <EntityType Name="Pracownicy_Odp">
+    <Key>
+      <PropertyRef Name="IdOperacji" />
+    </Key>
+    <Property Name="IdPracownika" Type="Int32" Nullable="false" />
+    <Property Name="IdMieszkania" Type="Int32" Nullable="false" />
+    <Property Name="IdOperacji" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
   </EntityType>
   <EntityType Name="Remonty">
     <Key>
@@ -88,14 +107,6 @@
     <NavigationProperty Name="Czynsz_Wplywy" Relationship="Self.FK_Czynsz_Wplywy_ToTable" FromRole="Umowa" ToRole="Czynsz_Wplywy" />
     <NavigationProperty Name="Lokator" Relationship="Self.FK_Umowa_ToTable_1" FromRole="Umowa" ToRole="Lokator" />
     <NavigationProperty Name="Mieszkanie" Relationship="Self.FK_Umowa_ToTable" FromRole="Umowa" ToRole="Mieszkanie" />
-  </EntityType>
-  <EntityType Name="Pracownicy_Odp">
-    <Key>
-      <PropertyRef Name="IdPracownika" />
-      <PropertyRef Name="IdMieszkania" />
-    </Key>
-    <Property Name="IdPracownika" Type="Int32" Nullable="false" />
-    <Property Name="IdMieszkania" Type="Int32" Nullable="false" />
   </EntityType>
   <Association Name="FK_Czynsz_Wplywy_ToTable">
     <End Role="Umowa" Type="Self.Umowa" Multiplicity="1" />
@@ -158,14 +169,15 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="DostepPrac" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Autoryzacja" EntityType="Self.Autoryzacja" />
     <EntitySet Name="Czynsz_Wplywy" EntityType="Self.Czynsz_Wplywy" />
     <EntitySet Name="Lokator" EntityType="Self.Lokator" />
     <EntitySet Name="Mieszkanie" EntityType="Self.Mieszkanie" />
     <EntitySet Name="Pracownicy" EntityType="Self.Pracownicy" />
+    <EntitySet Name="Pracownicy_Odp" EntityType="Self.Pracownicy_Odp" />
     <EntitySet Name="Remonty" EntityType="Self.Remonty" />
     <EntitySet Name="Stanowiska" EntityType="Self.Stanowiska" />
     <EntitySet Name="Umowa" EntityType="Self.Umowa" />
-    <EntitySet Name="Pracownicy_Odp" EntityType="Self.Pracownicy_Odp" />
     <AssociationSet Name="FK_Czynsz_Wplywy_ToTable" Association="Self.FK_Czynsz_Wplywy_ToTable">
       <End Role="Umowa" EntitySet="Umowa" />
       <End Role="Czynsz_Wplywy" EntitySet="Czynsz_Wplywy" />

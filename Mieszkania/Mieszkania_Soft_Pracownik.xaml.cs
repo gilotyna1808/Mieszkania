@@ -107,7 +107,7 @@ namespace Mieszkania
 
         private void btn_ModyfikujR_Click(object sender, RoutedEventArgs e)
         {
-            ModyfikujRemont mr = new ModyfikujRemont();
+            ModyfikujRemont mr = new ModyfikujRemont(u);
             PanelWidok.Children.Clear();
             PanelWidok.Children.Add(mr);
         }

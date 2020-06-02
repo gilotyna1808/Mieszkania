@@ -16,5 +16,6 @@ namespace Mieszkania
     {
         public int IdPracownika { get; set; }
         public int IdMieszkania { get; set; }
+        public int IdOperacji { get; set; }
     }
 }

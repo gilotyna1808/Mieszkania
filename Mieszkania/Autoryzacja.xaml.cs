@@ -18,11 +18,11 @@ namespace Mieszkania
     /// <summary>
     /// Logika interakcji dla klasy Autoryzacja.xaml
     /// </summary>dd
-    public partial class Autoryzacja : Window
+    public partial class AutoryzacjaO : Window
     {
         DostepAut dostepM = new DostepAut();
         public User uzytkownik { get; set; }
-        public Autoryzacja()
+        public AutoryzacjaO()
         {
             InitializeComponent();
         }

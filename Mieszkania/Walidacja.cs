@@ -152,5 +152,21 @@ namespace Mieszkania
             }
             return false;
         }
+
+        public bool SprawdzPesel(string s)
+        {
+            Regex pesel = new Regex(@"^[0-9]{11}$");
+            if(pesel.IsMatch(s)) return true;
+            else return false;
+        }
+
+        public bool SprawdzAdres(string s)
+        {
+            if (SpradzCzyZaDlugie(s, 45))
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

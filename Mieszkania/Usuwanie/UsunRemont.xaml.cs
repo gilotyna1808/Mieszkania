@@ -30,7 +30,7 @@ namespace Mieszkania
 
         private void btn_Wybierz_Click(object sender, RoutedEventArgs e)
         {
-            WyswietlRemonty wr = new WyswietlRemonty();
+            WyswietlRemonty wr = new WyswietlRemonty(uzytkownik);
             wr.ShowDialog();
             int temp_id = 0;
             temp_id = wr.id_w_r;

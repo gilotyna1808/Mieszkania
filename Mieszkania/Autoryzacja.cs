@@ -18,5 +18,6 @@ namespace Mieszkania
         public string Login { get; set; }
         public string Haslo { get; set; }
         public Nullable<bool> Aktywne { get; set; }
+        public int IdKonta { get; set; }
     }
 }

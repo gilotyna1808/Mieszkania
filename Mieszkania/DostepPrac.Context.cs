@@ -25,13 +25,14 @@ namespace Mieszkania
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Autoryzacja> Autoryzacja { get; set; }
         public virtual DbSet<Czynsz_Wplywy> Czynsz_Wplywy { get; set; }
         public virtual DbSet<Lokator> Lokator { get; set; }
         public virtual DbSet<Mieszkanie> Mieszkanie { get; set; }
         public virtual DbSet<Pracownicy> Pracownicy { get; set; }
+        public virtual DbSet<Pracownicy_Odp> Pracownicy_Odp { get; set; }
         public virtual DbSet<Remonty> Remonty { get; set; }
         public virtual DbSet<Stanowiska> Stanowiska { get; set; }
         public virtual DbSet<Umowa> Umowa { get; set; }
-        public virtual DbSet<Pracownicy_Odp> Pracownicy_Odp { get; set; }
     }
 }
