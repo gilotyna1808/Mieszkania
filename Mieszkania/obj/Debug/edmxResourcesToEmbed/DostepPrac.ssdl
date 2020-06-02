@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MieszkaniaModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Autoryzacja">
+    <Key>
+      <PropertyRef Name="IdKonta" />
+    </Key>
+    <Property Name="IdPracownika" Type="int" Nullable="false" />
+    <Property Name="Login" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Haslo" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Aktywne" Type="bit" />
+    <Property Name="IdKonta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Czynsz_Wplywy">
+    <Key>
+      <PropertyRef Name="IdCzynszu" />
+    </Key>
+    <Property Name="IdCzynszu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUmowy" Type="int" Nullable="false" />
+    <Property Name="Kwota" Type="money" Nullable="false" />
+    <Property Name="Termin_Rozliczenia" Type="date" Nullable="false" />
+    <Property Name="Zaplacone" Type="bit" />
+  </EntityType>
+  <EntityType Name="Lokator">
+    <Key>
+      <PropertyRef Name="IdLokatora" />
+    </Key>
+    <Property Name="IdLokatora" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Imie" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Nazwisko" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Pesel" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="Nr_Telefonu" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Adres_Korespondecyjny" Type="varchar" MaxLength="50" />
+    <Property Name="Adres_Mailowy" Type="varchar" MaxLength="50" />
+    <Property Name="Mieszka" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Mieszkanie">
+    <Key>
+      <PropertyRef Name="IdMieszkania" />
+    </Key>
+    <Property Name="IdMieszkania" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Miasto" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Kod_Pocztowy" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Ulica" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Nr_Domu" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Nr_Mieszkania" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Status_Mieszkania" Type="varchar" MaxLength="45" />
+    <Property Name="Posiadane" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pracownicy">
+    <Key>
+      <PropertyRef Name="IdPracownika" />
+    </Key>
+    <Property Name="IdPracownika" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwisko" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Imie" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="NrTel" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="Pesel" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Miasto_Zamieszkania" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Adres_Zamieszkania" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="IdStanowisko" Type="int" Nullable="false" />
+    <Property Name="Zatrudniony" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pracownicy_Odp">
+    <Key>
+      <PropertyRef Name="IdOperacji" />
+    </Key>
+    <Property Name="IdPracownika" Type="int" Nullable="false" />
+    <Property Name="IdMieszkania" Type="int" Nullable="false" />
+    <Property Name="IdOperacji" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Remonty">
+    <Key>
+      <PropertyRef Name="IdRemontu" />
+    </Key>
+    <Property Name="IdRemontu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdMieszkania" Type="int" Nullable="false" />
+    <Property Name="Stan" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Koszt_Remontu" Type="money" Nullable="false" />
+    <Property Name="Data_Rozpoczecia" Type="date" Nullable="false" />
+    <Property Name="Data_Zakonczenia" Type="date" />
+  </EntityType>
+  <EntityType Name="Stanowiska">
+    <Key>
+      <PropertyRef Name="IdStanowiska" />
+    </Key>
+    <Property Name="IdStanowiska" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa_Stanowiska" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Opis_Stanowiska" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Umowa">
+    <Key>
+      <PropertyRef Name="IdUmowy" />
+    </Key>
+    <Property Name="IdUmowy" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdMieszkania" Type="int" Nullable="false" />
+    <Property Name="IdLokatora" Type="int" Nullable="false" />
+    <Property Name="Od_Kiedy" Type="date" Nullable="false" />
+    <Property Name="Do_Kiedy" Type="date" />
+    <Property Name="Stawka_Czynsz" Type="money" Nullable="false" />
+    <Property Name="Oplaty_Stale" Type="money" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Czynsz_Wplywy_ToTable">
+    <End Role="Umowa" Type="Self.Umowa" Multiplicity="1" />
+    <End Role="Czynsz_Wplywy" Type="Self.Czynsz_Wplywy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Umowa">
+        <PropertyRef Name="IdUmowy" />
+      </Principal>
+      <Dependent Role="Czynsz_Wplywy">
+        <PropertyRef Name="IdUmowy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pracownicy_ToTable">
+    <End Role="Stanowiska" Type="Self.Stanowiska" Multiplicity="1" />
+    <End Role="Pracownicy" Type="Self.Pracownicy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stanowiska">
+        <PropertyRef Name="IdStanowiska" />
+      </Principal>
+      <Dependent Role="Pracownicy">
+        <PropertyRef Name="IdStanowisko" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Remonty_ToTable">
+    <End Role="Mieszkanie" Type="Self.Mieszkanie" Multiplicity="1" />
+    <End Role="Remonty" Type="Self.Remonty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mieszkanie">
+        <PropertyRef Name="IdMieszkania" />
+      </Principal>
+      <Dependent Role="Remonty">
+        <PropertyRef Name="IdMieszkania" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Umowa_ToTable">
+    <End Role="Mieszkanie" Type="Self.Mieszkanie" Multiplicity="1" />
+    <End Role="Umowa" Type="Self.Umowa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mieszkanie">
+        <PropertyRef Name="IdMieszkania" />
+      </Principal>
+      <Dependent Role="Umowa">
+        <PropertyRef Name="IdMieszkania" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Umowa_ToTable_1">
+    <End Role="Lokator" Type="Self.Lokator" Multiplicity="1" />
+    <End Role="Umowa" Type="Self.Umowa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lokator">
+        <PropertyRef Name="IdLokatora" />
+      </Principal>
+      <Dependent Role="Umowa">
+        <PropertyRef Name="IdLokatora" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MieszkaniaModel1StoreContainer">
+    <EntitySet Name="Autoryzacja" EntityType="Self.Autoryzacja" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Czynsz_Wplywy" EntityType="Self.Czynsz_Wplywy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lokator" EntityType="Self.Lokator" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mieszkanie" EntityType="Self.Mieszkanie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pracownicy" EntityType="Self.Pracownicy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pracownicy_Odp" EntityType="Self.Pracownicy_Odp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Remonty" EntityType="Self.Remonty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Stanowiska" EntityType="Self.Stanowiska" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Umowa" EntityType="Self.Umowa" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Czynsz_Wplywy_ToTable" Association="Self.FK_Czynsz_Wplywy_ToTable">
+      <End Role="Umowa" EntitySet="Umowa" />
+      <End Role="Czynsz_Wplywy" EntitySet="Czynsz_Wplywy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pracownicy_ToTable" Association="Self.FK_Pracownicy_ToTable">
+      <End Role="Stanowiska" EntitySet="Stanowiska" />
+      <End Role="Pracownicy" EntitySet="Pracownicy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Remonty_ToTable" Association="Self.FK_Remonty_ToTable">
+      <End Role="Mieszkanie" EntitySet="Mieszkanie" />
+      <End Role="Remonty" EntitySet="Remonty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Umowa_ToTable" Association="Self.FK_Umowa_ToTable">
+      <End Role="Mieszkanie" EntitySet="Mieszkanie" />
+      <End Role="Umowa" EntitySet="Umowa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Umowa_ToTable_1" Association="Self.FK_Umowa_ToTable_1">
+      <End Role="Lokator" EntitySet="Lokator" />
+      <End Role="Umowa" EntitySet="Umowa" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
