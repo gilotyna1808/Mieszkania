@@ -26,6 +26,7 @@
     <EntitySetMapping Name="Lokator">
       <EntityTypeMapping TypeName="MieszkaniaModel1.Lokator">
         <MappingFragment StoreEntitySet="Lokator">
+          <ScalarProperty Name="Mieszka" ColumnName="Mieszka" />
           <ScalarProperty Name="IdLokatora" ColumnName="IdLokatora" />
           <ScalarProperty Name="Imie" ColumnName="Imie" />
           <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />

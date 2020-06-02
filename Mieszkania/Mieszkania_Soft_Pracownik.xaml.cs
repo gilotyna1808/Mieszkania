@@ -93,7 +93,7 @@ namespace Mieszkania
 
         private void btn_ModyfikujL_Click(object sender, RoutedEventArgs e)
         {
-            ModyfikujLokatora ml = new ModyfikujLokatora();
+            ModyfikujLokatora ml = new ModyfikujLokatora(u);
             PanelWidok.Children.Clear();
             PanelWidok.Children.Add(ml);
         }

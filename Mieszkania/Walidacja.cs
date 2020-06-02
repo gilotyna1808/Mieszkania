@@ -96,7 +96,7 @@ namespace Mieszkania
 
         public bool sprawdzCzynsz(string s)
         {
-            Regex czynsz = new Regex(@"^[0-9]+\,?[0-9]{1,2}$");
+            Regex czynsz = new Regex(@"^[0-9]+\,?[0-9]{1,2}[0]{0,2}$");
             if (czynsz.IsMatch(s))
             {
                 return true;
@@ -106,7 +106,7 @@ namespace Mieszkania
 
         public bool sprawdzOplaty(string s)
         {
-            Regex oplaty = new Regex(@"^[0-9]+[\,]?[0-9]{1,2}$");
+            Regex oplaty = new Regex(@"^[0-9]+[\,]?[0-9]{1,2}[0]{0,2}$");
             if (oplaty.IsMatch(s))
             {
                 return true;
@@ -163,6 +163,16 @@ namespace Mieszkania
         public bool SprawdzAdres(string s)
         {
             if (SpradzCzyZaDlugie(s, 45))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool SprawdzAdresEmail(string s)
+        {
+            Regex mail = new Regex(@".+\@[A-z]{1,5}\.[A-z]{1,3}$");
+            if (mail.IsMatch(s))
             {
                 return true;
             }

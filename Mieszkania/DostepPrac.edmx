@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MieszkaniaModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MieszkaniaModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Autoryzacja">
           <Key>
             <PropertyRef Name="IdKonta" />
@@ -36,6 +36,7 @@
           <Property Name="Nr_Telefonu" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="Adres_Korespondecyjny" Type="varchar" MaxLength="50" />
           <Property Name="Adres_Mailowy" Type="varchar" MaxLength="50" />
+          <Property Name="Mieszka" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Mieszkanie">
           <Key>
@@ -194,8 +195,7 @@
             <End Role="Umowa" EntitySet="Umowa" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MieszkaniaModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -232,6 +232,7 @@
           <Property Name="Adres_Korespondecyjny" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Adres_Mailowy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Umowa" Relationship="Self.FK_Umowa_ToTable_1" FromRole="Lokator" ToRole="Umowa" />
+          <Property Name="Mieszka" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="Mieszkanie">
           <Key>
@@ -429,6 +430,7 @@
           <EntitySetMapping Name="Lokator">
             <EntityTypeMapping TypeName="MieszkaniaModel1.Lokator">
               <MappingFragment StoreEntitySet="Lokator">
+                <ScalarProperty Name="Mieszka" ColumnName="Mieszka" />
                 <ScalarProperty Name="IdLokatora" ColumnName="IdLokatora" />
                 <ScalarProperty Name="Imie" ColumnName="Imie" />
                 <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />

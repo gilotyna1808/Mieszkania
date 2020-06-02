@@ -27,6 +27,7 @@ namespace Mieszkania
         public string Nr_Telefonu { get; set; }
         public string Adres_Korespondecyjny { get; set; }
         public string Adres_Mailowy { get; set; }
+        public bool Mieszka { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Umowa> Umowa { get; set; }

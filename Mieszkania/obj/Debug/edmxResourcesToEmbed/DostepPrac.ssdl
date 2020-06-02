@@ -31,6 +31,7 @@
     <Property Name="Nr_Telefonu" Type="varchar" MaxLength="15" Nullable="false" />
     <Property Name="Adres_Korespondecyjny" Type="varchar" MaxLength="50" />
     <Property Name="Adres_Mailowy" Type="varchar" MaxLength="50" />
+    <Property Name="Mieszka" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="Mieszkanie">
     <Key>

@@ -39,24 +39,92 @@ namespace Mieszkania.Dodawanie
             bool walidacjaImie = true;
             bool walidacjaNazw = true;
             bool walidacjaTel = true;
-            string imie = txt_imi.Text;
+            bool walidacjaPesel = true;
+            bool walidacjaAdresK = true;
+            bool walidacjaAdresE = true;
+            string imie = txt_imie.Text;
             string nazwisko = txt_naz.Text;
             string nrTel = txt_tel.Text;
+            string pesel = txt_pesel.Text;
+            string adresk = txt_adresk.Text;
+            string mail = txt_mail.Text;
             walidacjaImie = w.sprawdzImie(imie);
             walidacjaNazw = w.sprawdzNazwisko(nazwisko);
             walidacjaTel = w.sprawdzTelefon(nrTel);
-            if (walidacjaImie && walidacjaNazw && walidacjaTel)
+            walidacjaPesel = w.SprawdzPesel(pesel);
+            walidacjaAdresE = w.SprawdzAdresEmail(mail);
+            int flag = 0;
+            if (mail == "")
+            { 
+            walidacjaAdresE = true;
+                flag = 1;
+            } 
+            if (adresk == "")
+            {
+                walidacjaAdresK = true;
+                if (flag == 1) { flag = 3; }
+                else {flag = 2; }
+            } 
+            if (walidacjaImie && walidacjaNazw && walidacjaTel && walidacjaPesel && walidacjaAdresE && walidacjaAdresK)
             {
                 using (var db = new DostepPrac())
                 {
-                    var m = new Lokator()
+                    if (flag == 0)
                     {
-                        Imie = imie,
-                        Nazwisko = nazwisko,
-                        Nr_Telefonu = nrTel
-                    };
-                    db.Lokator.Add(m);
-                    db.SaveChanges();
+                        var m = new Lokator()
+                        {
+                            Imie = imie,
+                            Nazwisko = nazwisko,
+                            Nr_Telefonu = nrTel,
+                            Pesel = pesel,
+                            Adres_Korespondecyjny = adresk,
+                            Adres_Mailowy = mail
+                        };
+                        db.Lokator.Add(m);
+                        db.SaveChanges();
+                    }
+                    else if (flag == 1)
+                    {
+                        var m = new Lokator()
+                        {
+                            Imie = imie,
+                            Nazwisko = nazwisko,
+                            Nr_Telefonu = nrTel,
+                            Pesel = pesel,
+                            Adres_Korespondecyjny = adresk,
+                            Adres_Mailowy = null
+                        };
+                        db.Lokator.Add(m);
+                        db.SaveChanges();
+                    }
+                    else if (flag == 2)
+                    {
+                        var m = new Lokator()
+                        {
+                            Imie = imie,
+                            Nazwisko = nazwisko,
+                            Nr_Telefonu = nrTel,
+                            Pesel = pesel,
+                            Adres_Korespondecyjny = null,
+                            Adres_Mailowy = mail
+                        };
+                        db.Lokator.Add(m);
+                        db.SaveChanges();
+                    }
+                    else if(flag==3){
+                        var m = new Lokator()
+                        {
+                            Imie = imie,
+                            Nazwisko = nazwisko,
+                            Nr_Telefonu = nrTel,
+                            Pesel = pesel,
+                            Adres_Korespondecyjny = null,
+                            Adres_Mailowy = null
+                        };
+                        db.Lokator.Add(m);
+                        db.SaveChanges();
+                    }
+                   
                 }
                 if (temp == 1)
                 {

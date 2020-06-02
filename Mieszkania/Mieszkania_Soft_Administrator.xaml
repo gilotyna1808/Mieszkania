@@ -45,6 +45,34 @@
                             <ColumnDefinition Width="22*"/>
                             <ColumnDefinition Width="273*"/>
                         </Grid.ColumnDefinitions>
+                        <Button x:Name="btn_DodajUmowe" Content="Dodaj Umowe" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,10,0,375" Width="274" Grid.ColumnSpan="2" Click="btn_DodajUmowe_Click"/>
+                        <Button x:Name="btn_ModyfikujUmowe" Content="Modyfikuj Umowe" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,52,0,333" Width="274" Grid.ColumnSpan="2" Click="btn_ModyfikujUmowe_Click"/>
+                        <Button x:Name="btn_UkryjUmowe" Content="Usun Umowe" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,94,0,291" Width="274" Grid.ColumnSpan="2" Click="btn_UkryjUmowe_Click"/>
+                        <Button x:Name="btn_WyswietlUmowe" Content="Wyświetl Umowe" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,136,0,249" Width="274" Grid.ColumnSpan="2" Click="btn_WyswietlUmowe_Click"/>
+                        <Button x:Name="btn_DodajRachunek" Content="Dodaj Rachunek" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,179,0,206" Width="274" Grid.ColumnSpan="2" Click="btn_DodajRachunek_Click"/>
+                        <Button x:Name="btn_ModyfikujRachunek" Content="Modyfikuj Rachunek" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,221,0,164" Width="274" Grid.ColumnSpan="2" Click="btn_ModyfikujRachunek_Click"/>
+                        <Button x:Name="btn_UsunRachunek" Content="Usun Rachunek" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,263,0,122" Width="274" Grid.ColumnSpan="2" Click="btn_UsunRachunek_Click"/>
+                        <Button x:Name="btn_WyswietlRachunki" Content="Wyświetl Rachunki" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,305,0,80" Width="274" Grid.ColumnSpan="2" Click="btn_WyswietlRachunki_Click"/>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Lokator">
+                    <Grid Background="#FFE5E5E5" Margin="0,0,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="22*"/>
+                            <ColumnDefinition Width="273*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="btn_DodaLokatora" Content="Dodaj Lokatora" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,13,0,372" Width="274" Grid.ColumnSpan="2" Click="btn_DodaLokatora_Click"/>
+                        <Button x:Name="btn_ModyfikujLokatora" Content="Modyfikuj Lokatora" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,55,0,330" Width="274" Grid.ColumnSpan="2" Click="btn_ModyfikujLokatora_Click"/>
+                        <Button x:Name="btn_UkryjLokatora" Content="Usun Lokatora" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,97,0,288" Width="274" Grid.ColumnSpan="2" Click="btn_UkryjLokatora_Click"/>
+                        <Button x:Name="btn_WyswietlLokatora" Content="Wyświetl Lokatora" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,139,0,246" Width="274" Grid.ColumnSpan="2" Click="btn_WyswietlLokatora_Click"/>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Konta">
+                    <Grid Background="#FFE5E5E5" Margin="0,0,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="22*"/>
+                            <ColumnDefinition Width="273*"/>
+                        </Grid.ColumnDefinitions>
                     </Grid>
                 </TabItem>
             </TabControl>

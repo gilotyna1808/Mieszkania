@@ -31,7 +31,7 @@ namespace Mieszkania
 
         private void btn_Wybierz_Click(object sender, RoutedEventArgs e)
         {
-            WyswietlLokator wl = new WyswietlLokator();
+            WyswietlLokator wl = new WyswietlLokator(uzytkownik);
             wl.ShowDialog();
             int temp_id = 0;
             temp_id = wl.id_w_l;

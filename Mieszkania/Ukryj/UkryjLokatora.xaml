@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="Mieszkania.Ukryj.UkryjLokatora"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Mieszkania.Ukryj"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="White">
+        <Button x:Name="btn_Wybierz" Content="Wybierz lokatora" HorizontalAlignment="Left" VerticalAlignment="Top" Width="221" Margin="50,21,0,0" Height="44" Click="btn_Wybierz_Click"/>
+        <TextBox x:Name="txt_id" IsEnabled="False" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="IdLokatora" VerticalAlignment="Top" Width="120" Margin="344,34,0,0"/>
+        <Label Content="Imie&#x9;" Foreground="#2EC4B6" HorizontalAlignment="Left" Height="40" Margin="46,76,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
+        <Label Content="Nazwisko" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="46,122,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
+        <Label Content="Nr tel" Foreground="#2EC4B6" HorizontalAlignment="Left" Height="40" Margin="46,166,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
+        <TextBox x:Name="txt_imie" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,76,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" IsEnabled="False"/>
+        <TextBox x:Name="txt_naz" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,122,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" IsEnabled="False"/>
+        <TextBox x:Name="txt_tel" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,166,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" IsEnabled="False"/>
+        <Button x:Name="btn_Usun" Content="Usuń" Foreground="White" Background="#2EC4B6" FontSize="20" VerticalContentAlignment="Center" Height="50" Margin="320,390,280,0" VerticalAlignment="Top" Width="200" Click="btn_Usun_Click"/>
+        <Label Content="Pesel" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="46,214,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
+        <Label Content="Adres &#xA;Korespondencyjny" Foreground="#2EC4B6" HorizontalAlignment="Left" Height="58" Margin="46,258,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
+        <TextBox x:Name="txt_pesel" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,214,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" IsEnabled="False"/>
+        <TextBox x:Name="txt_adresk" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="58" Margin="190,258,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" IsEnabled="False"/>
+        <Label Content="Adres E-mail" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="46,322,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
+        <TextBox x:Name="txt_mail" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,322,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" IsEnabled="False"/>
+
+    </Grid>
+</UserControl>

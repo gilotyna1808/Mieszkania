@@ -334,6 +334,9 @@
     <Compile Include="Dodawanie\DodajPracownikowOdp.xaml.cs">
       <DependentUpon>DodajPracownikowOdp.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Dodawanie\DodajRachunek.xaml.cs">
+      <DependentUpon>DodajRachunek.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Dodawanie\DodajRemont.xaml.cs">
       <DependentUpon>DodajRemont.xaml</DependentUpon>
     </Compile>
@@ -393,6 +396,9 @@
     </Compile>
     <Compile Include="Modyfikacje\ModyfikujLokatora.xaml.cs" />
     <Compile Include="Modyfikacje\ModyfikujPracownika.xaml.cs" />
+    <Compile Include="Modyfikacje\ModyfikujRachunek.xaml.cs">
+      <DependentUpon>ModyfikujRachunek.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Modyfikacje\ModyfikujRemont.xaml.cs" />
     <Compile Include="Modyfikacje\ModyfikujUmowe.xaml.cs">
       <DependentUpon>ModyfikujUmowe.xaml</DependentUpon>
@@ -419,6 +425,9 @@
     <Compile Include="test.xaml.cs">
       <DependentUpon>test.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Ukryj\UkryjLokatora.xaml.cs">
+      <DependentUpon>UkryjLokatora.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ukryj\UkryjMieszkanie.xaml.cs">
       <DependentUpon>UkryjMieszkanie.xaml</DependentUpon>
     </Compile>
@@ -441,6 +450,9 @@
     <Compile Include="Usuwanie\UsunPracownika.xaml.cs">
       <DependentUpon>UsunPracownika.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Usuwanie\UsunRachunek.xaml.cs">
+      <DependentUpon>UsunRachunek.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Usuwanie\UsunRemont.xaml.cs">
       <DependentUpon>UsunRemont.xaml</DependentUpon>
     </Compile>
@@ -456,6 +468,15 @@
     </Compile>
     <Compile Include="Wyswietlanie\Kontrolery\Kon_WyswietlRemonty.xaml.cs">
       <DependentUpon>Kon_WyswietlRemonty.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wyswietlanie\Kontrolery\Kon_WyswietlUmowy.xaml.cs">
+      <DependentUpon>Kon_WyswietlUmowy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wyswietlanie\Kontrolery\Kon_WyswietlRachunki.xaml.cs">
+      <DependentUpon>Kon_WyswietlRachunki.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wyswietlanie\Kontrolery\Kon_WyswietlLokator.xaml.cs">
+      <DependentUpon>Kon_WyswietlLokator.xaml</DependentUpon>
     </Compile>
     <Compile Include="Wyswietlanie\WyswietlanieAutoryzacji.xaml.cs">
       <DependentUpon>WyswietlanieAutoryzacji.xaml</DependentUpon>
@@ -474,6 +495,9 @@
     </Compile>
     <Compile Include="Wyswietlanie\Kontrolery\Kon_WyswietlPracownika.xaml.cs">
       <DependentUpon>Kon_WyswietlPracownika.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wyswietlanie\WyswietlRachunki.xaml.cs">
+      <DependentUpon>WyswietlRachunki.xaml</DependentUpon>
     </Compile>
     <Compile Include="Wyswietlanie\WyswietlRemonty.xaml.cs">
       <DependentUpon>WyswietlRemonty.xaml</DependentUpon>
@@ -494,6 +518,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Dodawanie\DodajPracownikowOdp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dodawanie\DodajRachunek.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -548,6 +576,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Modyfikacje\ModyfikujRachunek.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Modyfikacje\ModyfikujRemont.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -572,6 +604,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Ukryj\UkryjLokatora.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Ukryj\UkryjMieszkanie.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -592,6 +628,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Usuwanie\UsunRachunek.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Usuwanie\UsunRemont.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -609,6 +649,18 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Wyswietlanie\Kontrolery\Kon_WyswietlRemonty.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Wyswietlanie\Kontrolery\Kon_WyswietlUmowy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Wyswietlanie\Kontrolery\Kon_WyswietlRachunki.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Wyswietlanie\Kontrolery\Kon_WyswietlLokator.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -633,6 +685,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Wyswietlanie\Kontrolery\Kon_WyswietlPracownika.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Wyswietlanie\WyswietlRachunki.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

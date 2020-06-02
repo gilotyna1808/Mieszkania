@@ -1,5 +1,7 @@
 ﻿using Mieszkania.Dodawanie;
+using Mieszkania.Modyfikacje;
 using Mieszkania.Ukryj;
+using Mieszkania.Usuwanie;
 using Mieszkania.Wyswietlanie;
 using System;
 using System.Collections.Generic;
@@ -131,6 +133,90 @@ namespace Mieszkania
             Kon_WyswietlRemonty wr = new Kon_WyswietlRemonty();
             PanelWidok.Children.Clear();
             PanelWidok.Children.Add(wr);
+        }
+
+        private void btn_DodajUmowe_Click(object sender, RoutedEventArgs e)
+        {
+            DodajUmowe du = new DodajUmowe(uztykownik);
+            PanelWidok.Children.Clear();
+            PanelWidok.Children.Add(du);
+        }
+
+        private void btn_ModyfikujUmowe_Click(object sender, RoutedEventArgs e)
+        {
+            ModyfikujUmowe mu = new ModyfikujUmowe();
+            PanelWidok.Children.Clear();
+            PanelWidok.Children.Add(mu);
+        }
+
+        private void btn_UkryjUmowe_Click(object sender, RoutedEventArgs e)
+        {
+            UsunUmowe uu = new UsunUmowe(uztykownik);
+            PanelWidok.Children.Clear();
+            PanelWidok.Children.Add(uu);
+        }
+
+        private void btn_WyswietlUmowe_Click(object sender, RoutedEventArgs e)
+        {
+            Kon_WyswietlUmowy wu = new Kon_WyswietlUmowy();
+            PanelWidok.Children.Clear();
+            PanelWidok.Children.Add(wu);
+        }
+
+        private void btn_DodajRachunek_Click(object sender, RoutedEventArgs e)
+        {
+            DodajRachunek dr = new DodajRachunek();
+            PanelWidok.Children.Clear();
+            PanelWidok.Children.Add(dr);
+        }
+
+        private void btn_WyswietlRachunki_Click(object sender, RoutedEventArgs e)
+        {
+            Kon_WyswietlRachunki wr = new Kon_WyswietlRachunki(uztykownik);
+            PanelWidok.Children.Clear();
+            PanelWidok.Children.Add(wr);
+        }
+
+        private void btn_ModyfikujRachunek_Click(object sender, RoutedEventArgs e)
+        {
+            ModyfikujRachunek mr = new ModyfikujRachunek(uztykownik);
+            PanelWidok.Children.Clear();
+            PanelWidok.Children.Add(mr);
+        }
+
+        private void btn_UsunRachunek_Click(object sender, RoutedEventArgs e)
+        {
+            UsunRachunek ur = new UsunRachunek(uztykownik);
+            PanelWidok.Children.Clear();
+            PanelWidok.Children.Add(ur);
+        }
+
+        private void btn_DodaLokatora_Click(object sender, RoutedEventArgs e)
+        {
+            DodajLokatora dl = new DodajLokatora();
+            PanelWidok.Children.Clear();
+            PanelWidok.Children.Add(dl);
+        }
+
+        private void btn_ModyfikujLokatora_Click(object sender, RoutedEventArgs e)
+        {
+            ModyfikujLokatora ml = new ModyfikujLokatora(uztykownik);
+            PanelWidok.Children.Clear();
+            PanelWidok.Children.Add(ml);
+        }
+
+        private void btn_UkryjLokatora_Click(object sender, RoutedEventArgs e)
+        {
+            UkryjLokatora ul = new UkryjLokatora(uztykownik);
+            PanelWidok.Children.Clear();
+            PanelWidok.Children.Add(ul);
+        }
+
+        private void btn_WyswietlLokatora_Click(object sender, RoutedEventArgs e)
+        {
+            Kon_WyswietlLokator wl = new Kon_WyswietlLokator(uztykownik);
+            PanelWidok.Children.Clear();
+            PanelWidok.Children.Add(wl);
         }
     }
 }

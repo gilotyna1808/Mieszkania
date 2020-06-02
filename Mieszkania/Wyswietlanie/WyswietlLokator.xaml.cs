@@ -19,25 +19,40 @@ namespace Mieszkania.Wyswietlanie
     /// </summary>
     public partial class WyswietlLokator : Window
     {
+        User uzytkownik;
         public int id_w_l { get; set; }
-        public WyswietlLokator()
+        public WyswietlLokator(User u)
         {
+            uzytkownik = u;
             InitializeComponent();
             id_w_l = 0;
             var dba = new DostepPrac();
-            var querry =
+            if (u.getIdStanowiska() == 1)
+            {
+                var querry =
+                               from a in dba.Lokator
+                               select new { a.IdLokatora, a.Imie, a.Nazwisko, a.Pesel, a.Nr_Telefonu, a.Adres_Mailowy, a.Adres_Korespondecyjny,a.Mieszka };
+                dataG.ItemsSource = querry.ToList();
+            }
+            else
+            {
+                var querry =
                from a in dba.Lokator
-               select new {a.IdLokatora,a.Imie,a.Nazwisko,a.Nr_Telefonu};
-            dataG.ItemsSource = querry.ToList();
+               where (a.Mieszka ==true)
+               select new { a.IdLokatora, a.Imie, a.Nazwisko, a.Pesel, a.Nr_Telefonu, a.Adres_Mailowy, a.Adres_Korespondecyjny };
+                dataG.ItemsSource = querry.ToList();
+            }
+            
         }
 
         private void btn_W_Click(object sender, RoutedEventArgs e)
         {
-            if (dataG.SelectedItems.Count > 0)
+            if (dataG.SelectedItems.Count == 1)
             {
-                string tes = Convert.ToString(dataG.Items.GetItemAt(dataG.SelectedIndex));
-                tes = (tes.Substring(14, 2)).TrimEnd(',');
-                id_w_l = Convert.ToInt32(tes);
+                DataGridRow dr = dataG.ItemContainerGenerator.ContainerFromIndex(dataG.SelectedIndex) as DataGridRow;
+                DataGridColumn dc = dataG.Columns[0];
+                TextBlock cell = dc.GetCellContent(dr) as TextBlock;
+                id_w_l = Convert.ToInt32(cell.Text);
             }
             this.Close();
         }

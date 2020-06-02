@@ -47,7 +47,7 @@ namespace Mieszkania.Wyswietlanie
 
         private void btn_l_Click(object sender, RoutedEventArgs e)
         {
-            WyswietlLokator l = new WyswietlLokator();
+            WyswietlLokator l = new WyswietlLokator(uzytkownik);
             l.Show();
         }
 

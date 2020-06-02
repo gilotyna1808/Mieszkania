@@ -33,6 +33,7 @@
     <Property Name="Adres_Korespondecyjny" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Adres_Mailowy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Umowa" Relationship="Self.FK_Umowa_ToTable_1" FromRole="Lokator" ToRole="Umowa" />
+    <Property Name="Mieszka" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="Mieszkanie">
     <Key>

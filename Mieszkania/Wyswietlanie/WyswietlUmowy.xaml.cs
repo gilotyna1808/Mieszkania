@@ -32,11 +32,12 @@ namespace Mieszkania.Wyswietlanie
 
         private void btn_W_Click(object sender, RoutedEventArgs e)
         {
-            if (dataG.SelectedItems.Count > 0)
+            if (dataG.SelectedItems.Count == 1)
             {
-                string tes = Convert.ToString(dataG.Items.GetItemAt(dataG.SelectedIndex));
-                tes = (tes.Substring(11, 3)).TrimEnd(',');
-                id_w_u = Convert.ToInt32(tes);
+                DataGridRow dr = dataG.ItemContainerGenerator.ContainerFromIndex(dataG.SelectedIndex) as DataGridRow;
+                DataGridColumn dc = dataG.Columns[0];
+                TextBlock cell = dc.GetCellContent(dr) as TextBlock;
+                id_w_u = Convert.ToInt32(cell.Text);
             }
             this.Close();
         }
