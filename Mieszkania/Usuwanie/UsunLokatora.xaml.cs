@@ -20,6 +20,7 @@ namespace Mieszkania
     /// <summary>
     /// Logika interakcji dla klasy UsunLokatora.xaml
     /// </summary>
+    /// 
     public partial class UsunLokatora : UserControl
     {
         User uzytkownik;
