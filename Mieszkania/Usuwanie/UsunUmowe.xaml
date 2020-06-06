@@ -7,9 +7,20 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
-        <Button x:Name="btn_Wybierz" Content="Wybierz Umowe" HorizontalAlignment="Left" VerticalAlignment="Top" Width="204" Margin="90,28,0,0" Height="53" Click="btn_Wybierz_Click"/>
-        <Button x:Name="btn_Usun" Content="Usun" HorizontalAlignment="Left" VerticalAlignment="Top" Width="204" Margin="90,232,0,0" Height="50" Click="btn_Usun_Click"/>
-        <TextBox x:Name="txt_id" IsEnabled="False" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Width="120" Margin="174,140,0,0"/>
-        <Label Content="ID umowy: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="90,136,0,0"/>
+        <Label Content="ID Umowy: "          Foreground="#2EC4B6" HorizontalAlignment="Left" Height="40" Margin="23,55,0,0" VerticalAlignment="Top" FontSize="15" Width="151"/>
+        <Label Content="ID Mieszkania: "     Foreground="#FFBF69" HorizontalAlignment="Left" Height="40" Margin="23,100,0,0" VerticalAlignment="Top" FontSize="15" Width="151"/>
+        <Label Content="ID Lokatora: "       Foreground="#2EC4B6" HorizontalAlignment="Left" Height="40" Margin="23,145,0,0" VerticalAlignment="Top" FontSize="15" Width="151"/>
+        <Label Content="Data obowiązywania:"          Foreground="#FFBF69" HorizontalAlignment="Left" Height="40" Margin="23,190,0,0" VerticalAlignment="Top" FontSize="15" Width="151" RenderTransformOrigin="0.372,1.424"/>
+        <Label Content="Czynsz: "            Foreground="#2EC4B6" HorizontalAlignment="Left" Height="40" Margin="23,235,0,0" VerticalAlignment="Top" FontSize="15" Width="151"/>
+        <Label Content="Oplaty stale: "      Foreground="#FFBF69" HorizontalAlignment="Left" Height="40" Margin="23,280,0,0" VerticalAlignment="Top" FontSize="15" Width="151"/>
+        <TextBox x:Name="txt_id"             Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,55,0,0"  TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" IsEnabled="False"/>
+        <TextBox x:Name="txt_idM"            Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,100,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" IsEnabled="False"/>
+        <TextBox x:Name="txt_idL"            Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,145,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" IsEnabled="False"/>
+        <DatePicker x:Name="txt_od_kiedy"    Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,190,0,0" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="170" IsEnabled="False"/>
+        <DatePicker x:Name="txt_do_kiedy"    Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="370,190,0,0" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="170" IsEnabled="False"/>
+        <TextBox x:Name="txt_czynsz"         Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,235,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" IsEnabled="False"/>
+        <TextBox x:Name="txt_coplaty"        Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,280,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" IsEnabled="False"/>
+        <Button x:Name="wybierz" Content="Wybierz umowe"      HorizontalAlignment="Left" Height="40" Margin="190,325,0,0" VerticalAlignment="Top" Foreground="White" Background="#FFBF69" Width="100" Click="btn_Wybierz_Click"/>
+        <Button x:Name="btn_Usun" Content="Usun"             HorizontalAlignment="Left" Foreground="White" Background="#2EC4B6" FontSize="20" VerticalContentAlignment="Center" Height="50" Margin="340,390,0,0" VerticalAlignment="Top" Width="200" Click="btn_Usun_Click"/>
     </Grid>
 </UserControl>

@@ -5,29 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mieszkania"
         mc:Ignorable="d"
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Margin="0,0,-6.4,0" Background="White" MouseMove="Grid_MouseMove">
-        <Label Content="Id" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="109,92,0,0" Height="33" Width="268"/>
-        <Button x:Name="btn_Wybierz" Content="Wybierz pracownika" HorizontalAlignment="Left" VerticalAlignment="Top" Width="192" Margin="183,30,0,0" Height="38" Click="btn_Wybierz_Click"/>
-        <TextBox x:Name="txt_id" IsEnabled="False" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" Text="IdPracownika" VerticalAlignment="Top" Width="209" Margin="233,92,0,0"/>
-        <Button x:Name="btn_Modyfikuj" Content="Modyfikuj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="168" Margin="183,393,0,0" Height="47" Click="btn_Modyfikuj_Click"/>
-        <Label Content="Imie: " HorizontalAlignment="Left" Margin="106,124,0,0" VerticalAlignment="Top" Width="154"/>
-        <Label Content="Nazwisko: " HorizontalAlignment="Left" Margin="106,155,0,0" VerticalAlignment="Top" Width="154"/>
-        <Label Content="Numer telefonu: " HorizontalAlignment="Left" Margin="106,217,0,0" VerticalAlignment="Top" Width="154"/>
-        <TextBox x:Name="txt_imiePrac" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Imie" VerticalAlignment="Top" Width="209" Margin="233,124,0,0"/>
-        <TextBox x:Name="txt_nazPrac" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Nazwisko" VerticalAlignment="Top" Width="209" Margin="233,155,0,0"/>
-        <TextBox x:Name="txt_telPrac" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="xxxxxxxxx" VerticalAlignment="Top" Width="209" Margin="233,217,0,0"/>
-        <Label Content="Pesel: " HorizontalAlignment="Left" Margin="106,186,0,0" VerticalAlignment="Top" Width="154"/>
-        <TextBox x:Name="txt_Pesel" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Nazwisko" VerticalAlignment="Top" Width="209" Margin="233,186,0,0"/>
-        <Label Content="Miasto zamieszkania" HorizontalAlignment="Left" Margin="106,245,0,0" VerticalAlignment="Top" Width="154"/>
-        <Label Content="Adres zamieszkania" HorizontalAlignment="Left" Margin="106,276,0,0" VerticalAlignment="Top" Width="154"/>
-        <Label Content="Stanowisko" HorizontalAlignment="Left" Margin="106,302,0,0" VerticalAlignment="Top" Width="154"/>
-        <TextBox x:Name="txt_miasto" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="xxxxxxxxx" VerticalAlignment="Top" Width="209" Margin="233,248,0,0"/>
-        <TextBox x:Name="txt_adres" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="xxxxxxxxx" VerticalAlignment="Top" Width="209" Margin="233,279,0,0"/>
-        <ComboBox x:Name="cbox_stanowisko" HorizontalAlignment="Left" Margin="233,307,0,0" VerticalAlignment="Top" Width="209" IsSynchronizedWithCurrentItem="True" SelectedValuePath="Key" DisplayMemberPath="Value" />
+             d:DesignHeight="550" d:DesignWidth="600">
+    <Grid Margin="0,0,10,0" Background="White" MouseMove="Grid_MouseMove">
+        <ComboBox x:Name="cbox_stanowisko" HorizontalAlignment="Left" Margin="179,361,0,0" VerticalAlignment="Top" Width="350" IsSynchronizedWithCurrentItem="True" SelectedValuePath="Key" DisplayMemberPath="Value" Height="35" />
         <DataGrid x:Name="dataG" HorizontalAlignment="Left" Height="59" Margin="894,212,-174.6,0" VerticalAlignment="Top" Width="87" Visibility="Hidden"/>
-        <Label Content="Zatrudniony" HorizontalAlignment="Left" Margin="106,337,0,0" VerticalAlignment="Top" Width="154"/>
-        <ComboBox x:Name="cbox_zatrudniony" HorizontalAlignment="Left" Margin="233,341,0,0" VerticalAlignment="Top" Width="209" IsSynchronizedWithCurrentItem="True" SelectedValuePath="Key" DisplayMemberPath="Value" />
+        <ComboBox x:Name="cbox_zatrudniony" HorizontalAlignment="Left" Margin="179,323,0,0" VerticalAlignment="Top" Width="350" IsSynchronizedWithCurrentItem="True" SelectedValuePath="Key" DisplayMemberPath="Value" Height="33" />
+        <Label Content="Id"              Foreground="#2EC4B6" HorizontalAlignment="Left" Height="40" Margin="34,7,0,0"  VerticalAlignment="Top" FontSize="15" Width="140"/>
+        <Label Content="Imie: "          Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="34,52,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
+        <Label Content="Nazwisko: "      Foreground="#2EC4B6" HorizontalAlignment="Left" Height="40" Margin="34,97,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
+        <Label Content="Numer telefonu:" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="34,142,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
+        <TextBox x:Name="txt_id"         Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="179,7,0,0"  TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="239" IsEnabled="False"/>
+        <TextBox x:Name="txt_imiePrac"   Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="179,52,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350"/>
+        <TextBox x:Name="txt_nazPrac"    Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="179,97,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350"/>
+        <TextBox x:Name="txt_telPrac"    Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="179,142,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350"/>
+        <Button x:Name="btn_Wybierz" Content="Wybierz pracownika" HorizontalAlignment="Left" Height="40" Margin="429,7,0,0" VerticalAlignment="Top" Foreground="White" Background="#FFBF69" Width="100" Click="btn_Wybierz_Click"/>
+        <Label Content="Pesel: "              Foreground="#2EC4B6" HorizontalAlignment="Left" Height="40" Margin="34,188,0,0"  VerticalAlignment="Top" FontSize="15" Width="140"/>
+        <Label Content="Miasto zamieszkania"          Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="34,233,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
+        <Label Content="Adres zamieszkania:"      Foreground="#2EC4B6" HorizontalAlignment="Left" Height="40" Margin="34,278,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
+        <Label Content="Stanowisko:" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="34,323,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
+        <TextBox x:Name="txt_Pesel"         Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="179,188,0,0"  TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" SpellCheck.IsEnabled="True"/>
+        <TextBox x:Name="txt_miasto"   Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="179,233,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350"/>
+        <TextBox x:Name="txt_adres"    Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="179,278,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350"/>
+        <Label Content="Zatrudniony"              Foreground="#2EC4B6" HorizontalAlignment="Left" Height="40" Margin="34,356,0,0"  VerticalAlignment="Top" FontSize="15" Width="140"/>
+        <Button x:Name="btn_Modyfikuj" Content="Modyfikuj" HorizontalAlignment="Left" Foreground="White" Background="#2EC4B6" FontSize="20" VerticalContentAlignment="Center" Height="50" Margin="329,442,0,0" VerticalAlignment="Top" Width="200" Click="btn_Modyfikuj_Click"/>
 
     </Grid>
 </UserControl>

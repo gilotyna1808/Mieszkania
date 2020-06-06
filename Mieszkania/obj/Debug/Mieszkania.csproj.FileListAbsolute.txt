@@ -233,3 +233,7 @@ C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Danielv2\gilotyna1808\Mieszkania\Mieszka
 C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Danielv2\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Mieszkania.csproj.CopyComplete
 C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Danielv2\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Mieszkania.exe
 C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Danielv2\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Mieszkania.pdb
+C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Danielv2\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Mieszkania.csprojAssemblyReference.cache
+C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Danielv2\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Danielv2\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\RdlCompile.cache
+C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Danielv2\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\RdlCompile.compiled

@@ -5,22 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mieszkania"
         mc:Ignorable="d"
-        d:DesignHeight="450" d:DesignWidth="800" Background="White">
+        d:DesignHeight="550" d:DesignWidth="600" Background="White">
     <Grid>
-        <TextBox x:Name="txt_stan" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Stan" VerticalAlignment="Top" Width="120" Margin="189,165,0,0"/>
-        <TextBox x:Name="txt_koszt" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Koszt" VerticalAlignment="Top" Width="120" Margin="189,208,0,0"/>
-        <DatePicker x:Name="txt_data_p" HorizontalAlignment="Left" Height="23"  Text="xx-xx-xxxx" VerticalAlignment="Top" Width="120" Margin="189,252,0,0"/>
-        <DatePicker x:Name="txt_data_k" HorizontalAlignment="Left" Height="23"  Text="xx-xx-xxxx" VerticalAlignment="Top" Width="120" Margin="189,295,0,0"/>
-        <TextBox x:Name="txt_id" IsEnabled="False" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Width="120" Margin="189,101,0,0"/>
-        <Label Content="Stan: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="73,165,0,0"/>
-        <Label Content="Koszt:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="73,204,0,0"/>
-        <Label Content="Data rozpoczecia: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="73,249,0,0"/>
-        <Label Content="Data zakonczenia: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="73,291,0,0"/>
-        <Label Content="ID Remontu: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="73,97,0,0"/>
-        <Button x:Name="btn_Wybierz" Content="Wybierz" HorizontalAlignment="Left" VerticalAlignment="Top" Width="236" Height="42" Margin="73,29,0,0" Click="Button_Click"/>
-        <Button x:Name="btn_Modyfikuj" Content="Modyfikuj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="236" Margin="73,339,0,0" Height="44" Click="Button_Click_1"/>
-        <TextBox x:Name="txt_idM" IsEnabled="False" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Width="120" Margin="189,129,0,0"/>
-        <Label Content="ID Mieszkania: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="73,129,0,0"/>
-
+        <Label Content="ID Remontu: "       Foreground="#2EC4B6" HorizontalAlignment="Left" Height="40" Margin="45,55,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
+        <Label Content="ID Mieszkania: "    Foreground="#FFBF69" HorizontalAlignment="Left" Height="40" Margin="45,100,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
+        <Label Content="Stan: "             Foreground="#2EC4B6" HorizontalAlignment="Left" Height="40" Margin="45,145,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
+        <Label Content="Koszt:"             Foreground="#FFBF69" HorizontalAlignment="Left" Height="40" Margin="45,190,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
+        <Label Content="Data rozpoczecia: " Foreground="#2EC4B6" HorizontalAlignment="Left" Height="40" Margin="45,235,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
+        <Label Content="Data zakonczenia: " Foreground="#FFBF69" HorizontalAlignment="Left" Height="40" Margin="45,280,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
+        <TextBox x:Name="txt_id"            Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,55,0,0"  TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" IsEnabled="False"/>
+        <TextBox x:Name="txt_idM"           Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,100,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" IsEnabled="False"/>
+        <TextBox x:Name="txt_stan"          Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,145,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350"/>
+        <TextBox x:Name="txt_koszt"         Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,190,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350"/>
+        <DatePicker x:Name="txt_data_p"     Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,235,0,0" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350"/>
+        <DatePicker x:Name="txt_data_k"     Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,280,0,0" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350"/>
+        <Button x:Name="btn_Wybierz"    Content="Wybierz z listy" HorizontalAlignment="Left" Height="40" Margin="440,325,0,0" VerticalAlignment="Top" Foreground="White" Background="#FFBF69" Width="100" Click="Button_Click"/>
+        <Button x:Name="btn_Modyfikuj"  Content="Modyfikuj" HorizontalAlignment="Left" Foreground="White" Background="#2EC4B6" FontSize="20" VerticalContentAlignment="Center" Height="50" Margin="340,400,0,0" VerticalAlignment="Top" Width="200" Click="Button_Click_1"/>
     </Grid>
 </UserControl>

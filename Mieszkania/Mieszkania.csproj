@@ -719,6 +719,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Testowy.rdlc" />
     <EntityDeploy Include="DostepAut.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DostepAut.Designer.cs</LastGenOutput>

@@ -7,8 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="White">
-        <Button x:Name="btn_Wybierz" Content="Wybierz lokatora" HorizontalAlignment="Left" VerticalAlignment="Top" Width="221" Margin="50,21,0,0" Height="44" Click="btn_Wybierz_Click"/>
-        <TextBox x:Name="txt_id" IsEnabled="False" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="IdLokatora" VerticalAlignment="Top" Width="120" Margin="344,34,0,0"/>
+        <TextBox x:Name="txt_id" IsEnabled="False" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" Text="IdLokatora" VerticalAlignment="Top" Width="160" Margin="380,21,0,0"/>
         <Label Content="Imie&#x9;" Foreground="#2EC4B6" HorizontalAlignment="Left" Height="40" Margin="46,76,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
         <Label Content="Nazwisko" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="46,122,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
         <Label Content="Nr tel" Foreground="#2EC4B6" HorizontalAlignment="Left" Height="40" Margin="46,166,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
@@ -22,6 +21,7 @@
         <TextBox x:Name="txt_adresk" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="58" Margin="190,258,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" IsEnabled="False"/>
         <Label Content="Adres E-mail" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="46,322,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
         <TextBox x:Name="txt_mail" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,322,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" IsEnabled="False"/>
+        <Button x:Name="btn_Wybierz" Content="Wybierz Lokatora" HorizontalAlignment="Left" Foreground="White" Background="#FF9F1C" FontSize="20" VerticalContentAlignment="Center" Height="50" Margin="46,21,0,0" VerticalAlignment="Top" Width="329" Click="btn_Wybierz_Click"/>
 
     </Grid>
 </UserControl>

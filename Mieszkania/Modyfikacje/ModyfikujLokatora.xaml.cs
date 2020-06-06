@@ -48,7 +48,7 @@ namespace Mieszkania
             }
         }
 
-        private void btn_modyfikuj_Click_1(object sender, RoutedEventArgs e)
+        private void btn_Modyfikuj_Click(object sender, RoutedEventArgs e)
         {
             Walidacja w = new Walidacja();
             bool walidacjaImie = true;
@@ -109,5 +109,6 @@ namespace Mieszkania
                 MessageBox.Show("Nie spelniono zasad");
             }
         }
+
     }
 }
