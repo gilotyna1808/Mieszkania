@@ -218,5 +218,12 @@ namespace Mieszkania
             PanelWidok.Children.Clear();
             PanelWidok.Children.Add(wl);
         }
+
+        private void btn_konta_mod_Click(object sender, RoutedEventArgs e)
+        {
+            ModyfikujKonto mk = new ModyfikujKonto();
+            PanelWidok.Children.Clear();
+            PanelWidok.Children.Add(mk);
+        }
     }
 }

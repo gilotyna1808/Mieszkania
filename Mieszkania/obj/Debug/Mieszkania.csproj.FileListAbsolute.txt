@@ -237,3 +237,5 @@ C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Danielv2\gilotyna1808\Mieszkania\Mieszka
 C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Danielv2\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Danielv2\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\RdlCompile.cache
 C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Danielv2\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\RdlCompile.compiled
+C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Danielv2\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Modyfikacje\ModyfikujKonto.g.cs
+C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Danielv2\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Modyfikacje\ModyfikujKonto.baml

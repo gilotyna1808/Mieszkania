@@ -11,19 +11,18 @@
             <ColumnDefinition Width="300"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <StackPanel HorizontalAlignment="Left" Width="300" Height="519" VerticalAlignment="Top">
-            <TabControl Height="450">
+        <StackPanel HorizontalAlignment="Left" Width="300" Height="519" VerticalAlignment="Top" Background="#FFFF0707">
+            <TabControl Height="450" Background="Red">
                 <TabItem Header="Pracownicy">
-                    <Grid Background="#FFE5E5E5">
+                    <Grid>
                         <Button x:Name="btn_DodajPrac" Content="Dodaj Pracownika" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,34,0,351" Width="274" Click="btn_DodajPrac_Click"/>
                         <Button x:Name="btn_Modyfikuj_Prac" Content="Modyfikuj Pracownika" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,76,0,309" Width="274" Click="btn_Modyfikuj_Prac_Click"/>
                         <Button x:Name="btn_UsunPrac" Content="Usuń Pracownika" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,118,0,267" Width="274" Click="btn_UsunPrac_Click"/>
                         <Button x:Name="btn_WyswietlPrac" Content="Wyświetl Pracownika" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,160,0,225" Width="274" Click="btn_WyswietlPrac_Click"/>
-                        <Button x:Name="btn_temp1" Content="Temp pokaz autoryzacje" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,202,0,183" Width="274" Click="btn_temp1_Click"/>
                     </Grid>
                 </TabItem>
                 <TabItem Header="Mieszkania">
-                    <Grid Background="#FFE5E5E5" Margin="0,0,0,0">
+                    <Grid Margin="0,0,0,0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="22*"/>
                             <ColumnDefinition Width="273*"/>
@@ -40,7 +39,7 @@
                     </Grid>
                 </TabItem>
                 <TabItem Header="Umowy">
-                    <Grid Background="#FFE5E5E5" Margin="0,0,0,0">
+                    <Grid Margin="0,0,0,0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="22*"/>
                             <ColumnDefinition Width="273*"/>
@@ -56,7 +55,7 @@
                     </Grid>
                 </TabItem>
                 <TabItem Header="Lokator">
-                    <Grid Background="#FFE5E5E5" Margin="0,0,0,0">
+                    <Grid Margin="0,0,0,0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="22*"/>
                             <ColumnDefinition Width="273*"/>
@@ -68,11 +67,13 @@
                     </Grid>
                 </TabItem>
                 <TabItem Header="Konta">
-                    <Grid Background="#FFE5E5E5" Margin="0,0,0,0">
+                    <Grid Margin="0,0,0,0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="22*"/>
                             <ColumnDefinition Width="273*"/>
                         </Grid.ColumnDefinitions>
+                        <Button x:Name="btn_konta_mod" Content="Modyfikuj Konta" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,10,0,375" Width="274" Grid.ColumnSpan="2" Click="btn_konta_mod_Click"/>
+                        <Button x:Name="btn_temp1" Content="Pokaż Konta" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,52,0,333" Width="274" Click="btn_temp1_Click" Grid.ColumnSpan="2"/>
                     </Grid>
                 </TabItem>
             </TabControl>

@@ -37,6 +37,15 @@ namespace Mieszkania
             if (temp_id != 0)
             {
                 txt_id.Text = Convert.ToString(temp_id);
+                using (var com = new DostepPrac())
+                {
+                    var i = com.Remonty.Where(s => s.IdRemontu == temp_id);
+                    txt_stan.Text = Convert.ToString(i.Select(s => s.Stan).FirstOrDefault());
+                    txt_data_p.Text = Convert.ToString(i.Select(s => s.Data_Rozpoczecia).FirstOrDefault());
+                    txt_data_k.Text = Convert.ToString(i.Select(s => s.Data_Zakonczenia).FirstOrDefault());
+                    txt_koszt.Text = Convert.ToString(i.Select(s => s.Koszt_Remontu).FirstOrDefault());
+                    txt_idM.Text = Convert.ToString(i.Select(s => s.IdMieszkania).FirstOrDefault());
+                }
             }
         }
 

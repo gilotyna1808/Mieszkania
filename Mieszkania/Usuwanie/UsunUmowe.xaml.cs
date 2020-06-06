@@ -37,6 +37,16 @@ namespace Mieszkania
             if (temp_id != 0)
             {
                 txt_id.Text = Convert.ToString(temp_id);
+                using (var com = new DostepPrac())
+                {
+                    var i = com.Umowa.Where(s => s.IdUmowy == temp_id);
+                    txt_coplaty.Text = Convert.ToString(i.Select(s => s.Oplaty_Stale).FirstOrDefault());
+                    txt_czynsz.Text = Convert.ToString(i.Select(s => s.Stawka_Czynsz).FirstOrDefault());
+                    txt_od_kiedy.Text = Convert.ToString(i.Select(s => s.Od_Kiedy).FirstOrDefault());
+                    txt_do_kiedy.Text = Convert.ToString(i.Select(s => s.Do_Kiedy).FirstOrDefault());
+                    txt_idL.Text = Convert.ToString(i.Select(s => s.IdLokatora).FirstOrDefault());
+                    txt_idM.Text = Convert.ToString(i.Select(s => s.IdMieszkania).FirstOrDefault());
+                }
             }
         }
 
