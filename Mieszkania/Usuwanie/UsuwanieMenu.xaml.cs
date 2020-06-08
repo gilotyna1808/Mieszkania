@@ -66,10 +66,5 @@ namespace Mieszkania.Usuwanie
             baze.PanelWidok.Children.Add(us);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            RaportTest rp = new RaportTest(uzytkownik);
-            rp.Show();
-        }
     }
 }

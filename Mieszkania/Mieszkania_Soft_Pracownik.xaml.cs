@@ -228,5 +228,18 @@ namespace Mieszkania
             PanelWidok.Children.Clear();
             PanelWidok.Children.Add(mk);
         }
+
+        private void btn_Raport_wlasne_Click(object sender, RoutedEventArgs e)
+        {
+            RaportTest mk = new RaportTest(uztykownik);
+            PanelWidok.Children.Clear();
+            PanelWidok.Children.Add(mk);
+        }
+
+        private void btn_RaportOg_Click(object sender, RoutedEventArgs e)
+        {
+            Okno_PracownicyOdp o = new Okno_PracownicyOdp();
+            o.Show();
+        }
     }
 }

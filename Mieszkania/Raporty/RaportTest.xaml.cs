@@ -21,7 +21,7 @@ namespace Mieszkania.Raporty
     /// <summary>
     /// Logika interakcji dla klasy RaportTest.xaml
     /// </summary>
-    public partial class RaportTest : Window
+    public partial class RaportTest : UserControl
     {
         User uzytkownik;
         public RaportTest(User u)
@@ -62,15 +62,23 @@ namespace Mieszkania.Raporty
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Test.Reset();
-            
-            DostepPrac dp = new DostepPrac();
             ReportParameter rp = new ReportParameter("Imie", uzytkownik.getImie());
             ReportParameter rp2 = new ReportParameter("Nazwisko", uzytkownik.getNazwisko());
-            //ReportDataSource ds = new ReportDataSource("DataSet1",dp);
-            Test.LocalReport.ReportPath = "../../Testowy.rdlc";
-            Test.LocalReport.SetParameters(new ReportParameter[] { rp,rp2 });
-            //Test.LocalReport.DataSources.Add(ds);
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Pracownicy_OdpDataSet dataset = new Pracownicy_OdpDataSet();
+            dataset.BeginInit();
+            reportDataSource1.Name = "DataSet1";
+
+            reportDataSource1.Value = dataset.Pracownicy_OdpDataSet1;
+            this.Test.LocalReport.DataSources.Add(reportDataSource1);
+            this.Test.LocalReport.ReportPath = "../../Raporty/PracownikMieszkaniaODP.rdlc";
+            Test.LocalReport.SetParameters(new ReportParameter[] { rp, rp2 });
+            dataset.EndInit();
+
+            Pracownicy_OdpDataSetTableAdapters.Pracownicy_OdpDataSet1TableAdapter dataTable1TableAdapter = new Pracownicy_OdpDataSetTableAdapters.Pracownicy_OdpDataSet1TableAdapter();
+
+            dataTable1TableAdapter.ClearBeforeFill = true;
+            dataTable1TableAdapter.Fill(dataset.Pracownicy_OdpDataSet1,uzytkownik.getIdPrac());
             Test.RefreshReport();
         }
     }

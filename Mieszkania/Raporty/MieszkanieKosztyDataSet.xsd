@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="MieszkanieKosztyDataSet" targetNamespace="http://tempuri.org/MieszkanieKosztyDataSet.xsd" xmlns:mstns="http://tempuri.org/MieszkanieKosztyDataSet.xsd" xmlns="http://tempuri.org/MieszkanieKosztyDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="MieszkaniaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MieszkaniaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Mieszkania.Properties.Settings.GlobalReference.Default.MieszkaniaConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MieszkanieKosztyDataSet1TableAdapter" GeneratorDataComponentClassName="MieszkanieKosztyDataSet1TableAdapter" Name="MieszkanieKosztyDataSet1" UserDataComponentName="MieszkanieKosztyDataSet1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MieszkaniaConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Mieszkanie.IdMieszkania, Mieszkanie.Miasto, Mieszkanie.Ulica, Mieszkanie.Nr_Domu, Mieszkanie.Nr_Mieszkania, Umowa.Od_Kiedy, Umowa.Do_Kiedy, SUM(Umowa.Stawka_Czynsz) AS Expr1, SUM(Umowa.Oplaty_Stale) 
+                         AS Expr2
+FROM            Mieszkanie INNER JOIN
+                         Umowa ON Mieszkanie.IdMieszkania = Umowa.IdMieszkania
+GROUP BY Mieszkanie.IdMieszkania, Mieszkanie.Miasto, Mieszkanie.Ulica, Mieszkanie.Nr_Domu, Mieszkanie.Nr_Mieszkania, Umowa.Od_Kiedy, Umowa.Do_Kiedy</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdMieszkania" DataSetColumn="IdMieszkania" />
+              <Mapping SourceColumn="Miasto" DataSetColumn="Miasto" />
+              <Mapping SourceColumn="Ulica" DataSetColumn="Ulica" />
+              <Mapping SourceColumn="Nr_Domu" DataSetColumn="Nr_Domu" />
+              <Mapping SourceColumn="Nr_Mieszkania" DataSetColumn="Nr_Mieszkania" />
+              <Mapping SourceColumn="Od_Kiedy" DataSetColumn="Od_Kiedy" />
+              <Mapping SourceColumn="Do_Kiedy" DataSetColumn="Do_Kiedy" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="Expr2" DataSetColumn="Expr2" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="MieszkanieKosztyDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="MieszkanieKosztyDataSet" msprop:Generator_UserDSName="MieszkanieKosztyDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="MieszkanieKosztyDataSet1" msprop:Generator_TableClassName="MieszkanieKosztyDataSet1DataTable" msprop:Generator_TableVarName="tableMieszkanieKosztyDataSet1" msprop:Generator_TablePropName="MieszkanieKosztyDataSet1" msprop:Generator_RowDeletingName="MieszkanieKosztyDataSet1RowDeleting" msprop:Generator_RowChangingName="MieszkanieKosztyDataSet1RowChanging" msprop:Generator_RowEvHandlerName="MieszkanieKosztyDataSet1RowChangeEventHandler" msprop:Generator_RowDeletedName="MieszkanieKosztyDataSet1RowDeleted" msprop:Generator_UserTableName="MieszkanieKosztyDataSet1" msprop:Generator_RowChangedName="MieszkanieKosztyDataSet1RowChanged" msprop:Generator_RowEvArgName="MieszkanieKosztyDataSet1RowChangeEvent" msprop:Generator_RowClassName="MieszkanieKosztyDataSet1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdMieszkania" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdMieszkania" msprop:Generator_ColumnPropNameInRow="IdMieszkania" msprop:Generator_ColumnPropNameInTable="IdMieszkaniaColumn" msprop:Generator_UserColumnName="IdMieszkania" type="xs:int" />
+              <xs:element name="Miasto" msprop:Generator_ColumnVarNameInTable="columnMiasto" msprop:Generator_ColumnPropNameInRow="Miasto" msprop:Generator_ColumnPropNameInTable="MiastoColumn" msprop:Generator_UserColumnName="Miasto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ulica" msprop:Generator_ColumnVarNameInTable="columnUlica" msprop:Generator_ColumnPropNameInRow="Ulica" msprop:Generator_ColumnPropNameInTable="UlicaColumn" msprop:Generator_UserColumnName="Ulica">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nr_Domu" msprop:Generator_ColumnVarNameInTable="columnNr_Domu" msprop:Generator_ColumnPropNameInRow="Nr_Domu" msprop:Generator_ColumnPropNameInTable="Nr_DomuColumn" msprop:Generator_UserColumnName="Nr_Domu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nr_Mieszkania" msprop:Generator_ColumnVarNameInTable="columnNr_Mieszkania" msprop:Generator_ColumnPropNameInRow="Nr_Mieszkania" msprop:Generator_ColumnPropNameInTable="Nr_MieszkaniaColumn" msprop:Generator_UserColumnName="Nr_Mieszkania">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Od_Kiedy" msprop:Generator_ColumnVarNameInTable="columnOd_Kiedy" msprop:Generator_ColumnPropNameInRow="Od_Kiedy" msprop:Generator_ColumnPropNameInTable="Od_KiedyColumn" msprop:Generator_UserColumnName="Od_Kiedy" type="xs:dateTime" />
+              <xs:element name="Do_Kiedy" msprop:Generator_ColumnVarNameInTable="columnDo_Kiedy" msprop:Generator_ColumnPropNameInRow="Do_Kiedy" msprop:Generator_ColumnPropNameInTable="Do_KiedyColumn" msprop:Generator_UserColumnName="Do_Kiedy" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Expr1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Expr2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnExpr2" msprop:Generator_ColumnPropNameInRow="Expr2" msprop:Generator_ColumnPropNameInTable="Expr2Column" msprop:Generator_UserColumnName="Expr2" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:MieszkanieKosztyDataSet1" />
+      <xs:field xpath="mstns:IdMieszkania" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
