@@ -59,8 +59,16 @@ namespace Mieszkania
                         IdMieszkania = id_m
                     };
                     db.Remonty.Add(dodaj);
-                    db.SaveChanges();
+                    var flagaPowDod = db.SaveChanges();
+                    if (flagaPowDod == 1)
+                    {
+                        MessageBox.Show("Dodawanie zakonczone pomyślnie");
+                    }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Wprowadzone złe dane");
             }
         }
         private void btn_wybierz_mieszkanie_Click(object sender, RoutedEventArgs e)
@@ -72,6 +80,34 @@ namespace Mieszkania
             if (temp_id != 0)
             {
                 txt_id_m.Text = Convert.ToString(temp_id);
+            }
+        }
+
+        private void txt_stan_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            TextBox x = (TextBox)sender;
+            if (w.sprawdzStanRemont(x.Text))
+            {
+                x.Background = Brushes.White;
+            }
+            else
+            {
+                x.Background = Brushes.Red;
+            }
+        }
+
+        private void txt_Koszt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            TextBox x = (TextBox)sender;
+            if (w.sprawdzKosztRemontu(x.Text))
+            {
+                x.Background = Brushes.White;
+            }
+            else
+            {
+                x.Background = Brushes.Red;
             }
         }
     }

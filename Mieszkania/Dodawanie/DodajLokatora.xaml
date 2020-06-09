@@ -10,17 +10,17 @@
         <Label Content="Imie&#x9;" Foreground="#2EC4B6" HorizontalAlignment="Left" Height="40" Margin="45,55,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
         <Label Content="Nazwisko" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="45,100,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
         <Label Content="Nr tel" Foreground="#2EC4B6" HorizontalAlignment="Left" Height="40" Margin="45,145,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
-        <TextBox x:Name="txt_imie" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,55,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350"/>
-        <TextBox x:Name="txt_naz" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,100,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350"/>
-        <TextBox x:Name="txt_tel" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,145,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350"/>
+        <TextBox x:Name="txt_imie" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,55,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" TextChanged="txt_imie_TextChanged"/>
+        <TextBox x:Name="txt_naz" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,100,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" TextChanged="txt_naz_TextChanged"/>
+        <TextBox x:Name="txt_tel" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,145,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" TextChanged="txt_tel_TextChanged"/>
         <Button x:Name="btn_dodaj" Content="Dodaj" Foreground="White" Background="#2EC4B6" FontSize="20" VerticalContentAlignment="Center" Height="50" Margin="340,400,60,0" VerticalAlignment="Top" Width="200" Click="btn_dodaj_Click"/>
         <Label Content="Pesel" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="45,192,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
         <Label Content="Adres &#xD;&#xA;Korespondencyjny" Foreground="#2EC4B6" HorizontalAlignment="Left" Height="59" Margin="45,236,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
         <TextBlock HorizontalAlignment="Left" Height="4" Margin="413,220,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="3"/>
-        <TextBox x:Name="txt_pesel" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,192,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350"/>
-        <TextBox x:Name="txt_adresk" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="59" Margin="190,236,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350"/>
+        <TextBox x:Name="txt_pesel" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,192,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" TextChanged="txt_pesel_TextChanged"/>
+        <TextBox x:Name="txt_adresk" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="59" Margin="190,236,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" TextChanged="txt_adresk_TextChanged"/>
         <Label Content="Adres E-mail" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="45,300,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
-        <TextBox x:Name="txt_mail" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,300,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350"/>
+        <TextBox x:Name="txt_mail" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,300,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" TextChanged="txt_mail_TextChanged"/>
 
     </Grid>
 </UserControl>

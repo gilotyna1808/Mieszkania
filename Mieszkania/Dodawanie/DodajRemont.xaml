@@ -7,11 +7,11 @@
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="600">
     <Grid  Background="#f6f6f6">
-        <TextBox x:Name="txt_stan" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,55,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350"/>
-        <TextBox x:Name="txt_Koszt" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,100,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350"/>
+        <TextBox x:Name="txt_stan" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,55,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" TextChanged="txt_stan_TextChanged"/>
+        <TextBox x:Name="txt_Koszt" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,100,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" TextChanged="txt_Koszt_TextChanged"/>
         <DatePicker x:Name="txt_data_p" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,145,0,0"  VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350"/>
         <DatePicker x:Name="txt_data_k" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,190,0,0"  VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350"/>
-        <TextBox x:Name="txt_id_m" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,235,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="240"/>
+        <TextBox x:Name="txt_id_m" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,235,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="240" IsEnabled="False"/>
         <Label Content="Stan:"   Foreground="#2EC4B6" HorizontalAlignment="Left" Height="40" Margin="45,55,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
         <Label Content="Kosz:"   Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="45,100,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
         <Label Content="Data Rozpoczecia:" Foreground="#2EC4B6" HorizontalAlignment="Left" Height="40" Margin="45,145,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>

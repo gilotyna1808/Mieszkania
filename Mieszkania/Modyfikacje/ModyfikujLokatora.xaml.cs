@@ -101,7 +101,11 @@ namespace Mieszkania
 
                         }
                     }
-                    dp.SaveChanges();
+                    var flagaPowDod = dp.SaveChanges();
+                    if (flagaPowDod == 1)
+                    {
+                        MessageBox.Show("Modyfikowanie zakonczone pomyślnie");
+                    }
                 }
             }
             else
@@ -110,5 +114,88 @@ namespace Mieszkania
             }
         }
 
+        private void txt_imie_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            TextBox x = (TextBox)sender;
+            if (w.sprawdzImie(x.Text))
+            {
+                x.Background = Brushes.White;
+            }
+            else
+            {
+                x.Background = Brushes.Red;
+            }
+        }
+
+        private void txt_naz_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            TextBox x = (TextBox)sender;
+            if (w.sprawdzNazwisko(x.Text))
+            {
+                x.Background = Brushes.White;
+            }
+            else
+            {
+                x.Background = Brushes.Red;
+            }
+        }
+
+        private void txt_tel_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            TextBox x = (TextBox)sender;
+            if (w.sprawdzTelefon(x.Text))
+            {
+                x.Background = Brushes.White;
+            }
+            else
+            {
+                x.Background = Brushes.Red;
+            }
+        }
+
+        private void txt_pesel_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            TextBox x = (TextBox)sender;
+            if (w.SprawdzPesel(x.Text))
+            {
+                x.Background = Brushes.White;
+            }
+            else
+            {
+                x.Background = Brushes.Red;
+            }
+        }
+
+        private void txt_adresk_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            TextBox x = (TextBox)sender;
+            if (w.SprawdzAdres(x.Text))
+            {
+                x.Background = Brushes.White;
+            }
+            else
+            {
+                x.Background = Brushes.Red;
+            }
+        }
+
+        private void txt_mail_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            TextBox x = (TextBox)sender;
+            if (w.SprawdzAdresEmail(x.Text))
+            {
+                x.Background = Brushes.White;
+            }
+            else
+            {
+                x.Background = Brushes.Red;
+            }
+        }
     }
 }

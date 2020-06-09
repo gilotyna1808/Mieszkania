@@ -99,7 +99,11 @@ namespace Mieszkania
                             p.Zatrudniony = Convert.ToBoolean(cbox_zatrudniony.SelectedValue);
                         }
                     }
-                    dp.SaveChanges();
+                    var flagaPowDod = dp.SaveChanges();
+                    if (flagaPowDod == 1)
+                    {
+                        MessageBox.Show("Modyfikowanie zakonczone pomyślnie");
+                    }
                 };
             }
             else
@@ -122,6 +126,90 @@ namespace Mieszkania
             {
                 cbox_stanowisko.ItemsSource = stan;
                 test = true;
+            }
+        }
+
+        private void txt_imiePrac_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            TextBox x = (TextBox)sender;
+            if (w.sprawdzImie(x.Text))
+            {
+                x.Background = Brushes.White;
+            }
+            else
+            {
+                x.Background = Brushes.Red;
+            }
+        }
+
+        private void txt_nazPrac_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            TextBox x = (TextBox)sender;
+            if (w.sprawdzNazwisko(x.Text))
+            {
+                x.Background = Brushes.White;
+            }
+            else
+            {
+                x.Background = Brushes.Red;
+            }
+        }
+
+        private void txt_telPrac_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            TextBox x = (TextBox)sender;
+            if (w.sprawdzTelefon(x.Text))
+            {
+                x.Background = Brushes.White;
+            }
+            else
+            {
+                x.Background = Brushes.Red;
+            }
+        }
+
+        private void txt_Pesel_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            TextBox x = (TextBox)sender;
+            if (w.SprawdzPesel(x.Text))
+            {
+                x.Background = Brushes.White;
+            }
+            else
+            {
+                x.Background = Brushes.Red;
+            }
+        }
+
+        private void txt_miasto_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            TextBox x = (TextBox)sender;
+            if (w.sprawdzMiasto(x.Text))
+            {
+                x.Background = Brushes.White;
+            }
+            else
+            {
+                x.Background = Brushes.Red;
+            }
+        }
+
+        private void txt_adres_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            TextBox x = (TextBox)sender;
+            if (w.SprawdzAdres(x.Text))
+            {
+                x.Background = Brushes.White;
+            }
+            else
+            {
+                x.Background = Brushes.Red;
             }
         }
     }

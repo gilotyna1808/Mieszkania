@@ -22,7 +22,7 @@
         <Label Content="Kwota" HorizontalAlignment="Left" Margin="80,209,0,0" VerticalAlignment="Top"/>
         <Label Content="Termin Rozliczenia" HorizontalAlignment="Left" Margin="80,249,0,0" VerticalAlignment="Top"/>
         <Label Content="Opłacony" HorizontalAlignment="Left" Margin="80,280,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txt_Kwota" HorizontalAlignment="Left" Height="23" Margin="195,209,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txt_Kwota" HorizontalAlignment="Left" Height="23" Margin="195,209,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="txt_Kwota_TextChanged"/>
         <DatePicker x:Name="txt_termin" HorizontalAlignment="Left" Height="23" Margin="195,249,0,0" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btn_dodaj" Content="Button" HorizontalAlignment="Left" Margin="202,344,0,0" VerticalAlignment="Top" Width="87" Height="23" RenderTransformOrigin="0.5,0.5" Click="btn_dodaj_Click">
             <Button.RenderTransform>

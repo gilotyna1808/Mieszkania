@@ -59,7 +59,11 @@ namespace Mieszkania
                         Kod_Pocztowy=kodPocztowy
                     };
                     db.Mieszkanie.Add(m);
-                    db.SaveChanges();
+                    var flagaPowDod=db.SaveChanges();
+                    if (flagaPowDod == 1)
+                    {
+                        MessageBox.Show("Dodawanie zakonczone pomyślnie");
+                    }
                 }
             }
             else
@@ -72,6 +76,90 @@ namespace Mieszkania
                from a in dba.Mieszkanie
                select new {a.IdMieszkania,a.Kod_Pocztowy,a.Miasto,a.Mieszkanie1,a.Nr_Domu,a.Status_Mieszkania,a.Ulica};
             dataG.ItemsSource = querry.ToList();*/
+        }
+
+        private void txt_Miasto_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            TextBox x = (TextBox)sender;
+            if (w.sprawdzMiasto(x.Text))
+            {
+                x.Background = Brushes.White;
+            }
+            else
+            {
+                x.Background = Brushes.Red;
+            }
+        }
+
+        private void txt_Kod_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            TextBox x = (TextBox)sender;
+            if (w.sprawdzKodPocztowy(x.Text))
+            {
+                x.Background = Brushes.White;
+            }
+            else
+            {
+                x.Background = Brushes.Red;
+            }
+        }
+
+        private void txt_Ul_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            TextBox x = (TextBox)sender;
+            if (w.sprawdzUlice(x.Text))
+            {
+                x.Background = Brushes.White;
+            }
+            else
+            {
+                x.Background = Brushes.Red;
+            }
+        }
+
+        private void txt_Nr_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            TextBox x = (TextBox)sender;
+            if (w.sprawdzNrDomu(x.Text))
+            {
+                x.Background = Brushes.White;
+            }
+            else
+            {
+                x.Background = Brushes.Red;
+            }
+        }
+
+        private void txt_Mieszkanie_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            TextBox x = (TextBox)sender;
+            if (w.sprawdzNrDomu(x.Text))
+            {
+                x.Background = Brushes.White;
+            }
+            else
+            {
+                x.Background = Brushes.Red;
+            }
+        }
+
+        private void txt_status_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            TextBox x = (TextBox)sender;
+            if (w.sprawdzStatusMieszkanie(x.Text))
+            {
+                x.Background = Brushes.White;
+            }
+            else
+            {
+                x.Background = Brushes.Red;
+            }
         }
     }
 }

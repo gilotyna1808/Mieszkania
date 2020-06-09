@@ -81,12 +81,44 @@ namespace Mieszkania
                             r.Data_Zakonczenia = Convert.ToDateTime(txt_data_k.Text);
                         }
                     }
-                    dp.SaveChanges();
+                    var flagaPowDod = dp.SaveChanges();
+                    if (flagaPowDod == 1)
+                    {
+                        MessageBox.Show("Modyfikowanie zakonczone pomyślnie");
+                    }
                 };
             }
             else
             {
                 MessageBox.Show("Wprowadzono zle dane");
+            }
+        }
+
+        private void txt_stan_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            TextBox x = (TextBox)sender;
+            if (w.sprawdzStanRemont(x.Text))
+            {
+                x.Background = Brushes.White;
+            }
+            else
+            {
+                x.Background = Brushes.Red;
+            }
+        }
+
+        private void txt_Koszt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            TextBox x = (TextBox)sender;
+            if (w.sprawdzKosztRemontu(x.Text))
+            {
+                x.Background = Brushes.White;
+            }
+            else
+            {
+                x.Background = Brushes.Red;
             }
         }
     }

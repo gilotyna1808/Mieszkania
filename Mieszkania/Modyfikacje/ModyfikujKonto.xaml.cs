@@ -75,7 +75,11 @@ namespace Mieszkania.Modyfikacje
 
                         }
                     }
-                    dp.SaveChanges();
+                    var flagaPowDod = dp.SaveChanges();
+                    if (flagaPowDod == 1)
+                    {
+                        MessageBox.Show("Modyfikowanie zakonczone pomyślnie");
+                    }
                 };
             }
             else

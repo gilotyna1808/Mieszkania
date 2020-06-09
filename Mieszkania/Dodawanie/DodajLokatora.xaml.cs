@@ -35,6 +35,7 @@ namespace Mieszkania.Dodawanie
 
         private void btn_dodaj_Click(object sender, RoutedEventArgs e)
         {
+            var flagaPowDod=1;
             Walidacja w= new Walidacja();
             bool walidacjaImie = true;
             bool walidacjaNazw = true;
@@ -81,7 +82,7 @@ namespace Mieszkania.Dodawanie
                             Adres_Mailowy = mail
                         };
                         db.Lokator.Add(m);
-                        db.SaveChanges();
+                        flagaPowDod=db.SaveChanges();
                     }
                     else if (flag == 1)
                     {
@@ -95,7 +96,7 @@ namespace Mieszkania.Dodawanie
                             Adres_Mailowy = null
                         };
                         db.Lokator.Add(m);
-                        db.SaveChanges();
+                        flagaPowDod=db.SaveChanges();
                     }
                     else if (flag == 2)
                     {
@@ -109,7 +110,7 @@ namespace Mieszkania.Dodawanie
                             Adres_Mailowy = mail
                         };
                         db.Lokator.Add(m);
-                        db.SaveChanges();
+                        flagaPowDod=db.SaveChanges();
                     }
                     else if(flag==3){
                         var m = new Lokator()
@@ -122,7 +123,12 @@ namespace Mieszkania.Dodawanie
                             Adres_Mailowy = null
                         };
                         db.Lokator.Add(m);
-                        db.SaveChanges();
+                        flagaPowDod = db.SaveChanges();
+                        
+                    }
+                    if (flagaPowDod == 1)
+                    {
+                        MessageBox.Show("Dodawanie zakonczone pomyślnie");
                     }
                    
                 }
@@ -142,6 +148,90 @@ namespace Mieszkania.Dodawanie
             else
             {
                 MessageBox.Show("Nie spelniono zasad");
+            }
+        }
+
+        private void txt_imie_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            TextBox x = (TextBox)sender;
+            if (w.sprawdzImie(x.Text))
+            {
+                x.Background = Brushes.White;
+            }
+            else
+            {
+                x.Background = Brushes.Red;
+            }
+        }
+
+        private void txt_naz_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            TextBox x = (TextBox)sender;
+            if (w.sprawdzNazwisko(x.Text))
+            {
+                x.Background = Brushes.White;
+            }
+            else
+            {
+                x.Background = Brushes.Red;
+            }
+        }
+
+        private void txt_tel_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            TextBox x = (TextBox)sender;
+            if (w.sprawdzTelefon(x.Text))
+            {
+                x.Background = Brushes.White;
+            }
+            else
+            {
+                x.Background = Brushes.Red;
+            }
+        }
+
+        private void txt_pesel_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            TextBox x = (TextBox)sender;
+            if (w.SprawdzPesel(x.Text))
+            {
+                x.Background = Brushes.White;
+            }
+            else
+            {
+                x.Background = Brushes.Red;
+            }
+        }
+
+        private void txt_adresk_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            TextBox x = (TextBox)sender;
+            if (w.SprawdzAdres(x.Text))
+            {
+                x.Background = Brushes.White;
+            }
+            else
+            {
+                x.Background = Brushes.Red;
+            }
+        }
+
+        private void txt_mail_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            TextBox x = (TextBox)sender;
+            if (w.SprawdzAdresEmail(x.Text))
+            {
+                x.Background = Brushes.White;
+            }
+            else
+            {
+                x.Background = Brushes.Red;
             }
         }
     }

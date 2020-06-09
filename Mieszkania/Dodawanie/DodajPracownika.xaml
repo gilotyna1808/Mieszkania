@@ -7,18 +7,18 @@
         mc:Ignorable="d"
              d:DesignHeight="550" d:DesignWidth="600" Background="White">
     <Grid MouseMove="Grid_MouseMove">
-        <TextBox x:Name="txt_Pesel" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="192,189,0,0"  TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="348"/>
-        <TextBox x:Name="txt_miasto" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="192,231,0,0"  TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="348"/>
-        <TextBox x:Name="txt_adres" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="192,276,0,0"  TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="348"/>
+        <TextBox x:Name="txt_Pesel" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="192,189,0,0"  TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="348" TextChanged="txt_Pesel_TextChanged"/>
+        <TextBox x:Name="txt_miasto" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="192,231,0,0"  TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="348" TextChanged="txt_miasto_TextChanged"/>
+        <TextBox x:Name="txt_adres" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="192,276,0,0"  TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="348" TextChanged="txt_adres_TextChanged"/>
         <DataGrid x:Name="dataG" HorizontalAlignment="Left" Height="62" Margin="-156,121,0,0" VerticalAlignment="Top" Width="76" Visibility="Hidden"/>
         <ComboBox x:Name="cbox_stanowisko" HorizontalAlignment="Left" Margin="192,321,0,0" VerticalAlignment="Top" Width="348" IsSynchronizedWithCurrentItem="True" SelectedValuePath="Key" DisplayMemberPath="Value" Height="33" />
         <ComboBox x:Name="cbox_zatrudniony" HorizontalAlignment="Left" Margin="192,359,0,0" VerticalAlignment="Top" Width="348" IsSynchronizedWithCurrentItem="True" SelectedValuePath="Key" DisplayMemberPath="Value" Height="37" />
         <Label Content="Imie: " Foreground="#2EC4B6" HorizontalAlignment="Left" Height="40" Margin="37,55,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
         <Label Content="Nazwisko: " Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="37,100,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
         <Label Content="Numer telefonu: " Foreground="#2EC4B6" HorizontalAlignment="Left" Height="40" Margin="37,145,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
-        <TextBox x:Name="txt_imiePrac" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="192,55,0,0"  TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="348"/>
-        <TextBox x:Name="txt_nazPrac" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="192,100,0,0"  TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="348"/>
-        <TextBox x:Name="txt_telPrac" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="192,145,0,0"  TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="348"/>
+        <TextBox x:Name="txt_imiePrac" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="192,55,0,0"  TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="348" TextChanged="txt_imiePrac_TextChanged"/>
+        <TextBox x:Name="txt_nazPrac" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="192,100,0,0"  TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="348" TextChanged="txt_nazPrac_TextChanged"/>
+        <TextBox x:Name="txt_telPrac" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="192,145,0,0"  TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="348" TextChanged="txt_telPrac_TextChanged"/>
         <Label Content="Pesel:" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="37,189,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
         <Label Content="Miasto zamieszkania:" Foreground="#2EC4B6" HorizontalAlignment="Left" Height="40" Margin="37,234,0,0" VerticalAlignment="Top" FontSize="15" Width="150"/>
         <Label Content="Adres zamieszkania:" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="37,276,0,0" VerticalAlignment="Top" FontSize="15" Width="150"/>

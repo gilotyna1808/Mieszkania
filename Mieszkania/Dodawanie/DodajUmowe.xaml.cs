@@ -65,7 +65,11 @@ namespace Mieszkania
 
                     };
                     db.Umowa.Add(dodaj);
-                    db.SaveChanges();
+                    var flagaPowDod = db.SaveChanges();
+                    if (flagaPowDod == 1)
+                    {
+                        MessageBox.Show("Dodawanie zakonczone pomyślnie");
+                    }
                 }
             }
             else
@@ -102,6 +106,34 @@ namespace Mieszkania
         {
             empty emp = new empty("lokator");
             emp.ShowDialog();
+        }
+
+        private void txt_czynsz_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            TextBox x = (TextBox)sender;
+            if (w.sprawdzCzynsz(x.Text))
+            {
+                x.Background = Brushes.White;
+            }
+            else
+            {
+                x.Background = Brushes.Red;
+            }
+        }
+
+        private void txt_oplaty_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            TextBox x = (TextBox)sender;
+            if (w.sprawdzOplaty(x.Text))
+            {
+                x.Background = Brushes.White;
+            }
+            else
+            {
+                x.Background = Brushes.Red;
+            }
         }
     }
 }

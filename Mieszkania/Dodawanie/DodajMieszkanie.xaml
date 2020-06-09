@@ -13,12 +13,12 @@
         <Label Content="Nr Domu:"       Foreground="#FF9F1C" HorizontalAlignment="Left" Height="45" Margin="45,190,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
         <Label Content="Mieszkanie:"    Foreground="#2EC4B6" HorizontalAlignment="Left" Height="40" Margin="45,235,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
         <Label Content="Status Mieszkania:" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="45,280,0,0" VerticalAlignment="Top" FontSize="15" Width="140"/>
-        <TextBox x:Name="txt_Miasto"    Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,55,0,0"  TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350"/>
-        <TextBox x:Name="txt_Kod"       Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,100,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350"/>
-        <TextBox x:Name="txt_Ul"        Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,145,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350"/>
-        <TextBox x:Name="txt_Nr"        Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,190,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350"/>
-        <TextBox x:Name="txt_Mieszkanie" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,235,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350"/>
-        <TextBox x:Name="txt_status"    Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,280,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350"/>
+        <TextBox x:Name="txt_Miasto"    Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,55,0,0"  TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" TextChanged="txt_Miasto_TextChanged"/>
+        <TextBox x:Name="txt_Kod"       Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,100,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" TextChanged="txt_Kod_TextChanged"/>
+        <TextBox x:Name="txt_Ul"        Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,145,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" TextChanged="txt_Ul_TextChanged"/>
+        <TextBox x:Name="txt_Nr"        Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,190,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" TextChanged="txt_Nr_TextChanged"/>
+        <TextBox x:Name="txt_Mieszkanie" Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,235,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" TextChanged="txt_Mieszkanie_TextChanged"/>
+        <TextBox x:Name="txt_status"    Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,280,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" TextChanged="txt_status_TextChanged"/>
         <Button Content="Dopisz" HorizontalAlignment="Left" Foreground="White" Background="#2EC4B6" FontSize="20" VerticalContentAlignment="Center" Height="50" Margin="340,400,0,0" VerticalAlignment="Top" Width="200" Click="Button_Click"/>
 
     </Grid>

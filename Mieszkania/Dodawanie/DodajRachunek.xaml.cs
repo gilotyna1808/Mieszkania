@@ -66,7 +66,11 @@ namespace Mieszkania.Dodawanie
                         Zaplacone = Convert.ToBoolean(cbox_oplacone.SelectedValue)
                     };
                     dp.Czynsz_Wplywy.Add(cw);
-                    dp.SaveChanges();
+                    var flagaPowDod = dp.SaveChanges();
+                    if (flagaPowDod == 1)
+                    {
+                        MessageBox.Show("Dodawanie zakonczone pomyślnie");
+                    }
                 };
             }
             else
@@ -74,6 +78,20 @@ namespace Mieszkania.Dodawanie
                 MessageBox.Show("Błędne dane");
             }
 
+        }
+
+        private void txt_Kwota_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            TextBox x = (TextBox)sender;
+            if (w.sprawdzCzynsz(x.Text))
+            {
+                x.Background = Brushes.White;
+            }
+            else
+            {
+                x.Background = Brushes.Red;
+            }
         }
     }
 }

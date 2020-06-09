@@ -13,13 +13,13 @@
         <Label Content="Data obowiązywania:"          Foreground="#FFBF69" HorizontalAlignment="Left" Height="40" Margin="23,190,0,0" VerticalAlignment="Top" FontSize="15" Width="151" RenderTransformOrigin="0.372,1.424"/>
         <Label Content="Czynsz: "            Foreground="#2EC4B6" HorizontalAlignment="Left" Height="40" Margin="23,235,0,0" VerticalAlignment="Top" FontSize="15" Width="151"/>
         <Label Content="Oplaty stale: "      Foreground="#FFBF69" HorizontalAlignment="Left" Height="40" Margin="23,280,0,0" VerticalAlignment="Top" FontSize="15" Width="151"/>
-        <TextBox x:Name="txt_id"             Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,55,0,0"  TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350"/>
-        <TextBox x:Name="txt_idM"            Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,100,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350"/>
-        <TextBox x:Name="txt_idL"            Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,145,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350"/>
+        <TextBox x:Name="txt_id"             Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,55,0,0"  TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" IsEnabled="False"/>
+        <TextBox x:Name="txt_idM"            Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,100,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" IsEnabled="False"/>
+        <TextBox x:Name="txt_idL"            Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,145,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" IsEnabled="False"/>
         <DatePicker x:Name="txt_od_kiedy"    Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,190,0,0" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="170"/>
         <DatePicker x:Name="txt_do_kiedy"    Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="370,190,0,0" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="170"/>
-        <TextBox x:Name="txt_czynsz"         Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,235,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350"/>
-        <TextBox x:Name="txt_coplaty"        Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,280,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350"/>
+        <TextBox x:Name="txt_czynsz"         Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,235,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" TextChanged="txt_czynsz_TextChanged"/>
+        <TextBox x:Name="txt_coplaty"        Foreground="#FF9F1C" HorizontalAlignment="Left" Height="40" Margin="190,280,0,0" TextWrapping="Wrap" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="350" TextChanged="txt_coplaty_TextChanged"/>
         <Button Content="Wybierz umowe"      HorizontalAlignment="Left" Height="40" Margin="190,325,0,0" VerticalAlignment="Top" Foreground="White" Background="#FFBF69" Width="100" Click="Button_Click"/>
         <Button Content="Modyfikuj"          HorizontalAlignment="Left" Foreground="White" Background="#2EC4B6" FontSize="20" VerticalContentAlignment="Center" Height="50" Margin="340,355,0,0" VerticalAlignment="Top" Width="200" Click="Button_Click_1"/>
     </Grid>

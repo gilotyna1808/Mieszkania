@@ -58,5 +58,60 @@ namespace Mieszkania.Modyfikacje
                 txt_Kwota.Text = Convert.ToString(dp.Umowa.Where(s => s.IdUmowy == temp_id).Select(s => s.Stawka_Czynsz).FirstOrDefault());
             };
         }
+
+        private void txt_Kwota_TextChanged(object sender, TextChangedEventArgs e)
+        {
+                Walidacja w = new Walidacja();
+                TextBox x = (TextBox)sender;
+                if (w.sprawdzCzynsz(x.Text))
+                {
+                    x.Background = Brushes.White;
+                }
+                else
+                {
+                    x.Background = Brushes.Red;
+                }
+        }
+
+        private void btn_modyfikuj_Click(object sender, RoutedEventArgs e)
+        {
+            Walidacja w = new Walidacja();
+            bool id_w, kwota_w, termin_w;
+            string id, kwota, termin;
+            id = txt_id.Text;
+            kwota = txt_Kwota.Text;
+            termin = txt_termin.Text;
+            id_w = w.sprawdzId(id);
+            kwota_w = w.sprawdzCzynsz(kwota);
+            termin_w = w.sprawdzDate(termin);
+            int temp_id = Convert.ToInt32(txt_id.Text);
+            if (id_w && kwota_w && termin_w)
+            {
+                using (DostepPrac dp = new DostepPrac())
+                {
+                    var q = from data in dp.Czynsz_Wplywy
+                            orderby data.IdCzynszu
+                            select data;
+
+                    foreach (Czynsz_Wplywy u in q)
+                    {
+                        if (u.IdCzynszu == temp_id)
+                        {
+                            u.Kwota = Convert.ToDecimal(txt_Kwota.Text);
+                            u.Termin_Rozliczenia = Convert.ToDateTime(txt_termin.Text);
+                        }
+                    }
+                    var flagaPowDod = dp.SaveChanges();
+                    if (flagaPowDod == 1)
+                    {
+                        MessageBox.Show("Modyfikowanie zakonczone pomyślnie");
+                    }
+                };
+            }
+            else
+            {
+                MessageBox.Show("Błędne dane");
+            }
+        }
     }
 }
