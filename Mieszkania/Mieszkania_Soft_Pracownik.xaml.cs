@@ -241,5 +241,17 @@ namespace Mieszkania
             Okno_PracownicyOdp o = new Okno_PracownicyOdp();
             o.Show();
         }
+
+        private void btn_RaportMLokator_Click(object sender, RoutedEventArgs e)
+        {
+            MieszkanieLokator o = new MieszkanieLokator();
+            o.Show();
+        }
+
+        private void btn_RaportMRemont_Click(object sender, RoutedEventArgs e)
+        {
+            MieszkanieRemont o = new MieszkanieRemont();
+            o.Show();
+        }
     }
 }

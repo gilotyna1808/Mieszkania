@@ -421,14 +421,20 @@
     <Compile Include="Raporty\MieszkanieKosztyDataSet.Designer.cs">
       <DependentUpon>MieszkanieKosztyDataSet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Raporty\MieszkanieLokator.xaml.cs" />
+    <Compile Include="Raporty\MieszkanieRemont.xaml.cs" />
+    <Compile Include="Raporty\MLokatorDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MLokatorDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Raporty\Okno_PracownicyOdp.xaml.cs">
       <DependentUpon>Okno_PracownicyOdp.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Raporty\Pracownicy_OdpDataSet.cs">
+    <Compile Include="Raporty\Pracownicy_OdpDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
       <DependentUpon>Pracownicy_OdpDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Raporty\Pracownicy_OdpDataSet.Designer.cs">
-      <DependentUpon>Pracownicy_OdpDataSet.cs</DependentUpon>
     </Compile>
     <Compile Include="Raporty\RaportTest.xaml.cs">
       <DependentUpon>RaportTest.xaml</DependentUpon>
@@ -614,6 +620,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Raporty\MieszkanieLokator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Raporty\MieszkanieRemont.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Raporty\Okno_PracownicyOdp.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -747,6 +761,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Raporty\PracownikMieszkaniaODP.rdlc" />
     <EmbeddedResource Include="Raporty\Raport_Autoryzacja.rdlc" />
+    <EmbeddedResource Include="Raporty\Raport_MieszkanieLokator.rdlc" />
+    <EmbeddedResource Include="Raporty\Raport_MieszkanieRemont.rdlc" />
     <EmbeddedResource Include="Raporty\Raport_Pracownicy_Odp.rdlc" />
     <EmbeddedResource Include="Raporty\Report_MieszkanieKoszty.rdlc" />
     <EmbeddedResource Include="Raporty\Testowy.rdlc" />
@@ -778,10 +794,25 @@
     <None Include="Raporty\MieszkanieKosztyDataSet.xss">
       <DependentUpon>MieszkanieKosztyDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Raporty\MLokatorDataSet.xsc">
+      <DependentUpon>MLokatorDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Raporty\MLokatorDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MLokatorDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Raporty\MLokatorDataSet.xss">
+      <DependentUpon>MLokatorDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Raporty\Pracownicy_OdpDataSet.xsc">
       <DependentUpon>Pracownicy_OdpDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Raporty\Pracownicy_OdpDataSet.xsd" />
+    <None Include="Raporty\Pracownicy_OdpDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Pracownicy_OdpDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Raporty\Pracownicy_OdpDataSet.xss">
       <DependentUpon>Pracownicy_OdpDataSet.xsd</DependentUpon>
     </None>

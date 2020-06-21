@@ -66,6 +66,8 @@
                         </Grid.ColumnDefinitions>
                         <Button x:Name="btn_Raport_wlasne" Content="Raporty Własne" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,10,0,375" Width="274" Grid.ColumnSpan="2" Click="btn_Raport_wlasne_Click"/>
                         <Button x:Name="btn_RaportOg" Content="Ogólne" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,52,0,333" Width="274" Grid.ColumnSpan="2" Click="btn_RaportOg_Click"/>
+                        <Button x:Name="btn_Raport_MLokator" Content="Lokatorzy i mieszkania" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,93,0,292" Width="274" Click="btn_RaportMLokator_Click" Grid.ColumnSpan="2"/>
+                        <Button x:Name="btn_Raport_MRemont" Content="Mieszkania i remonty" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,135,0,250" Width="274" Click="btn_RaportMRemont_Click" Grid.ColumnSpan="2"/>
                     </Grid>
                 </TabItem>
             </TabControl>

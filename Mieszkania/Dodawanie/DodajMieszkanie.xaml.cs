@@ -56,7 +56,8 @@ namespace Mieszkania
                         Nr_Domu=nrDomu,
                         Ulica=ulica,
                         Status_Mieszkania=status,
-                        Kod_Pocztowy=kodPocztowy
+                        Kod_Pocztowy=kodPocztowy,
+                        Posiadane = true
                     };
                     db.Mieszkanie.Add(m);
                     var flagaPowDod=db.SaveChanges();

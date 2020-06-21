@@ -1,0 +1,20 @@
+﻿<Window x:Class="Mieszkania.Raporty.MieszkanieLokator"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mieszkania.Raporty"
+        mc:Ignorable="d"
+        xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms"
+        Title="MieszkanieLokator" Height="450" Width="800">
+    <Grid>
+        <WindowsFormsHost Margin="10,77,10,10">
+            <rv:ReportViewer x:Name="R_MieszkanieLokator"></rv:ReportViewer>
+        </WindowsFormsHost>
+        <Button Content="Wygeneruj raport" HorizontalAlignment="Left" Margin="554,10,0,0" VerticalAlignment="Top" Width="218" Height="51" Click="Button_Click"/>
+        <ComboBox x:Name="CBid" HorizontalAlignment="Left" Margin="177,10,0,0" VerticalAlignment="Top" Width="358" Height="51" SelectedValuePath="Key" DisplayMemberPath="Value" >
+        </ComboBox>
+        <Label Content="Wybierz ID Lokatora" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="167" Height="51"/>
+
+    </Grid>
+</Window>
