@@ -7,9 +7,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="600">
     <Grid Background="White">
-        <Label Content="Witaj" HorizontalAlignment="Left" Margin="230,66,0,0" VerticalAlignment="Top" Height="78" Width="145" FontSize="48"/>
-        <Label x:Name="lbl1" Content="" HorizontalAlignment="Left" Margin="95,167,0,0" VerticalAlignment="Top" Height="70" Width="458" FontSize="48"/>
-        <Label x:Name="lbl2" Content="" HorizontalAlignment="Left" Margin="95,284,0,0" VerticalAlignment="Top" Height="78" Width="458" FontSize="48"/>
+        <Label Content="Witaj" HorizontalAlignment="Left" Margin="230,66,0,0" Foreground="#ff9f1c" VerticalAlignment="Top" Height="78" Width="145" FontSize="48"/>
+        <Label x:Name="lbl1" Content="" HorizontalAlignment="Left" Foreground="#2ec4b6" Margin="95,167,0,0" VerticalAlignment="Top" Height="70" Width="458" FontSize="48"/>
+        <Label x:Name="lbl2" Content="" HorizontalAlignment="Left" Foreground="#2ec4b6" Margin="95,284,0,0" VerticalAlignment="Top" Height="78" Width="458" FontSize="48"/>
 
     </Grid>
 </UserControl>

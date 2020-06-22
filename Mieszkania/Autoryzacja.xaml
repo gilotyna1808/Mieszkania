@@ -5,15 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mieszkania"
         mc:Ignorable="d"
-        Height="400" Width="400"
-        Background="#f6f6f6">
-    <Grid Margin="0,0,439,246">
-        <Button x:Name="btn_aut_log" Foreground="White" Background="#2EC4B6" Content="Zaloguj" HorizontalAlignment="Left" Height="35" Margin="200,298,-300,-208.6" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
-        <TextBox x:Name="autLogin" HorizontalAlignment="Left" VerticalContentAlignment="Top"  Foreground="#FF9F1C" Height="40" Margin="100,139,-300,-54.6" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="200"/>
-        <Label Content="Login:" HorizontalAlignment="Left" Height="35" Margin="53,104,-100,-14.6" VerticalAlignment="Top" Width="47"/>
-        <Label Content="Hasło:" HorizontalAlignment="Left" Height="35" Margin="53,196,-100,-106.6" VerticalAlignment="Top" Width="47" RenderTransformOrigin="0.54,-0.427"/>
-        <PasswordBox x:Name="autPass" VerticalContentAlignment="Top" HorizontalAlignment="Left" Height="40" Margin="100,231,-300,-146.6" Foreground="#FF9F1C" VerticalAlignment="Top" DataContext="Password"  Width="200"/>
+        Height="400" Width="400">
+    <Grid  Background="#f6f6f6">
         <Image x:Name="vievImage" Stretch="Fill" HorizontalAlignment="Left" Height="70" Margin="150,18,-220,0" VerticalAlignment="Top" Width="70" Source="/img/house.jpg"/>
+        <Label Content="Login:"         Foreground="#2EC4B6" HorizontalAlignment="Left" Height="40" FontSize="15" Margin="40,140,0,0" VerticalAlignment="Top" Width="50"/>
+        <Label Content="Hasło:"         Foreground="#2EC4B6" HorizontalAlignment="Left" Height="40" FontSize="15" Margin="40,200,0,0" VerticalAlignment="Top" Width="50" />
+        <TextBox x:Name="autLogin"      HorizontalAlignment="Left" VerticalContentAlignment="Center"  Foreground="#FF9F1C" Height="40" Margin="100,140,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="200"/>
+        <PasswordBox x:Name="autPass"   VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="40" Margin="100,200,0,0" Foreground="#FF9F1C" VerticalAlignment="Top" DataContext="Password"  Width="200"/>
+        <Button x:Name="btn_aut_log" Foreground="White" Background="#2EC4B6" FontSize="15"  Content="Zaloguj" HorizontalAlignment="Left" Height="40" Margin="180,298,0,0" VerticalAlignment="Top" Width="150" Click="Button_Click"/>
 
 
     </Grid>

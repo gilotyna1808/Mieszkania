@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="Mieszkania_Soft_Nieaktywne" Height="450" Width="800">
     <Grid x:Name="btn_wyloguj">
-        <Label x:Name="l1" Content="" HorizontalAlignment="Left" Margin="93,33,0,0" VerticalAlignment="Top" FontSize="36" Width="529"/>
-        <Label x:Name="l2" Content="" HorizontalAlignment="Left" Margin="93,96,0,0" VerticalAlignment="Top" FontSize="36" Width="529"/>
-        <Label Content="Twoje konto jest nieaktywne" HorizontalAlignment="Left" Margin="126,156,0,0" VerticalAlignment="Top" Height="80" Width="465" FontSize="36"/>
-        <Button Content="Wyloguj" HorizontalAlignment="Left" Height="68" Margin="185,260,0,0" VerticalAlignment="Top" Width="372" Click="Button_Click"/>
+        <Label x:Name="l1" Content="" HorizontalAlignment="Left" Foreground="#2ec4b6" Margin="93,33,0,0" VerticalAlignment="Top" FontSize="36" Width="529"/>
+        <Label x:Name="l2" Content="" HorizontalAlignment="Left" Foreground="#2ec4b6" Margin="93,96,0,0" VerticalAlignment="Top" FontSize="36" Width="529"/>
+        <Label Content="Twoje konto jest nieaktywne" HorizontalAlignment="Left" Margin="150,156,0,0" VerticalAlignment="Top" Foreground="#ff9f1c" Height="80" Width="500" FontSize="36"/>
+        <Button Content="Wyloguj" HorizontalAlignment="Left" Foreground="#2ec4b6" Background="#cbf3f0" Height="55" Margin="250,250,0,0" Width="280" Click="Button_Click"/>
 
     </Grid>
 </Window>

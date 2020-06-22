@@ -1,0 +1,19 @@
+﻿<UserControl
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mieszkania.Raporty"
+        xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms"
+        xmlns:Dodawanie="clr-namespace:Mieszkania.Dodawanie" xmlns:Wyswietlanie="clr-namespace:Mieszkania.Wyswietlanie" x:Class="Mieszkania.Raporty.RaportTest"
+        mc:Ignorable="d"
+       Height="450" Width="800">
+    <Grid Background="White">
+        <WindowsFormsHost HorizontalAlignment="Left" Height="389" Margin="0,61,0,0" VerticalAlignment="Top" Width="800">
+            <rv:ReportViewer x:Name="Test"/>
+        </WindowsFormsHost>
+        <Button Content="Button" HorizontalAlignment="Left" Height="61" Margin="397,0,0,0" VerticalAlignment="Top" Width="403" Click="Button_Click"/>
+
+
+    </Grid>
+</UserControl>

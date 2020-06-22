@@ -8,84 +8,74 @@
         Title="Mieszkania_Soft_Administrator" Height="550" Width="1200">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="300" />
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <StackPanel HorizontalAlignment="Left" Width="300" Height="519" VerticalAlignment="Top" Background="#FFFF0707">
-            <TabControl Height="450" Background="Red">
-                <TabItem Header="Pracownicy">
+        <StackPanel Margin="0,0,0,0.4" Background="#2ec4b6" HorizontalAlignment="Left" Width="300">
+            <TabControl Height="450" Background="{x:Null}" Foreground="{x:Null}">
+                <TabItem Header="Pracownicy" Width="74" Foreground="#2ec4b6" Background="White">
                     <Grid>
-                        <Button x:Name="btn_DodajPrac" Content="Dodaj Pracownika" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,34,0,351" Width="274" Click="btn_DodajPrac_Click"/>
-                        <Button x:Name="btn_Modyfikuj_Prac" Content="Modyfikuj Pracownika" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,76,0,309" Width="274" Click="btn_Modyfikuj_Prac_Click"/>
-                        <Button x:Name="btn_UsunPrac" Content="Usuń Pracownika" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,118,0,267" Width="274" Click="btn_UsunPrac_Click"/>
-                        <Button x:Name="btn_WyswietlPrac" Content="Wyświetl Pracownika" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,160,0,225" Width="274" Click="btn_WyswietlPrac_Click"/>
+                        <Button x:Name="btn_DodajPrac" Content="Dodaj Pracownika"           HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,10,0,0"  Height="35" VerticalAlignment="Top" Width="270"  Click="btn_DodajPrac_Click"/>
+                        <Button x:Name="btn_Modyfikuj_Prac" Content="Modyfikuj Pracownika"  HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,50,0,0"  Height="35" VerticalAlignment="Top" Width="270"  Click="btn_Modyfikuj_Prac_Click"/>
+                        <Button x:Name="btn_UsunPrac" Content="Usuń Pracownika"             HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,90,0,0"  Height="35" VerticalAlignment="Top" Width="270"  Click="btn_UsunPrac_Click"/>
+                        <Button x:Name="btn_WyswietlPrac" Content="Wyświetl Pracownika"     HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,130,0,0" Height="35" VerticalAlignment="Top" Width="270" Click="btn_WyswietlPrac_Click"/>
                     </Grid>
                 </TabItem>
                 <TabItem Header="Mieszkania">
                     <Grid Margin="0,0,0,0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="22*"/>
-                            <ColumnDefinition Width="273*"/>
                         </Grid.ColumnDefinitions>
-                        <Button x:Name="btn_DodajMieszkanie" Content="Dodaj Mieszkanie" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,34,0,351" Width="274" Grid.ColumnSpan="2" Click="btn_DodajMieszkanie_Click"/>
-                        <Button x:Name="btn_ModyfikujMieszkanie" Content="Modyfikuj Mieszkanie" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,76,0,309" Width="274" Grid.ColumnSpan="2" Click="btn_ModyfikujMieszkanie_Click"/>
-                        <Button x:Name="btn_UsunMieszkanie" Content="Usuń Mieszkanie" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,118,0,267" Width="274" Grid.ColumnSpan="2" Click="btn_UsunMieszkanie_Click"/>
-                        <Button x:Name="btn_WyswietlMieszkanie" Content="Wyświetl Mieszkanie" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,160,0,225" Width="274" Grid.ColumnSpan="2" Click="btn_WyswietlMieszkanie_Click"/>
-                        <Button x:Name="btn_Przydzialy" Content="Zmień Przydzialy" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,202,0,183" Width="274" Grid.ColumnSpan="2" Click="btn_Przydzialy_Click"/>
-                        <Button x:Name="btn_DodajRemont" Content="Dodaj Remont" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,246,0,140" Width="274" Grid.ColumnSpan="2" Click="btn_DodajRemont_Click"/>
-                        <Button x:Name="btn_ModyfikujRemont" Content="Modyfikuj Remont" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,288,0,98" Width="274" Grid.ColumnSpan="2" Click="btn_ModyfikujRemont_Click"/>
-                        <Button x:Name="btn_UkryjRemont" Content="Usun Remont" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,330,0,56" Width="274" Grid.ColumnSpan="2" Click="btn_UkryjRemont_Click"/>
-                        <Button x:Name="btn_wyswietlRemonty" Content="Wyświetl Remonty" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,371,0,15" Width="274" Grid.ColumnSpan="2" Click="btn_wyswietlRemonty_Click"/>
+                        <Button x:Name="btn_DodajMieszkanie" Content="Dodaj Mieszkanie"         HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,10,0,0"  Height="35" VerticalAlignment="Top" Width="270" Click="btn_DodajMieszkanie_Click"/>
+                        <Button x:Name="btn_ModyfikujMieszkanie" Content="Modyfikuj Mieszkanie" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,50,0,0"  Height="35" VerticalAlignment="Top" Width="270" Click="btn_ModyfikujMieszkanie_Click"/>
+                        <Button x:Name="btn_UsunMieszkanie" Content="Usuń Mieszkanie"           HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,90,0,0"  Height="35" VerticalAlignment="Top" Width="270" Click="btn_UsunMieszkanie_Click"/>
+                        <Button x:Name="btn_WyswietlMieszkanie" Content="Wyświetl Mieszkanie"   HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,130,0,0" Height="35" VerticalAlignment="Top" Width="270" Click="btn_WyswietlMieszkanie_Click"/>
+                        <Button x:Name="btn_Przydzialy" Content="Zmień Przydzialy"              HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,170,0,0" Height="35" VerticalAlignment="Top" Width="270" Click="btn_Przydzialy_Click"/>
+                        <Button x:Name="btn_DodajRemont" Content="Dodaj Remont"                 HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,210,0,0" Height="35" VerticalAlignment="Top" Width="270" Click="btn_DodajRemont_Click"/>
+                        <Button x:Name="btn_ModyfikujRemont" Content="Modyfikuj Remont"         HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,250,0,0" Height="35" VerticalAlignment="Top" Width="270" Click="btn_ModyfikujRemont_Click"/>
+                        <Button x:Name="btn_UkryjRemont" Content="Usun Remont"                  HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,290,0,0" Height="35" VerticalAlignment="Top" Width="270" Click="btn_UkryjRemont_Click"/>
+                        <Button x:Name="btn_wyswietlRemonty" Content="Wyświetl Remonty"         HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,330,0,0" Height="35" VerticalAlignment="Top" Width="270" Click="btn_wyswietlRemonty_Click"/>
                     </Grid>
                 </TabItem>
                 <TabItem Header="Umowy">
                     <Grid Margin="0,0,0,0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="22*"/>
-                            <ColumnDefinition Width="273*"/>
                         </Grid.ColumnDefinitions>
-                        <Button x:Name="btn_DodajUmowe" Content="Dodaj Umowe" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,10,0,375" Width="274" Grid.ColumnSpan="2" Click="btn_DodajUmowe_Click"/>
-                        <Button x:Name="btn_ModyfikujUmowe" Content="Modyfikuj Umowe" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,52,0,333" Width="274" Grid.ColumnSpan="2" Click="btn_ModyfikujUmowe_Click"/>
-                        <Button x:Name="btn_UkryjUmowe" Content="Usun Umowe" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,94,0,291" Width="274" Grid.ColumnSpan="2" Click="btn_UkryjUmowe_Click"/>
-                        <Button x:Name="btn_WyswietlUmowe" Content="Wyświetl Umowe" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,136,0,249" Width="274" Grid.ColumnSpan="2" Click="btn_WyswietlUmowe_Click"/>
-                        <Button x:Name="btn_DodajRachunek" Content="Dodaj Rachunek" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,179,0,206" Width="274" Grid.ColumnSpan="2" Click="btn_DodajRachunek_Click"/>
-                        <Button x:Name="btn_ModyfikujRachunek" Content="Modyfikuj Rachunek" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,221,0,164" Width="274" Grid.ColumnSpan="2" Click="btn_ModyfikujRachunek_Click"/>
-                        <Button x:Name="btn_UsunRachunek" Content="Usun Rachunek" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,263,0,122" Width="274" Grid.ColumnSpan="2" Click="btn_UsunRachunek_Click"/>
-                        <Button x:Name="btn_WyswietlRachunki" Content="Wyświetl Rachunki" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,305,0,80" Width="274" Grid.ColumnSpan="2" Click="btn_WyswietlRachunki_Click"/>
+                        <Button x:Name="btn_DodajUmowe" Content="Dodaj Umowe"               HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,10,0,0"  Height="35" VerticalAlignment="Top" Width="270" Click="btn_DodajUmowe_Click"/>
+                        <Button x:Name="btn_ModyfikujUmowe" Content="Modyfikuj Umowe"       HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,50,0,0"  Height="35" VerticalAlignment="Top" Width="270" Click="btn_ModyfikujUmowe_Click"/>
+                        <Button x:Name="btn_UkryjUmowe" Content="Usun Umowe"                HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,90,0,0"  Height="35" VerticalAlignment="Top" Width="270" Click="btn_UkryjUmowe_Click"/>
+                        <Button x:Name="btn_WyswietlUmowe" Content="Wyświetl Umowe"         HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,130,0,0" Height="35" VerticalAlignment="Top" Width="270" Click="btn_WyswietlUmowe_Click"/>
+                        <Button x:Name="btn_DodajRachunek" Content="Dodaj Rachunek"         HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,170,0,0" Height="35" VerticalAlignment="Top" Width="270" Click="btn_DodajRachunek_Click"/>
+                        <Button x:Name="btn_ModyfikujRachunek" Content="Modyfikuj Rachunek" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,210,0,0" Height="35" VerticalAlignment="Top" Width="270" Click="btn_ModyfikujRachunek_Click"/>
+                        <Button x:Name="btn_UsunRachunek" Content="Usun Rachunek"           HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,250,0,0" Height="35" VerticalAlignment="Top" Width="270" Click="btn_UsunRachunek_Click"/>
+                        <Button x:Name="btn_WyswietlRachunki" Content="Wyświetl Rachunki"   HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,290,0,0" Height="35" VerticalAlignment="Top" Width="270" Click="btn_WyswietlRachunki_Click"/>
                     </Grid>
                 </TabItem>
                 <TabItem Header="Lokator">
                     <Grid Margin="0,0,0,0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="22*"/>
-                            <ColumnDefinition Width="273*"/>
                         </Grid.ColumnDefinitions>
-                        <Button x:Name="btn_DodaLokatora" Content="Dodaj Lokatora" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,13,0,372" Width="274" Grid.ColumnSpan="2" Click="btn_DodaLokatora_Click"/>
-                        <Button x:Name="btn_ModyfikujLokatora" Content="Modyfikuj Lokatora" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,55,0,330" Width="274" Grid.ColumnSpan="2" Click="btn_ModyfikujLokatora_Click"/>
-                        <Button x:Name="btn_UkryjLokatora" Content="Usun Lokatora" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,97,0,288" Width="274" Grid.ColumnSpan="2" Click="btn_UkryjLokatora_Click"/>
-                        <Button x:Name="btn_WyswietlLokatora" Content="Wyświetl Lokatora" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,139,0,246" Width="274" Grid.ColumnSpan="2" Click="btn_WyswietlLokatora_Click"/>
+                        <Button x:Name="btn_DodaLokatora" Content="Dodaj Lokatora"          HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,10,0,0"  Height="35" VerticalAlignment="Top" Width="270" Click="btn_DodaLokatora_Click"/>
+                        <Button x:Name="btn_ModyfikujLokatora" Content="Modyfikuj Lokatora" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,50,0,0"  Height="35" VerticalAlignment="Top" Width="270" Click="btn_ModyfikujLokatora_Click"/>
+                        <Button x:Name="btn_UkryjLokatora" Content="Usun Lokatora"          HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,90,0,0"  Height="35" VerticalAlignment="Top" Width="270" Click="btn_UkryjLokatora_Click"/>
+                        <Button x:Name="btn_WyswietlLokatora" Content="Wyświetl Lokatora"   HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,130,0,0" Height="35" VerticalAlignment="Top" Width="270" Click="btn_WyswietlLokatora_Click"/>
                     </Grid>
                 </TabItem>
                 <TabItem Header="Konta">
                     <Grid Margin="0,0,0,0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="22*"/>
-                            <ColumnDefinition Width="273*"/>
                         </Grid.ColumnDefinitions>
-                        <Button x:Name="btn_konta_mod" Content="Modyfikuj Konta" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,10,0,375" Width="274" Grid.ColumnSpan="2" Click="btn_konta_mod_Click"/>
-                        <Button x:Name="btn_temp1" Content="Pokaż Konta" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,52,0,333" Width="274" Click="btn_temp1_Click" Grid.ColumnSpan="2"/>
+                        <Button x:Name="btn_konta_mod" Content="Modyfikuj Konta" HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,10,0,0"  Height="35" VerticalAlignment="Top" Width="270" Click="btn_konta_mod_Click"/>
+                        <Button x:Name="btn_temp1" Content="Pokaż Konta"         HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,50,0,0"  Height="35" VerticalAlignment="Top" Width="270" Click="btn_temp1_Click"/>
                     </Grid>
                 </TabItem>
             </TabControl>
             <Button x:Name="btn_Logout_Copy" Content="Wyloguj" HorizontalAlignment="Left" Foreground="#2ec4b6" Background="#cbf3f0" Height="55" Margin="10,5,0,0" Width="280" Click="btn_Logout_Click"/>
         </StackPanel>
         <StackPanel x:Name="PanelWidok" Grid.Column="1">
-            <StackPanel.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFE2F3F3" Offset="0"/>
-                    <GradientStop Color="#FF18D8D8" Offset="1"/>
-                </LinearGradientBrush>
-            </StackPanel.Background>
         </StackPanel>
 
     </Grid>

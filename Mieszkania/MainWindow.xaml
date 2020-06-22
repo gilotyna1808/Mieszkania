@@ -9,7 +9,7 @@
     <Grid Margin="0,0,0,9" HorizontalAlignment="Left" Width="700">
 
 
-        <Label Content="Nie jesteś zalogowany &#xA;  do naszego serwisu" FontSize="20" Background="White" HorizontalContentAlignment="Center" Height="80" Margin="409,284,41,97.4" Width="250"/>
+        <Label Content="Nie jesteś zalogowany &#xA;  do naszego serwisu" FontSize="20" Foreground="#ff9f1c" Background="White" HorizontalContentAlignment="Center" Height="80" Margin="409,284,41,97.4" Width="250"/>
         <Button x:Name="btn_mainLog" Foreground="White" FontSize="17" Background="#2ec4b6"  Content="Przejdz do logowania" HorizontalAlignment="Left" Height="50" Margin="409,369,0,0" VerticalAlignment="Top" Width="250" Click="btn_mainLog_Click"/>
         <Label Content="HOME ASSISTANT" Height="70" Width="400" Foreground="#2ec4b6" HorizontalAlignment="Left" FontSize="35" HorizontalContentAlignment="Center" Margin="150,98,0,0" VerticalAlignment="Top"/>
         <Image HorizontalAlignment="Left" Stretch="Fill" Height="90" Source="/img/dach.png" Margin="220,10,0,0" VerticalAlignment="Top" Width="260"/>
