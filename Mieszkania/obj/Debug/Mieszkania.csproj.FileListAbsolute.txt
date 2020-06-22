@@ -243,3 +243,4 @@ C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Danielv2\gilotyna1808\Mieszkania\Mieszka
 C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Danielv2\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Mieszkania.csproj.CopyComplete
 C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Danielv2\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Mieszkania.exe
 C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Danielv2\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Mieszkania.pdb
+C:\Users\Daniel-PC\Desktop\BAZY\Projekt\Danielv2\gilotyna1808\Mieszkania\Mieszkania\obj\Debug\Mieszkania.csprojAssemblyReference.cache

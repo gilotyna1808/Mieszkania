@@ -23,13 +23,38 @@ namespace Mieszkania.Wyswietlanie
         public Kon_WyswietlRemonty()
         {
             InitializeComponent();
-            var dba = new DostepPrac();
-            var querry =
-               from a in dba.Remonty
-               select new {a.IdRemontu ,a.IdMieszkania,a.Koszt_Remontu,a.Stan,a.Data_Rozpoczecia,a.Data_Zakonczenia};
-            dataG.ItemsSource = querry.ToList();
+            Wyswietl();
         }
 
+        private void Wyswietl()
+        {
+            Walidacja w = new Walidacja();
+            int idM;
+            if (w.sprawdzId(txt_ID.Text)) idM=Convert.ToInt32(txt_ID.Text);
+            else idM = 0;
+            if (idM == 0)
+            {
+                var dba = new DostepPrac();
+                var querry =
+                   from a in dba.Remonty
+                   select new { a.IdRemontu, a.IdMieszkania, a.Koszt_Remontu, a.Stan, a.Data_Rozpoczecia, a.Data_Zakonczenia };
+                dataG.ItemsSource = querry.ToList();
+            }
+            else
+            {
+                var dba = new DostepPrac();
+                var querry =
+                   from a in dba.Remonty
+                   where(a.IdMieszkania==idM)
+                   select new { a.IdRemontu, a.IdMieszkania, a.Koszt_Remontu, a.Stan, a.Data_Rozpoczecia, a.Data_Zakonczenia };
+                dataG.ItemsSource = querry.ToList();
+            }
+            
+        }
 
+        private void txt_ID_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Wyswietl();
+        }
     }
 }

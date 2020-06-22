@@ -7,8 +7,10 @@
         mc:Ignorable="d"
         Title="WyswietlRemonty" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="dataG" HorizontalAlignment="Left" Height="328" Margin="10,10,0,0" VerticalAlignment="Top" Width="772"/>
+        <DataGrid x:Name="dataG" HorizontalAlignment="Left" Height="254" Margin="10,84,0,0" VerticalAlignment="Top" Width="772"/>
         <Button x:Name="btn_W" Content="Wybierz/Zamknij" HorizontalAlignment="Left" Height="55" Margin="284,354,0,0" VerticalAlignment="Top" Width="199" Click="btn_W_Click"/>
+        <TextBox x:Name="txt_ID" HorizontalAlignment="Left" Height="30" Margin="12,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179" TextChanged="txt_ID_TextChanged"/>
+        <Label Content="ID Mieszkania:&#x9;" HorizontalAlignment="Left" Height="34" Margin="10,10,0,0" VerticalAlignment="Top" Width="181"/>
 
     </Grid>
 </Window>

@@ -23,11 +23,30 @@ namespace Mieszkania.Wyswietlanie
         public WyswietlUmowy()
         {
             InitializeComponent();
-           var dba = new DostepPrac();
-           var querry =
-              from a in dba.Umowa
-              select new {a.IdUmowy,a.Od_Kiedy,a.Do_Kiedy,a.Stawka_Czynsz,a.Oplaty_Stale,a.IdMieszkania,a.IdLokatora};
-           dataG.ItemsSource = querry.ToList();
+            Wysietl();
+        }
+
+        private void Wysietl()
+        {
+            string imie = txt_imi.Text;
+            string naz = txt_Naz.Text;
+
+            var dba = new DostepPrac();
+            var querry =
+               from a in dba.Umowa
+               where (a.Lokator.Nazwisko.StartsWith(naz) && a.Lokator.Imie.StartsWith(imie))
+               select new { a.IdUmowy, a.Od_Kiedy, a.Do_Kiedy, a.Stawka_Czynsz, a.Oplaty_Stale, a.IdMieszkania, a.IdLokatora, a.Lokator.Imie, a.Lokator.Nazwisko};
+            dataG.ItemsSource = querry.ToList();
+        }
+
+        private void txt_imi_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Wysietl();
+        }
+
+        private void txt_Naz_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Wysietl();
         }
 
         private void btn_W_Click(object sender, RoutedEventArgs e)

@@ -25,26 +25,33 @@ namespace Mieszkania.Wyswietlanie
         {
             uzytkownik = u;
             InitializeComponent();
-            var dba = new DostepPrac();
-            if (uzytkownik.getIdStanowiska()==1)
+            Wyswietl();
+        }
+
+        private void Wyswietl()
+        {
+            Walidacja w = new Walidacja();
+            int idM;
+            if (w.sprawdzId(txt_ID.Text)) idM = Convert.ToInt32(txt_ID.Text);
+            else idM = 0;
+            if (idM == 0)
             {
+                var dba = new DostepPrac();
                 var querry =
-               from a in dba.Remonty
-               select new { a.IdRemontu, a.IdMieszkania, a.Koszt_Remontu, a.Stan, a.Data_Rozpoczecia, a.Data_Zakonczenia };
+                   from a in dba.Remonty
+                   select new { a.IdRemontu, a.IdMieszkania, a.Koszt_Remontu, a.Stan, a.Data_Rozpoczecia, a.Data_Zakonczenia };
                 dataG.ItemsSource = querry.ToList();
             }
             else
             {
-                int temp_id = uzytkownik.getIdPrac();
+                var dba = new DostepPrac();
                 var querry =
-               from a in dba.Remonty
-               join a2 in dba.Mieszkanie on a.IdMieszkania equals a2.IdMieszkania
-               join a3 in dba.Pracownicy_Odp on a2.IdMieszkania equals a3.IdMieszkania
-               where(a2.Posiadane==true && a3.IdPracownika== temp_id)
-               select new { a.IdRemontu, a.IdMieszkania, a.Koszt_Remontu, a.Stan, a.Data_Rozpoczecia, a.Data_Zakonczenia };
+                   from a in dba.Remonty
+                   where (a.IdMieszkania == idM)
+                   select new { a.IdRemontu, a.IdMieszkania, a.Koszt_Remontu, a.Stan, a.Data_Rozpoczecia, a.Data_Zakonczenia };
                 dataG.ItemsSource = querry.ToList();
             }
-            
+
         }
 
         private void btn_W_Click(object sender, RoutedEventArgs e)
@@ -57,6 +64,11 @@ namespace Mieszkania.Wyswietlanie
                 id_w_r = Convert.ToInt32(cell.Text);
             }
             this.Close();
+        }
+
+        private void txt_ID_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Wyswietl();
         }
     }
 }
