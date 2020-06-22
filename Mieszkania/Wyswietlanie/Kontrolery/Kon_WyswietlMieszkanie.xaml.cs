@@ -23,16 +23,26 @@ namespace Mieszkania.Wyswietlanie
     public partial class Kon_WyswietlMieszkanie : UserControl
     {
         public int id_w_m { get; set; }
+        User uzytkownik;
         public Kon_WyswietlMieszkanie(User u)
         {
-            int id = u.getIdPrac();
             InitializeComponent();
             id_w_m = 0;
-            if (u.getIdStanowiska() == 1)
+            uzytkownik = u;
+            Wyswietl();
+        }
+
+        private void Wyswietl()
+        {
+            string miasto = txt_M.Text;
+            string ul = txt_ul.Text;
+            string kod = txt_kod.Text;
+            if (uzytkownik.getIdStanowiska() == 1)
             {
                 var dba = new DostepPrac();
                 var querry =
                    from a in dba.Mieszkanie
+                   where (a.Miasto.StartsWith(miasto) && a.Kod_Pocztowy.StartsWith(kod) && a.Ulica.StartsWith(ul))
                    select new { a.IdMieszkania, a.Kod_Pocztowy, a.Miasto, a.Nr_Mieszkania, a.Nr_Domu, a.Status_Mieszkania, a.Ulica, a.Posiadane };
                 dataG.ItemsSource = querry.ToList();
             }
@@ -42,11 +52,10 @@ namespace Mieszkania.Wyswietlanie
                 var querry =
                    from a in dba.Mieszkanie
                    join a2 in dba.Pracownicy_Odp on a.IdMieszkania equals a2.IdMieszkania
-                   where (a2.IdPracownika == id && a.Posiadane == true)
+                   where (a2.IdPracownika == uzytkownik.getIdPrac() && a.Posiadane == true && a.Miasto.StartsWith(miasto) && a.Kod_Pocztowy.StartsWith(kod) && a.Ulica.StartsWith(ul))
                    select new { a.IdMieszkania, a.Kod_Pocztowy, a.Miasto, a.Nr_Mieszkania, a.Nr_Domu, a.Status_Mieszkania, a.Ulica };
                 dataG.ItemsSource = querry.ToList();
             }
-
         }
 
         private void btn_W_Click(object sender, RoutedEventArgs e)
@@ -58,6 +67,21 @@ namespace Mieszkania.Wyswietlanie
                 TextBlock cell = dc.GetCellContent(dr) as TextBlock;
                 id_w_m = Convert.ToInt32(cell.Text);
             }
+        }
+
+        private void txt_ul_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Wyswietl();
+        }
+
+        private void txt_kod_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Wyswietl();
+        }
+
+        private void txt_M_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Wyswietl();
         }
     }
 }

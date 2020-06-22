@@ -7,8 +7,14 @@
         mc:Ignorable="d"
         Title="WyswietlLokator" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="dataG" HorizontalAlignment="Left" Height="326" Margin="10,10,0,0" VerticalAlignment="Top" Width="772"/>
+        <DataGrid x:Name="dataG" HorizontalAlignment="Left" Height="252" Margin="10,84,0,0" VerticalAlignment="Top" Width="772"/>
         <Button x:Name="btn_W" Content="Wybierz/Zamknij" HorizontalAlignment="Left" Height="55" Margin="284,354,0,0" VerticalAlignment="Top" Width="199" Click="btn_W_Click"/>
+        <TextBox x:Name="txt_Naz" HorizontalAlignment="Left" Height="30" Margin="12,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179" TextChanged="txt_Naz_TextChanged"/>
+        <TextBox x:Name="txt_imi" HorizontalAlignment="Left" Height="30" Margin="220,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179" TextChanged="txt_imi_TextChanged"/>
+        <TextBox x:Name="txt_pes" HorizontalAlignment="Left" Height="30" Margin="425,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179" TextChanged="txt_pes_TextChanged"/>
+        <Label Content="Nazwisko:" HorizontalAlignment="Left" Height="34" Margin="10,10,0,0" VerticalAlignment="Top" Width="181"/>
+        <Label Content="Imię:" HorizontalAlignment="Left" Height="34" Margin="220,10,0,0" VerticalAlignment="Top" Width="181"/>
+        <Label Content="Pesel:" HorizontalAlignment="Left" Height="34" Margin="425,10,0,0" VerticalAlignment="Top" Width="181"/>
 
     </Grid>
 </Window>

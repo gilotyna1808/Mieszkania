@@ -7,8 +7,7 @@
         mc:Ignorable="d"
          Height="450" Width="800">
     <Grid Background="White">
-        <DataGrid x:Name="dataG" HorizontalAlignment="Left" Height="326" Margin="10,10,0,0" VerticalAlignment="Top" Width="772"/>
-        <Button x:Name="btn_W" Content="Wybierz/Zamknij" HorizontalAlignment="Left" Height="55" Margin="284,354,0,0" VerticalAlignment="Top" Width="199" Click="btn_W_Click"/>
+        <DataGrid x:Name="dataG" HorizontalAlignment="Left" Height="356" Margin="10,84,0,0" VerticalAlignment="Top" Width="780"/>
 
     </Grid>
 </UserControl>

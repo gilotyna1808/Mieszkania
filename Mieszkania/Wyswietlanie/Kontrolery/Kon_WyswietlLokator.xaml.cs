@@ -26,11 +26,22 @@ namespace Mieszkania.Wyswietlanie
             uzytkownik = u;
             InitializeComponent();
             id_w_l = 0;
+            Wyswietl();
+        }
+
+        private void Wyswietl()
+        {
             var dba = new DostepPrac();
-            if (u.getIdStanowiska() == 1)
+            string naz, imi, pes;
+            naz = txt_Naz.Text;
+            imi = txt_imi.Text;
+            pes = txt_pes.Text;
+
+            if (uzytkownik.getIdStanowiska() == 1)
             {
                 var querry =
                                from a in dba.Lokator
+                               where (a.Imie.StartsWith(imi) && a.Nazwisko.StartsWith(naz) && a.Pesel.StartsWith(pes))
                                select new { a.IdLokatora, a.Imie, a.Nazwisko, a.Pesel, a.Nr_Telefonu, a.Adres_Mailowy, a.Adres_Korespondecyjny, a.Mieszka };
                 dataG.ItemsSource = querry.ToList();
             }
@@ -38,7 +49,7 @@ namespace Mieszkania.Wyswietlanie
             {
                 var querry =
                from a in dba.Lokator
-               where (a.Mieszka == true)
+               where (a.Mieszka == true && a.Imie.StartsWith(imi) && a.Nazwisko.StartsWith(naz) && a.Pesel.StartsWith(pes))
                select new { a.IdLokatora, a.Imie, a.Nazwisko, a.Pesel, a.Nr_Telefonu, a.Adres_Mailowy, a.Adres_Korespondecyjny };
                 dataG.ItemsSource = querry.ToList();
             }
@@ -53,6 +64,21 @@ namespace Mieszkania.Wyswietlanie
                 TextBlock cell = dc.GetCellContent(dr) as TextBlock;
                 id_w_l = Convert.ToInt32(cell.Text);
             }
+        }
+
+        private void txt_Naz_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Wyswietl();
+        }
+
+        private void txt_imi_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Wyswietl();
+        }
+
+        private void txt_pes_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Wyswietl();
         }
     }
 }

@@ -27,13 +27,22 @@ namespace Mieszkania.Wyswietlanie
         {
             InitializeComponent();
             id_w_p = 0;
+            Wyswietl();
+
+        }
+
+        public void Wyswietl()
+        {
+            string naz, imi, pes;
+            naz = txt_Naz.Text;
+            imi = txt_imi.Text;
+            pes = txt_pes.Text;
             var dba = new DostepPrac();
             var querry =
                from a in dba.Pracownicy
-               where a.Zatrudniony==true
-               select new { a.IdPracownika, a.Stanowiska.Nazwa_Stanowiska, a.Nazwisko, a.Imie,a.NrTel,a.Miasto_Zamieszkania,a.Adres_Zamieszkania,a.Pesel };
+               where (a.Nazwisko.StartsWith(naz) && a.Imie.StartsWith(imi) && a.Pesel.StartsWith(pes))
+               select new { a.IdPracownika, a.Imie, a.Nazwisko, a.NrTel,a.Pesel,a.Miasto_Zamieszkania,a.Stanowiska.Nazwa_Stanowiska };
             dataG.ItemsSource = querry.ToList();
-            
         }
 
         private void btn_W_Click(object sender, RoutedEventArgs e)
@@ -45,6 +54,21 @@ namespace Mieszkania.Wyswietlanie
                 TextBlock cell = dc.GetCellContent(dr) as TextBlock;
                 id_w_p = Convert.ToInt32(cell.Text);       
             }
+        }
+
+        private void txt_Naz_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Wyswietl();
+        }
+
+        private void txt_imi_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Wyswietl();
+        }
+
+        private void txt_pes_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Wyswietl();
         }
     }
 }

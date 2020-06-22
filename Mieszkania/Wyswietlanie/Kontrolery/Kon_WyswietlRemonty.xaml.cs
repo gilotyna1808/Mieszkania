@@ -30,14 +30,6 @@ namespace Mieszkania.Wyswietlanie
             dataG.ItemsSource = querry.ToList();
         }
 
-        private void btn_W_Click(object sender, RoutedEventArgs e)
-        {
-            if (dataG.SelectedItems.Count > 0)
-            {
-                string tes = Convert.ToString(dataG.Items.GetItemAt(dataG.SelectedIndex));
-                tes = (tes.Substring(13, 3)).TrimEnd(',');
-                id_w_r = Convert.ToInt32(tes);
-            }
-        }
+
     }
 }
