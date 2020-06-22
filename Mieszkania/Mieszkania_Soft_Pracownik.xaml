@@ -66,6 +66,7 @@
                         <Button x:Name="btn_RaportOg" Content="Ogólne"                          HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,50,0,0"  Height="35" VerticalAlignment="Top" Width="274" Grid.ColumnSpan="2" Click="btn_RaportOg_Click"/>
                         <Button x:Name="btn_Raport_MLokator" Content="Lokatorzy i mieszkania"   HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,90,0,0"  Height="35" VerticalAlignment="Top" Width="274" Grid.ColumnSpan="2" Click="btn_RaportMLokator_Click"/>
                         <Button x:Name="btn_Raport_MRemont" Content="Mieszkania i remonty"      HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,130,0,0" Height="35" VerticalAlignment="Top" Width="274" Grid.ColumnSpan="2" Click="btn_RaportMRemont_Click"/>
+                        <Button x:Name="btn_Raport_RaportMieszkaniaWplwywy" Content="Mieszkania wpływy"      HorizontalAlignment="Left" Foreground="#ff9f1c" Background="White" Margin="10,170,0,0" Height="35" VerticalAlignment="Top" Width="274" Grid.ColumnSpan="2" Click="btn_Raport_RaportMieszkaniaWplwywy_Click"/>
                     </Grid>
                 </TabItem>
             </TabControl>

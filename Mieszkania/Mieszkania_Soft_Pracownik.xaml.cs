@@ -253,5 +253,11 @@ namespace Mieszkania
             MieszkanieRemont o = new MieszkanieRemont();
             o.Show();
         }
+
+        private void btn_Raport_RaportMieszkaniaWplwywy_Click(object sender, RoutedEventArgs e)
+        {
+            OknoCzynsze oc = new OknoCzynsze();
+            oc.Show();
+        }
     }
 }

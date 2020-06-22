@@ -1,0 +1,18 @@
+﻿<Window x:Class="Mieszkania.Raporty.OknoCzynsze"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mieszkania.Raporty"
+        mc:Ignorable="d"
+         xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms"
+        Title="OknoCzynsze" Height="450" Width="800">
+    <Grid>
+        <WindowsFormsHost Margin="10,77,10,10">
+            <rv:ReportViewer x:Name="R_Czynsze"></rv:ReportViewer>
+        </WindowsFormsHost>
+        <ComboBox x:Name="CBid" HorizontalAlignment="Left" Margin="109,10,0,0" VerticalAlignment="Top" Width="269"/>
+        <Label Content="Mieszkanie" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="148"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="605,10,0,0" VerticalAlignment="Top" Width="177" Height="42" Click="Button_Click"/>
+    </Grid>
+</Window>

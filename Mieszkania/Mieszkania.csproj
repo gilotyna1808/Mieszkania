@@ -415,11 +415,10 @@
     <Compile Include="Pracownicy_Odp.cs">
       <DependentUpon>DostepPrac.tt</DependentUpon>
     </Compile>
-    <Compile Include="Raporty\MieszkanieKosztyDataSet.cs">
-      <DependentUpon>MieszkanieKosztyDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Raporty\MieszkanieKosztyDataSet.Designer.cs">
-      <DependentUpon>MieszkanieKosztyDataSet.cs</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MieszkanieKosztyDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Raporty\MieszkanieLokator.xaml.cs" />
     <Compile Include="Raporty\MieszkanieRemont.xaml.cs" />
@@ -427,6 +426,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MLokatorDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Raporty\OknoCzynsze.xaml.cs">
+      <DependentUpon>OknoCzynsze.xaml</DependentUpon>
     </Compile>
     <Compile Include="Raporty\Okno_PracownicyOdp.xaml.cs">
       <DependentUpon>Okno_PracownicyOdp.xaml</DependentUpon>
@@ -628,6 +630,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Raporty\OknoCzynsze.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Raporty\Okno_PracownicyOdp.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -761,6 +767,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Raporty\PracownikMieszkaniaODP.rdlc" />
     <EmbeddedResource Include="Raporty\Raport_Autoryzacja.rdlc" />
+    <EmbeddedResource Include="Raporty\Raport_Czynsz.rdlc" />
     <EmbeddedResource Include="Raporty\Raport_MieszkanieLokator.rdlc" />
     <EmbeddedResource Include="Raporty\Raport_MieszkanieRemont.rdlc" />
     <EmbeddedResource Include="Raporty\Raport_Pracownicy_Odp.rdlc" />
@@ -790,7 +797,11 @@
     <None Include="Raporty\MieszkanieKosztyDataSet.xsc">
       <DependentUpon>MieszkanieKosztyDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Raporty\MieszkanieKosztyDataSet.xsd" />
+    <None Include="Raporty\MieszkanieKosztyDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MieszkanieKosztyDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Raporty\MieszkanieKosztyDataSet.xss">
       <DependentUpon>MieszkanieKosztyDataSet.xsd</DependentUpon>
     </None>
